@@ -23,5 +23,4 @@ base de datos, que inmediatamente se actualizará.
 
 Ingreso de nuevos trabajos
 __________________________
-Se cuenta con campos en los cuales está indicado que información colocar en cada uno de ellos, solo presionando 
-el botón añadir esto hará que la base de datos se actualice de inmediato.
+Se cuenta con campos en los cuales están indicados que información colocar en cada uno de ellos, solo presionando el botón añadir esto hará que la base de datos se actualice de inmediato.
