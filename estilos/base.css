@@ -1,0 +1,25 @@
+
+		#for input:valid { background:white;}
+		#for input:invalid { background:#DBDBDB;}
+		{  
+			margin: 0;  
+			padding: 0;  
+		}  
+	body {  
+		margin: 0 auto;  
+		width: 1000px;  
+		font: 13px/22px Helvetica, Arial, sans-serif;  
+		background: #8FBC8F;  
+	}   
+	h1{  
+		font-size: 50px;  
+		line-height: 20px;  
+		padding: 22px 0;  
+	}  
+	p{  
+		padding-bottom: 20px;  
+	} 
+	textarea{
+		margin: 20;  
+		padding: 40;
+	}
