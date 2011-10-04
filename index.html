@@ -1,11 +1,7 @@
 <!DOCTYPE html>
-<header>
-	<title>Oficina de publicaciones e Impresiones de la UNCP - Registro de producción</title>
-	<h1>Registro de produccion</h1>
-</header>
-<body>
-	
-<form id="for">
+<head>
+	<title>Titulo de la aplicación</title>
+	<meta charset='utf-8'>
 	<style>
 		#for input:valid { background:white;}
 		#for input:invalid { background:#DBDBDB;}
@@ -32,6 +28,15 @@
 		padding: 40;
 	}
 	</style>
+</head>
+
+<body>
+<header>
+	<title>Oficina de publicaciones e Impresiones de la UNCP - Registro de producción</title>
+	<h1>Registro de produccion</h1>
+</header>
+	
+<form id="for">
 	<p># de expediente: <input type="text"  name="# de expediente"></p>
 	<p>Fecha: <input type="date" name="fecha"	required></p>
 	<p>Documento: <input type="text"	name="documento"	required></p>
@@ -43,7 +48,7 @@
 	<p>Contometro: <input type="text"	name="contometro"></p>
 	<p>Costo: <input type="text"	name="costo"></p>
 	<p><input type="submit" value="Agregar"></p>
-	<p><button>Cancelar</button></p>
 </form>
 
 </body>
+</html>
