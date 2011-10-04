@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<header>
+	<title>Oficina de publicaciones e Impresiones de la UNCP - Registro de producción</title>
+	<h1>Registro de produccion</h1>
+</header>
+<body>
+	
+<form id="for">
+	<style>
+		#for input:valid { background:white;}
+		#for input:invalid { background:#DBDBDB;}
+		{  
+			margin: 0;  
+			padding: 0;  
+		}  
+	body {  
+		margin: 0 auto;  
+		width: 1000px;  
+		font: 13px/22px Helvetica, Arial, sans-serif;  
+		background: #8FBC8F;  
+	}   
+	h1{  
+		font-size: 50px;  
+		line-height: 20px;  
+		padding: 22px 0;  
+	}  
+	p{  
+		padding-bottom: 20px;  
+	} 
+	textarea{
+		margin: 20;  
+		padding: 40;
+	}
+	</style>
+	<p># de expediente: <input type="text"  name="# de expediente"></p>
+	<p>Fecha: <input type="date" name="fecha"	required></p>
+	<p>Documento: <input type="text"	name="documento"	required></p>
+	<p>Interesado: <input type="text"	name="interesado"	required></p>
+	<p>DNI: <input type="text"	name="DNI"></p>
+	<p>Oficina: <input type="text"	name="oficina"></p>
+	<p><label>Asunto: <textarea name="comments" maxlength=1000></textarea></label></p>
+	<p><label>Tiraje y/o ejemplares: <textarea name="comments" maxlength=1000></textarea></label></p>
+	<p>Contometro: <input type="text"	name="contometro"></p>
+	<p>Costo: <input type="text"	name="costo"></p>
+	<p><input type="submit" value="Agregar"></p>
+	<p><button>Cancelar</button></p>
+</form>
+
+</body>
