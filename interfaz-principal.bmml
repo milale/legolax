@@ -1,0 +1,19 @@
+<mockup version="1.0" skin="sketch" measuredW="1186" measuredH="656" mockupW="961" mockupH="601">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::TitleWindow" x="225" y="55" w="961" h="601" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Oficina%20de%20Impresiones%20y%20publicaciones%20-%20Universidad%20Nacional%20del%20Centro%20del%20Per%FA</text>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::Button" x="950" y="155" w="-1" h="-1" measuredW="142" measuredH="28" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Registro%20de%20almac%E9n</text>
+      </controlProperties>
+    </control>
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::Button" x="280" y="521" w="163" h="29" measuredW="158" measuredH="28" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Registro%20de%20producci%F3n</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
