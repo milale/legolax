@@ -1,0 +1,5 @@
+#Evitar que los pyc se sincronicen y causen conflictos
+*.pyc
+
+#Evitar que los archivos temporales generados por vim causen conflictos con el uso del editor
+*.swp
