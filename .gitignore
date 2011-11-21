@@ -3,3 +3,9 @@
 
 #Evitar que los archivos temporales generados por vim causen conflictos con el uso del editor
 *.swp
+
+#Avoid DIA
+*.dia~
+
+#Avoid Excel
+~*.xlsx
