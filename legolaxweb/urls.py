@@ -6,7 +6,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
-    # url(r'^$', 'legolaxweb.views.home', name='home'),
+    url(r'^$', 'portal.views.index'),
     # url(r'^legolaxweb/', include('legolaxweb.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:

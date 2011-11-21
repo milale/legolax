@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block titulo %}Inicio{% endblock %}
+{% block contenido %} 
+<div id='contenido'>
+	<div id='encabezado'>
+		<h1><img src='/static/imagenes/uncp.png' alt='UNCP'>Sistema de Registro de Producción y Almacén </h1>
+		<h2>Oficina de Publicaciones e Impresiones</h2>
+	</div>	
+	<div id='principal'>
+		<ul>
+			<li><a href='/admin/' class='botonProduccion' title='Gestiona los trabajos que se solicitan a la imprenta'>Registro de producción</a></li>
+			<li><a href='#' class='botonAlmacen' title='Gestiona los recursos del almacén '>Registro de almacén</a></li>
+		</ul>
+	</div>
+	<div id='pie'>
+		<p>&copy; 2011 - UNCP - Oficina de Publicaciones e Impresiones</p>
+	</div>
+</div>
+{% endblock %}

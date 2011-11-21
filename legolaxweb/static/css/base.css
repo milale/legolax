@@ -1,0 +1,42 @@
+/* Estandarización de elemento */
+body, div, ul, li, a, p {
+	margin:0;
+	padding:0;
+}
+
+body { 
+	font-family:'Convergence',sans-serif; 
+	background:url('/static/imagenes/fondo.jpg') #13a903;
+}
+
+#contenido { 
+	margin:30px auto; 
+	background:url('/static/imagenes/impresionesuncp.jpg') #FFF; 
+	width:720px; 
+	height:538px; 
+/*
+	opacity:0.8;
+*/
+	border:20px #fff solid;
+	border-radius:10px;
+	box-shadow:-3px -3px 25px #000;
+}
+
+#encabezado { padding:0px 5px;}
+#encabezado h1 { color:#FFFFFF; letter-spacing:-3px; text-align:center; text-shadow:2px 2px #000; }
+#encabezado h1 img{ position:absolute; margin-top:40px;}
+#encabezado h2 { color:#000205; text-align:right; text-shadow:-1px -1px #fff;}
+
+#principal { text-align:center; margin:190px auto;}
+#principal ul { list-style:none; }
+#principal ul li { display:inline; }
+#principal ul li a { padding:30px 15px; background:#fff; text-decoration:none; margin:0px 10px; font-size:20px; }
+#principal ul li a { border-radius:25px 10px; box-shadow:3px 3px 10px #000; }
+#principal ul li a:hover { box-shadow:-2px -2px 3px #000; }
+#principal ul li .botonProduccion { background:#279116; color:#000; font-weight:bold; letter-spacing:-2px;}
+#principal ul li .botonProduccion:hover { background:#4dcc00; color:#fff; } 
+#principal ul li .botonAlmacen { background:#EBB709; color:#000; font-weight:bold; letter-spacing:-2px;}
+#principal ul li .botonAlmacen:hover { background:#ffcb14; color:#fff; } 
+
+
+#pie { text-align:right; color:#fff; font-size:0.9em; letter-spacing:-1px; padding:5px;}
