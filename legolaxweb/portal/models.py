@@ -55,4 +55,4 @@ class RegistroArticulo(models.Model):
 	articulo = models.ForeignKey(Articulo)
 	
 	def __unicode__(self):
-		return str(self.fregistro) + " " + str(self.cantidad) + " " + self.tipo
+		return self.articulo.nombre + " " + str(self.fregistro) + " "  + self.tipo + " " + str(self.cantidad) 
