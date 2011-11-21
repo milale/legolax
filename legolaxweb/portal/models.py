@@ -34,3 +34,25 @@ class Documento(models.Model):
 
 	def __unicode__(self):
 		return str(self.fentrega) + " " + self.codigo
+
+class Articulo(models.Model):
+	nombre = models.CharField(max_length=250)
+	marca = models.CharField(max_length=50,blank=True)
+	serie = models.CharField(max_length=50,blank=True)
+	codigo = models.CharField(max_length=50,blank=True)
+	caracteristica = models.TextField(blank=True)
+	umedida = models.CharField(max_length=50,verbose_name="Unidad de medida",blank=True)
+	
+	def __unicode__(self):
+		return self.nombre
+		
+class RegistroArticulo(models.Model):
+	detalle = models.TextField(blank=True)
+	cantidad = models.DecimalField(max_digits=6,decimal_places=2)
+	fregistro = models.DateField(verbose_name='Fecha de registro')
+	tipo_options = (('e','entrada'),('s','salida'))
+	tipo = models.CharField(max_length=1,choices=tipo_options)
+	articulo = models.ForeignKey(Articulo)
+	
+	def __unicode__(self):
+		return str(self.fregistro) + " " + str(self.cantidad) + " " + self.tipo
