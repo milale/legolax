@@ -64,6 +64,7 @@ class RegistroArticulo(models.Model):
 class RegistroArticuloForm(ModelForm):
 	class Meta:
 		model = RegistroArticulo
+		exclude = ('usuario',)
 
 class LoginForm(forms.Form):
 	userform = forms.CharField(label='usuario')

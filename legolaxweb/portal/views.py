@@ -1,11 +1,12 @@
 from django.shortcuts import render_to_response
 from portal.models import LoginForm
-from portal.models import RegistroArticuloForm
+from portal.models import RegistroArticulo, RegistroArticuloForm
 from django.template import RequestContext
 from django.contrib.auth import login
 from django.contrib.auth import authenticate
 from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 
 @login_required(login_url='/ingreso/')
 def index(request):
@@ -29,6 +30,18 @@ def ingreso(request):
 		formu = LoginForm(auto_id=True)
 	return render_to_response('ingreso.html',{'formu':formu},context_instance=RequestContext(request))
 
-def registroarticuloform(request):
-	formulario = RegistroArticuloForm(auto_id=True)
+def registroarticuloformu(request):
+	if request.method == 'POST':
+		formulario = RegistroArticuloForm(request.POST)
+		if formulario.is_valid():
+			detalle = formulario.cleaned_data['detalle']
+			cantidad = formulario.cleaned_data['cantidad']
+			fregistro = formulario.cleaned_data['fregistro']
+			tipo = formulario.cleaned_data['tipo']
+			precio = formulario.cleaned_data['precio']
+			articulo = formulario.cleaned_data['articulo']
+			usuario = request.user
+			return HttpResponseRedirect('/')
+	else:
+		formulario = RegistroArticuloForm(auto_id=True)
 	return render_to_response('registroarticuloform.html',{'formulario':formulario},context_instance=RequestContext(request))

@@ -6,6 +6,6 @@ admin.autodiscover()
 urlpatterns = patterns('',
     url(r'^$', 'portal.views.index'),
     url(r'^ingreso/$','portal.views.ingreso'),
-    url(r'^articulos/registro/$','portal.views.registroarticuloform'),
+    url(r'^articulos/registro/$','portal.views.registroarticuloformu'),
     url(r'^admin/', include(admin.site.urls)),
 )
