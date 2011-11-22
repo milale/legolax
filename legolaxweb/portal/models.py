@@ -1,6 +1,8 @@
+from django.contrib.auth.models import User
 from django.db import models
+from django import forms
+from django.forms import ModelForm
 
-# Create your models here.
 class Equipo(models.Model):
 	nombre = models.CharField(max_length=200)
 	
@@ -54,6 +56,15 @@ class RegistroArticulo(models.Model):
 	tipo = models.CharField(max_length=1,choices=tipo_options)
 	precio = models.DecimalField(max_digits=6,decimal_places=2)
 	articulo = models.ForeignKey(Articulo)
+	usuario = models.ForeignKey(User)
 	
 	def __unicode__(self):
 		return self.articulo.nombre + " " + str(self.fregistro) + " "  + self.tipo + " " + str(self.cantidad) 
+
+class RegistroArticuloForm(ModelForm):
+	class Meta:
+		model = RegistroArticulo
+
+class LoginForm(forms.Form):
+	userform = forms.CharField(label='usuario')
+	passform = forms.CharField(label='clave',widget=forms.PasswordInput(render_value=False))
