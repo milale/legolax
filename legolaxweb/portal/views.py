@@ -39,9 +39,10 @@ def registroarticuloformu(request):
 			fregistro = formulario.cleaned_data['fregistro']
 			tipo = formulario.cleaned_data['tipo']
 			precio = formulario.cleaned_data['precio']
+			preciototal = formulario.cleaned_data['preciototal']
 			articulo = formulario.cleaned_data['articulo']
 			usuario = request.user
-			guardarregistro = RegistroArticulo(detalle=detalle,cantidad=cantidad,fregistro=fregistro,tipo=tipo,precio=precio,articulo=articulo,usuario=usuario)
+			guardarregistro = RegistroArticulo(detalle=detalle,cantidad=cantidad,fregistro=fregistro,tipo=tipo,precio=precio,preciototal=preciototal,articulo=articulo,usuario=usuario)
 			guardarregistro.save()
 			return HttpResponseRedirect('/')
 	else:
