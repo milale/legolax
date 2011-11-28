@@ -54,8 +54,8 @@ class RegistroArticulo(models.Model):
 	fregistro = models.DateField(verbose_name='Fecha de registro')
 	tipo_options = (('e','entrada'),('s','salida'))
 	tipo = models.CharField(max_length=1,choices=tipo_options)
-	precio = models.DecimalField(max_digits=6,decimal_places=2)
-	preciototal = models.DecimalField(max_digits=6,decimal_places=2)
+	precio = models.DecimalField(max_digits=6,decimal_places=2,blank=True)
+	preciototal = models.DecimalField(max_digits=6,decimal_places=2,blank=True)
 	articulo = models.ForeignKey(Articulo)
 	usuario = models.ForeignKey(User)
 	
