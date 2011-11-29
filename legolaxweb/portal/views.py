@@ -1,4 +1,5 @@
 from django.shortcuts import render_to_response
+from portal.models import Documento
 from portal.models import LoginForm
 from portal.models import RegistroArticulo, RegistroArticuloForm
 from django.template import RequestContext
@@ -29,6 +30,10 @@ def ingreso(request):
 	else:
 		formu = LoginForm(auto_id=True)
 	return render_to_response('ingreso.html',{'formu':formu},context_instance=RequestContext(request))
+
+def documentos(request):
+	datos = Documento.objects.all().order_by('-id')
+	return render_to_response('documentos.html',{'datos':datos})
 
 def registroarticuloformu(request):
 	if request.method == 'POST':
