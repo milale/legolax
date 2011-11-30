@@ -31,6 +31,11 @@ def ingreso(request):
 		formu = LoginForm(auto_id=True)
 	return render_to_response('ingreso.html',{'formu':formu},context_instance=RequestContext(request))
 
+#view of persons, documents and equipment
+@login_required(login_url='/ingreso/')
+def eqindoc(request):
+	return render_to_response('eqindoc.html')
+
 def documentos(request):
 	datos = Documento.objects.all().order_by('-id')
 	return render_to_response('documentos.html',{'datos':datos})

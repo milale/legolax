@@ -7,13 +7,25 @@
 	<meta charset='UTF-8'>
 	<link rel='shorcut icon' href='/static/imagenes/uncp.png'/>
 	<link href='/static/css/base.css' rel='stylesheet'>
-	<link href='/static/css/south-street/jquery-ui-1.8.16.custom.css' rel='stylesheet'>
 	<link href='http://fonts.googleapis.com/css?family=Convergence' rel='stylesheet' type='text/css'>
+	{% block css %}{% endblock %}
+	<link href='/static/css/south-street/jquery-ui-1.8.16.custom.css' rel='stylesheet'>
 	<script src='/static/js/jquery-1.6.2.min.js'></script>
 	<script src='/static/js/jquery-ui-1.8.16.custom.min.js'></script>
+	<script src='/static/js/legolax.js'></script>
+	{% block javascript %}{% endblock %}
 </head>
 <body>
-   	{% block contenido %}
+<div id='contenido'>
+	<div id='encabezado'>
+		<h1><img src='/static/imagenes/uncp.png' alt='UNCP'>Sistema de Registro de Producción y Almacén </h1>
+		<h2>Oficina de Publicaciones e Impresiones</h2>
+	</div>	
+   	{% block principal %}
 	{% endblock %}
+	<div id='pie'>
+		<p>&copy; 2011 - UNCP - Oficina de Publicaciones e Impresiones</p>
+	</div>
+</div>
 </body>
 </html>

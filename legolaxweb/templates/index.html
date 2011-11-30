@@ -1,16 +1,6 @@
 {% extends 'base.html' %}
 {% block titulo %}Inicio{% endblock %}
-{% block contenido %} 
-<script>
-	$(function(){
-		$("#principal").tabs({collapsible: true,event: "mouseover"});
-	});
-</script>
-<div id='contenido'>
-	<div id='encabezado'>
-		<h1><img src='/static/imagenes/uncp.png' alt='UNCP'>Sistema de Registro de Producción y Almacén </h1>
-		<h2>Oficina de Publicaciones e Impresiones</h2>
-	</div>	
+{% block principal %} 
 	<div id='principal'>
 		<ul>
 			<li><a href='#tab-Produccion' class='botonProduccion' title='Gestiona los trabajos que se solicitan a la imprenta'>Registro de producción</a></li>
@@ -19,7 +9,7 @@
 		<div id='tab-Produccion'>
 			<ul>
 				<li><a href='#' class='main'>Trabajos</a></li>
-				<li><a href='#' class='extra'>Equipos, Interesados, Documentos</a></li>
+				<li><a href='/produccion/equipos-interesados-documentos/' class='extra'>Equipos, Interesados, Documentos</a></li>
 			</ul>
 		</div>
 		<div id='tab-Almacen'>
@@ -29,8 +19,4 @@
 			</ul>
 		</div>
 	</div>
-	<div id='pie'>
-		<p>&copy; 2011 - UNCP - Oficina de Publicaciones e Impresiones</p>
-	</div>
-</div>
 {% endblock %}

@@ -25,4 +25,8 @@ body { font-family:'Convergence',sans-serif; }
 .extra { margin:10px 0px; color:#FF8400 !important; font-weight:bold; }
 .extra:hover { text-decoration:none; }
 
+#navegation { text-align:left; }
+#navegation p a { color:#FF8400; font-weight:bold; }
+#navegation p a:hover { text-decoration:none; }
+
 #pie { padding:0px 5px; width:960px; margin:0 auto; text-align:right; color:#000; font-size:0.9em; letter-spacing:-1px;}
