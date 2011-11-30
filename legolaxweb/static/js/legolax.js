@@ -1,2 +1,2 @@
 /* Main tabs */
-$(function(){ $("#principal").tabs({collapsible: true,event: "mouseover"}); });
+$(function(){ $("#principal").tabs({collapsible: true}); });

@@ -1,5 +1,13 @@
 {% extends 'base.html' %}
 {% block titulo %}Inicio{% endblock %}
+{% block css %}
+	<link href='/static/css/south-street/jquery-ui-1.8.16.custom.css' rel='stylesheet'>
+{% endblock %}
+{% block javascript %}
+	<script src='/static/js/jquery-1.6.2.min.js'></script>
+	<script src='/static/js/jquery-ui-1.8.16.custom.min.js'></script>
+	<script src='/static/js/legolax.js'></script>
+{% endblock %}
 {% block principal %} 
 	<div id='principal'>
 		<ul>
@@ -9,7 +17,11 @@
 		<div id='tab-Produccion'>
 			<ul>
 				<li><a href='#' class='main'>Trabajos</a></li>
-				<li><a href='/produccion/equipos-interesados-documentos/' class='extra'>Equipos, Interesados, Documentos</a></li>
+				<li>
+					<a href='/produccion/equipos/' class='extra'>Equipos</a>
+					<a href='/produccion/interesados/' class='extra'>Interesados</a>
+					<a href='/produccion/tipo-documentos/' class='extra'>Tipo de Documentos</a>
+				</li>
 			</ul>
 		</div>
 		<div id='tab-Almacen'>

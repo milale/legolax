@@ -8,6 +8,10 @@ class Equipo(models.Model):
 	
 	def __unicode__(self):
 		return self.nombre
+
+class EquipoForm(ModelForm):
+	class Meta:
+		model = Equipo
 		
 class Interesado(models.Model):
 	nombre = models.CharField(max_length=200)
@@ -17,12 +21,20 @@ class Interesado(models.Model):
 	def __unicode__(self):
 		return self.nombre
 
+class InteresadoForm(ModelForm):
+	class Meta:
+		model=Interesado
+
 class TipoDocumento(models.Model):
 	tipo = models.CharField(max_length=200)
 	
 	def __unicode__(self):
 		return self.tipo
 		
+class TipoDocumentoForm(ModelForm):
+	class Meta:
+		model=TipoDocumento
+
 class Documento(models.Model):
 	codigo = models.CharField(max_length=200)
 	fentrega = models.DateField(verbose_name='Fecha de Entrega')
