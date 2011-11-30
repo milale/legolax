@@ -9,3 +9,4 @@
 
 #Avoid Excel
 ~*.xlsx
+.~lock*
