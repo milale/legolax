@@ -58,7 +58,7 @@ def equiposeditar(request, equipo_id):
 #view of persons, documents and equipment
 @login_required(login_url='/ingreso/')
 def interesados(request):
-	datos = Equipo.objects.all()
+	datos = Interesado.objects.all()
 	return render_to_response('interesados.html',{'datos':datos})
 	
 @login_required(login_url='/ingreso/')
@@ -69,8 +69,12 @@ def (request, interesado_id):
 		if formulario.is_valid():
 			nombre = formulario.cleaned_data['nombre']
 			dato.nombre = nombre
+			dni = formulario.cleaned_data['dni']
+			dato.dni = dni
+			oficina = formulario.cleaned_data['oficina']
+			dato.oficina = oficina
 			dato.save()
-			return HttpResponseRedirect('/produccion/equipos/')
+			return HttpResponseRedirect('/produccion/interesados/')
 	else:
 		formulario = EquipoForm(instance=dato)
 	return render_to_response('interesadoseditar.html',{'formulario':formulario},context_instance=RequestContext(request))
