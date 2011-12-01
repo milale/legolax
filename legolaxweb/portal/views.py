@@ -55,6 +55,27 @@ def equiposeditar(request, equipo_id):
 		formulario = EquipoForm(instance=dato)
 	return render_to_response('equiposeditar.html',{'formulario':formulario},context_instance=RequestContext(request))
 	
+#view of persons, documents and equipment
+@login_required(login_url='/ingreso/')
+def interesados(request):
+	datos = Equipo.objects.all()
+	return render_to_response('interesados.html',{'datos':datos})
+	
+@login_required(login_url='/ingreso/')
+def (request, interesado_id):
+	dato = get_object_or_404(Equipo, pk= interesado_id)
+	if request.method == 'POST':
+		formulario = EquipoForm(request.POST)
+		if formulario.is_valid():
+			nombre = formulario.cleaned_data['nombre']
+			dato.nombre = nombre
+			dato.save()
+			return HttpResponseRedirect('/produccion/equipos/')
+	else:
+		formulario = EquipoForm(instance=dato)
+	return render_to_response('interesadoseditar.html',{'formulario':formulario},context_instance=RequestContext(request))
+	
+	
 def documentos(request):
 	datos = Documento.objects.all().order_by('-id')
 	return render_to_response('documentos.html',{'datos':datos})
