@@ -13,7 +13,7 @@ body { font-family:'Convergence',sans-serif; }
 #encabezado h1 img{ position:absolute; margin-top:40px;}
 #encabezado h2 { color:#000205; text-align:right; text-shadow:-1px -1px #fff;}
 
-#principal { text-align:center; margin:20px auto; width:960px; border:10px #fff solid; border-radius:10px; box-shadow:-3px -3px 20px #000;}
+#principal { text-align:center; margin:20px auto; width:960px; border:10px #fff solid; border-radius:10px; box-shadow:-3px -3px 20px #000; background:#F5F3E5;}
 #principal ul { margin:0 auto; text-align:center; width:460px; }
 #tab-Produccion ul, #tab-Almacen ul { list-style:none; }
 #tab-Produccion ul li , #tab-Almacen ul li { display:block; padding:10px; }
@@ -36,8 +36,10 @@ body { font-family:'Convergence',sans-serif; }
 
 #formulario { width:500px; margin:0 auto; text-align:center; padding:25px;}
 #formulario label { font-size:18px; font-family:sans-serif; color:#444444; margin:5px;}
-#formulario input { width:400px; padding:5px; font-size:20px; margin:5px; font-family:sans-serif; }
-#formulario .errorlist{ color:#FF0018; font-size:15px; list-style:none;} 
+#formulario input { width:370px; padding:5px; font-size:20px; margin:5px; font-family:sans-serif; }
+#formulario .errorlist{ color:#FF0018; font-size:15px; list-style:none; background:none !important; font-weight:normal !important; border:none !important; text-align:right !important; } 
+#formulario .errorlist li { float:right !important; font-size:0.7em;}
 #formulario p .boton { color:#fff; background:#43B222; border:1px solid #d2d2d2; border-radius:3px; box-shadow:1px 1px 4px #000; cursor:pointer;}
+#formulario p label { text-align:right; float:left; padding:5px 0px; width:90px;}
 
 #pie { padding:0px 5px; width:960px; margin:0 auto; text-align:right; color:#000; font-size:0.9em; letter-spacing:-1px;}

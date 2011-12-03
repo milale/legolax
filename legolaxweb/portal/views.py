@@ -72,6 +72,21 @@ def equiposeditar(request, equipo_id):
 def interesados(request):
 	datos = Interesado.objects.all()
 	return render_to_response('interesados.html',{'datos':datos})
+
+@login_required(login_url='/ingreso/')
+def interesadosregistrar(request):
+	if request.method == 'POST':
+		formulario = InteresadoForm(request.POST)
+		if formulario.is_valid():
+			nombre = formulario.cleaned_data['nombre']
+			dni = formulario.cleaned_data['dni']
+			oficina = formulario.cleaned_data['oficina']
+			interesadonuevo = Interesado(nombre=nombre,dni=dni,oficina=oficina)
+			interesadonuevo.save()
+			return HttpResponseRedirect('/produccion/interesados/')
+	else:
+		formulario = InteresadoForm(auto_id=True)
+	return render_to_response('interesadoseditar.html',{'formulario':formulario},context_instance=RequestContext(request))
 	
 @login_required(login_url='/ingreso/')
 def interesadoseditar(request, interesado_id):
