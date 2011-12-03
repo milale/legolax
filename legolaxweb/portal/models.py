@@ -4,7 +4,7 @@ from django import forms
 from django.forms import ModelForm
 
 class Equipo(models.Model):
-	nombre = models.CharField(max_length=200)
+	nombre = models.CharField(max_length=200,verbose_name='Nombre del equipo')
 	
 	def __unicode__(self):
 		return self.nombre

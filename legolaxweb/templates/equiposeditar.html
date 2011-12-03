@@ -1,4 +1,75 @@
-<form method='post' action=''>{% csrf_token %}
-{{formulario.as_p}}
-<p><input type='submit' value='Modificar'/></p>
-</form>
+{% extends 'base.html' %}
+{% block titulo %}Editar o agregar equipos{% endblock %}
+{% block css %}
+	<link href='/static/css/south-street/jquery-ui-1.8.16.custom.css' rel='stylesheet'>
+{% endblock %}
+{% block javascript %}
+	<script src='/static/js/jquery-1.6.2.min.js'></script>
+	<script src='/static/js/jquery-ui-1.8.16.custom.min.js'></script>
+	<script src='/static/js/legolax.js'></script>
+{% endblock %}
+{% block principal %}
+	<script type="text/javascript">
+$(document).ready(function(){
+ 
+    // Formateamos el botón Diálogo sencillo
+    $('#dialogSencillo').button();
+ 
+    // Damos formato a la Ventana de Diálogo    
+    $('#dialogo').dialog({
+        // Indica si la ventana se abre de forma automática
+        autoOpen: false,
+        // Indica si la ventana es modal
+        modal: true,
+        // Largo
+        width: 300,
+        // Alto
+        height: 160,
+        // Creamos los botones
+        buttons: {
+            Confirmar: function() {
+                // ir a una url
+                //window.location.href="url";
+                $('#formulario').submit();
+            },
+            Cancelar: function() {
+                // Cerrar ventana de diálogo
+                $(this).dialog( "close" );
+            }
+ 
+        }
+    });
+ 
+    // Mostrar Diálogo Sencillo
+    $('#dialogSencillo').click(function(){
+        $('#dialogo').dialog('open');
+    });
+ 
+});
+  $(document).ready(function() {
+    $("form").keypress(function(e) {
+        if (e.which == 13) {
+            return false;
+        }
+    });
+});
+</script>
+	<div id='dialogo' title='Confirmación de cambios' style="display:none;">
+		<p>¿Desea guardar los cambios?</p>
+	</div>
+	<div id='principal'>
+		<div id='navigation'>
+			<p>
+				<a class='naveurl' href='/' title='Oficina de publicaciones e impresiones UNCP'>Volver al inicio</a>
+				<a class='naveurl' href='/produccion/equipos/' >Volver a la lista de equipos</a>
+			</p>
+		</div>
+		<div id='elementos'>
+			<p class='instruccion'>* Asegurese que el equipo que desea registrar no existe ya en la lista anterior</p>
+			<form id='formulario' method='post' action=''>{% csrf_token %}
+			{{formulario.as_p}}
+			<p><input id='dialogSencillo' class='boton' type='button' value='Confirmar'/></p>
+			</form>
+		</div>
+	</div>
+{% endblock %}

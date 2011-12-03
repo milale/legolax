@@ -40,7 +40,20 @@ def ingreso(request):
 def equipos(request):
 	datos = Equipo.objects.all()
 	return render_to_response('equipos.html',{'datos':datos})
-	
+
+@login_required(login_url='/ingreso/')
+def equiposregistrar(request):
+	if request.method == 'POST':
+		formulario = EquipoForm(request.POST)
+		if formulario.is_valid():
+			nombre = formulario.cleaned_data['nombre']
+			equiponuevo = Equipo(nombre=nombre)
+			equiponuevo.save()
+			return HttpResponseRedirect('/produccion/equipos/')
+	else:
+		formulario = EquipoForm(auto_id=True)
+	return render_to_response('equiposeditar.html',{'formulario':formulario},context_instance=RequestContext(request))
+		
 @login_required(login_url='/ingreso/')
 def equiposeditar(request, equipo_id):
 	dato = get_object_or_404(Equipo, pk=equipo_id)
