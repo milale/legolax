@@ -11,7 +11,7 @@
 		<div id='elementos'>
 			<ol>
 			{% for elemento in datos %}
-					<li><a href='editar/{{elemento.pk}}'>{{elemento.nombre}}</a></li>
+					<li><a href='editar/{{elemento.pk}}'>{{elemento.nombre}}, DNI: {{elemento.dni|default:'no registrado'}}, Oficina: {{elemento.oficina}}</a></li>
 			{% endfor %}
 			</ol>
 		</div>

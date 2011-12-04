@@ -4,7 +4,7 @@ from django import forms
 from django.forms import ModelForm
 
 class Equipo(models.Model):
-	nombre = models.CharField(max_length=200,verbose_name='Nombre del equipo')
+	nombre = models.CharField(max_length=200,verbose_name='Nombre del equipo',unique=True)
 	
 	def __unicode__(self):
 		return self.nombre
@@ -14,7 +14,7 @@ class EquipoForm(ModelForm):
 		model = Equipo
 		
 class Interesado(models.Model):
-	nombre = models.CharField(max_length=200)
+	nombre = models.CharField(max_length=200,unique=True)
 	dni = models.CharField(max_length=8,blank=True)
 	oficina = models.CharField(max_length=200)
 	
@@ -26,7 +26,7 @@ class InteresadoForm(ModelForm):
 		model=Interesado
 
 class TipoDocumento(models.Model):
-	tipo = models.CharField(max_length=200)
+	tipo = models.CharField(max_length=200,unique=True)
 	
 	def __unicode__(self):
 		return self.tipo

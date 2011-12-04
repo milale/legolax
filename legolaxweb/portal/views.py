@@ -138,7 +138,7 @@ def tdocumentoseditar(request, tdocumento_id):
 		formulario = TipoDocumentoForm(instance=dato)
 	return render_to_response('tdocumentoeditar.html',{'formulario':formulario},context_instance=RequestContext(request))
 
-
+@login_required(login_url='/ingreso/')
 def documentos(request):
 	datos = Documento.objects.all().order_by('-id')
 	return render_to_response('documentos.html',{'datos':datos})
