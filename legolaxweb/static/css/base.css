@@ -31,6 +31,9 @@ body { font-family:'Convergence',sans-serif; }
 
 #elementos { font-family:sans-serif; text-align:left; margin:20px 10px;}
 #elementos ol { text-transform:capitalize; }
+#elementos ol li .docu { text-decoration:none; color:#E68B09; text-transform:none;}
+#elementos ol li .docu:hover { color:#FFA500; }
+#elementos .detalleElemento { text-align:left; }
 
 .instruccion { color:#42B222; font-size:0.9em; }
 
@@ -43,3 +46,4 @@ body { font-family:'Convergence',sans-serif; }
 #formulario p label { text-align:right; float:left; padding:5px 0px; width:90px;}
 
 #pie { padding:0px 5px; width:960px; margin:0 auto; text-align:right; color:#000; font-size:0.9em; letter-spacing:-1px;}
+

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block titulo %}Detalle: {{dato.codigo}}{% endblock %}
+{% block principal %}
+	<div id='principal'>
+		<div id='navigation'>
+			<p>
+				<a class='naveurl' href='/produccion/trabajos/'>Volver a la lista de trabajos</a>
+				<a class='naveurl' href='../../editar/{{dato.pk}}/' >Editar los datos de este trabajo</a>
+			</p>
+		</div>
+		<div id='elementos'>
+			<ul class='detalleElemento'>
+				<li><strong>Código: </strong><em>{{dato.codigo}}</em></li>
+				<li><strong>Asunto: </strong><em>{{dato.asunto}}</em></li>
+				<li><strong>Fecha de registro: </strong><em>{{dato.fentrega}}</em></li>
+				<li><strong>Contometro: </strong><em>{{dato.contometro|default:'No registrado'}}</em></li>
+				<li><strong>Costo: </strong><em>{{dato.costo|default:'No registrado'}}</em></li>
+				<li><strong>Tiraje: </strong><em>{{dato.tiraje|default:'No registrado'}}</em></li>
+				<li><strong>Número de Expediente: </strong><em>{{dato.nexpediente|default:'No registrado'}}</em></li>
+				<li><strong>Equipo asignado: </strong><em>{{dato.equipo|default:'No registrado'}}</em></li>
+				<li><strong>Interesado: </strong><em>{{dato.interesado|default:'No registrado'}}</em></li>
+				<li><strong>Tipo de documento: </strong><em>{{dato.tdocumento|default:'No registrado'}}</em></li>
+			</ul>
+		</div>
+	</div>
+{% endblock %}

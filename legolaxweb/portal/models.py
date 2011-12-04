@@ -37,6 +37,7 @@ class TipoDocumentoForm(ModelForm):
 
 class Documento(models.Model):
 	codigo = models.CharField(max_length=200)
+	asunto = models.CharField(max_length=200, blank=True)
 	fentrega = models.DateField(verbose_name='Fecha de Entrega')
 	contometro = models.CharField(max_length=50, blank=True)
 	costo = models.DecimalField(max_digits=7,decimal_places=2,null=True,blank=True)

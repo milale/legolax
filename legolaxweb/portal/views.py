@@ -140,8 +140,17 @@ def tdocumentoseditar(request, tdocumento_id):
 
 @login_required(login_url='/ingreso/')
 def documentos(request):
-	datos = Documento.objects.all().order_by('-id')
+	datos = Documento.objects.all().order_by('-fentrega')
 	return render_to_response('documentos.html',{'datos':datos})
+
+@login_required(login_url='/ingreso/')
+def documentosdetalle(request):
+	return render_to_response()
+
+@login_required(login_url='/ingreso/')
+def documentosdetalle(request, documento_id):
+	dato = get_object_or_404(Documento, pk=documento_id)
+	return render_to_response('detalledocumento.html',{'dato':dato})
 
 def registroarticuloformu(request):
 	if request.method == 'POST':
