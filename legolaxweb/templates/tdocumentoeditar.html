@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block titulo %}Editar o agregar interesados{% endblock %}
+{% block titulo %}Editar o agregar equipos{% endblock %}
 {% block css %}
 	<link href='/static/css/south-street/jquery-ui-1.8.16.custom.css' rel='stylesheet'>
 {% endblock %}
@@ -16,14 +16,14 @@
 		<div id='navigation'>
 			<p>
 				<a class='naveurl' href='/' title='Oficina de publicaciones e impresiones UNCP'>Volver al inicio</a>
-				<a class='naveurl' href='/produccion/interesados/' >Volver a la lista de interesados</a>
+				<a class='naveurl' href='/produccion/tipo-documentos/' >Volver a la lista de tipos de documento</a>
 			</p>
 		</div>
 		<div id='elementos'>
-			<p class='instruccion'>* Asegurese de que el interesado que desea registrar no exista ya en la lista anterior</p>
+			<p class='instruccion'>* Asegurese de que el tipo de documento que desea registrar no exista ya en la lista anterior</p>
 			<form id='formulario' method='post' action=''>{% csrf_token %}
 			{{formulario.as_p}}
-			<p><input id='dialogSencillo' type='button' value='Modificar'/></p>
+			<p><input id='dialogSencillo' class='boton' type='button' value='Confirmar'/></p>
 			</form>
 		</div>
 	</div>

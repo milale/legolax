@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block titulo %}Tipos de documento {% endblock %}
+{% block principal %}
+	<div id='principal'>
+		<div id='navigation'>
+			<p>
+				<a class='naveurl' href='/' title='Oficina de publicaciones e impresiones UNCP'>Volver al inicio</a>
+				<a class='naveurl' href='nuevo' >Registrar un tipo de documento nuevo</a>
+			</p>
+		</div>
+		<div id='elementos'>
+			<ol>
+			{% for elemento in datos %}
+					<li><a href='editar/{{elemento.pk}}'>{{elemento.tipo}}</a></li>
+			{% endfor %}
+			</ol>
+		</div>
+	</div>
+{% endblock %}

@@ -105,8 +105,40 @@ def interesadoseditar(request, interesado_id):
 	else:
 		formulario = InteresadoForm(instance=dato)
 	return render_to_response('interesadoseditar.html',{'formulario':formulario},context_instance=RequestContext(request))
-	
-	
+
+@login_required(login_url='/ingreso/')
+def tdocumentos(request):
+	datos = TipoDocumento.objects.all()
+	return render_to_response('tdocumento.html',{'datos':datos})	
+
+@login_required(login_url='/ingreso/')
+def tdocumentosregistrar(request):
+	if request.method == 'POST':
+		formulario = TipoDocumentoForm(request.POST)
+		if formulario.is_valid():
+			tipo = formulario.cleaned_data['tipo']
+			tdocumentonuevo = TipoDocumento(tipo=tipo)
+			tdocumentonuevo.save()
+			return HttpResponseRedirect('/produccion/tipo-documentos/')
+	else:
+		formulario = TipoDocumentoForm(auto_id=True)
+	return render_to_response('tdocumentoeditar.html',{'formulario':formulario},context_instance=RequestContext(request))
+
+@login_required(login_url='/ingreso/')
+def tdocumentoseditar(request, tdocumento_id):
+	dato = get_object_or_404(TipoDocumento, pk=tdocumento_id)
+	if request.method == 'POST':
+		formulario = TipoDocumentoForm(request.POST)
+		if formulario.is_valid():
+			tipo = formulario.cleaned_data['tipo']
+			dato.tipo = tipo
+			dato.save()
+			return HttpResponseRedirect('/produccion/tipo-documentos/')
+	else:
+		formulario = TipoDocumentoForm(instance=dato)
+	return render_to_response('tdocumentoeditar.html',{'formulario':formulario},context_instance=RequestContext(request))
+
+
 def documentos(request):
 	datos = Documento.objects.all().order_by('-id')
 	return render_to_response('documentos.html',{'datos':datos})
