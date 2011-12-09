@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block titulo %}Articulos {% endblock %}
+{% block principal %}
+	<div id='principal'>
+		<div id='navigation'>
+			<p>
+				<a class='naveurl' href='/' title='Oficina de publicaciones e impresiones UNCP'>Volver al inicio</a>
+				<a class='naveurl' href='nuevo' >Registrar un artículo nuevo</a></p>
+			</p>
+		</div>
+		<div id='elementos'>
+			<ol>
+			{% for elemento in datos %}
+					<li><a href='editar/{{elemento.pk}}'>{{elemento.nombre}} - Marca: {{elemento.marca}} - Serie: {{elemento.serie}} - Codigo: {{elemento.codigo}} - Caracteristica: {{elemento.caracteristica}} - Unidad_medida: {{elemento.unidad_medida}}</a></li>
+			{% endfor %}
+			</ol>
+		</div>
+	</div>
+{% endblock %}

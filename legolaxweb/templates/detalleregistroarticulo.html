@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block titulo %}Detalle: {{dato.codigo}}{% endblock %}
+{% block principal %}
+	<div id='principal'>
+		<div id='navigation'>
+			<p>
+				<a class='naveurl' href='/almacen/entrada-salida/'>Volver a la lista de entrada | salida de articulos</a>
+				<a class='naveurl' href='../../editar/{{dato.pk}}/' >Editar los datos de esta entrada o salida</a>
+			</p>
+		</div>
+		<div id='elementos'>
+			<ul class='detalleElemento'>
+				<li><strong>Detalle: </strong><em>{{dato.detalle}}</em></li>
+				<li><strong>Cantidad: </strong><em>{{dato.cantidad}}</em></li>
+				<li><strong>Fecha de registro: </strong><em>{{dato.fentrega}}</em></li>
+				<li><strong>Tipo: </strong><em>{{dato.tipo}}</em></li>
+				<li><strong>Precio unitario: </strong><em>{{dato.precio_unitario}}</em></li>
+				<li><strong>Precio total: </strong><em>{{dato.precio_total}}</em></li>
+			</ul>
+		</div>
+	</div>
+{% endblock %}
