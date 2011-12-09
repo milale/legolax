@@ -1,5 +1,5 @@
 from django.shortcuts import render_to_response, get_object_or_404
-from portal.models import Documento
+from portal.models import Documento, DocumentoForm
 from portal.models import LoginForm
 from portal.models import RegistroArticulo, RegistroArticuloForm
 from portal.models import Equipo, EquipoForm
@@ -144,8 +144,28 @@ def documentos(request):
 	return render_to_response('documentos.html',{'datos':datos})
 
 @login_required(login_url='/ingreso/')
-def documentosdetalle(request):
-	return render_to_response()
+def documentosregistrar(request):
+	if request.method == 'POST':
+		formulario = DocumentoForm(request.POST)
+		if formulario.is_valid():
+			codigo = formulario.cleaned_data['codigo']
+			asunto = formulario.cleaned_data['asunto']
+			fentrega = formulario.cleaned_data['fentrega']
+			contometro = formulario.cleaned_data['contometro']
+			costo = formulario.cleaned_data['costo']
+			tiraje = formulario.cleaned_data['tiraje']
+			nexpediente = formulario.cleaned_data['nexpediente']
+			equipo = formulario.cleaned_data['equipo']
+			interesado = formulario.cleaned_data['interesado']
+			tdocumento = formulario.cleaned_data['tdocumento']
+			docnuevo = Documento(codigo=codigo,asunto=asunto,fentrega=fentrega,
+								contometro=contometro,costo=costo,tiraje=tiraje,
+								nexpediente=nexpediente,equipo=equipo,interesado=interesado,tdocumento=tdocumento)
+			docnuevo.save()
+			return HttpResponseRedirect('/produccion/trabajos/')
+	else:
+		formulario = DocumentoForm(auto_id=True)
+	return render_to_response('doceditar.html',{'formulario':formulario},context_instance=RequestContext(request))
 
 @login_required(login_url='/ingreso/')
 def documentosdetalle(request, documento_id):

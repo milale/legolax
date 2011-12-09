@@ -36,19 +36,23 @@ class TipoDocumentoForm(ModelForm):
 		model=TipoDocumento
 
 class Documento(models.Model):
+	tdocumento = models.ForeignKey(TipoDocumento, verbose_name='Tipo de documento')
 	codigo = models.CharField(max_length=200)
+	interesado = models.ForeignKey(Interesado)
+	equipo = models.ForeignKey(Equipo)
 	asunto = models.CharField(max_length=200, blank=True)
+	tiraje = models.CharField(max_length=200, blank=True)
 	fentrega = models.DateField(verbose_name='Fecha de Entrega')
 	contometro = models.CharField(max_length=50, blank=True)
 	costo = models.DecimalField(max_digits=7,decimal_places=2,null=True,blank=True)
-	tiraje = models.CharField(max_length=200, blank=True)
 	nexpediente = models.CharField(max_length=200, blank=True)
-	equipo = models.ForeignKey(Equipo)
-	interesado = models.ForeignKey(Interesado)
-	tdocumento = models.ForeignKey(TipoDocumento, verbose_name='Tipo de documento')
-
+	
 	def __unicode__(self):
 		return str(self.fentrega) + " " + self.codigo
+
+class DocumentoForm(ModelForm):
+	class Meta:
+		model = Documento
 
 class Articulo(models.Model):
 	nombre = models.CharField(max_length=250)
