@@ -40,8 +40,8 @@ class Documento(models.Model):
 	codigo = models.CharField(max_length=200)
 	interesado = models.ForeignKey(Interesado)
 	equipo = models.ForeignKey(Equipo)
-	asunto = models.CharField(max_length=200, blank=True)
-	tiraje = models.CharField(max_length=200, blank=True)
+	asunto = models.TextField(blank=True)
+	tiraje = models.TextField(blank=True)
 	fentrega = models.DateField(verbose_name='Fecha de Entrega')
 	contometro = models.CharField(max_length=50, blank=True)
 	costo = models.DecimalField(max_digits=7,decimal_places=2,null=True,blank=True)
@@ -57,23 +57,23 @@ class DocumentoForm(ModelForm):
 class Articulo(models.Model):
 	nombre = models.CharField(max_length=250)
 	marca = models.CharField(max_length=50,blank=True)
-	serie = models.CharField(max_length=50,blank=True)
 	codigo = models.CharField(max_length=50,blank=True)
 	caracteristica = models.TextField(blank=True)
 	umedida = models.CharField(max_length=50,verbose_name="Unidad de medida",blank=True)
+	sactual = models.DecimalField(max_digits=8,decimal_places=3)
 	
 	def __unicode__(self):
 		return self.nombre
 		
 class RegistroArticulo(models.Model):
+	articulo = models.ForeignKey(Articulo)
 	detalle = models.TextField(blank=True)
-	cantidad = models.DecimalField(max_digits=6,decimal_places=2)
+	cantidad = models.DecimalField(max_digits=8,decimal_places=3)
 	fregistro = models.DateField(verbose_name='Fecha de registro')
 	tipo_options = (('e','entrada'),('s','salida'))
 	tipo = models.CharField(max_length=1,choices=tipo_options)
-	precio = models.DecimalField(max_digits=6,decimal_places=2,blank=True)
-	preciototal = models.DecimalField(max_digits=6,decimal_places=2,blank=True)
-	articulo = models.ForeignKey(Articulo)
+	preciouni = models.DecimalField(max_digits=8,decimal_places=3,blank=True)
+	preciototal = models.DecimalField(max_digits=8,decimal_places=3,blank=True)
 	usuario = models.ForeignKey(User)
 	
 	def __unicode__(self):
