@@ -58,11 +58,9 @@ def equiposregistrar(request):
 def equiposeditar(request, equipo_id):
 	dato = get_object_or_404(Equipo, pk=equipo_id)
 	if request.method == 'POST':
-		formulario = EquipoForm(request.POST)
+		formulario = EquipoForm(request.POST, instance=dato)
 		if formulario.is_valid():
-			nombre = formulario.cleaned_data['nombre']
-			dato.nombre = nombre
-			dato.save()
+			formulario.save()
 			return HttpResponseRedirect('/produccion/equipos/')
 	else:
 		formulario = EquipoForm(instance=dato)
@@ -92,15 +90,9 @@ def interesadosregistrar(request):
 def interesadoseditar(request, interesado_id):
 	dato = get_object_or_404(Interesado, pk=interesado_id)
 	if request.method == 'POST':
-		formulario = InteresadoForm(request.POST)
+		formulario = InteresadoForm(request.POST, instance=dato)
 		if formulario.is_valid():
-			nombre = formulario.cleaned_data['nombre']
-			dni = formulario.cleaned_data['dni']
-			oficina = formulario.cleaned_data['oficina']
-			dato.dni = dni
-			dato.nombre = nombre
-			dato.oficina = oficina
-			dato.save()
+			formulario.save()
 			return HttpResponseRedirect('/produccion/interesados/')
 	else:
 		formulario = InteresadoForm(instance=dato)
@@ -128,11 +120,9 @@ def tdocumentosregistrar(request):
 def tdocumentoseditar(request, tdocumento_id):
 	dato = get_object_or_404(TipoDocumento, pk=tdocumento_id)
 	if request.method == 'POST':
-		formulario = TipoDocumentoForm(request.POST)
+		formulario = TipoDocumentoForm(request.POST, instance=dato)
 		if formulario.is_valid():
-			tipo = formulario.cleaned_data['tipo']
-			dato.tipo = tipo
-			dato.save()
+			formulario.save()
 			return HttpResponseRedirect('/produccion/tipo-documentos/')
 	else:
 		formulario = TipoDocumentoForm(instance=dato)
@@ -171,6 +161,19 @@ def documentosregistrar(request):
 def documentosdetalle(request, documento_id):
 	dato = get_object_or_404(Documento, pk=documento_id)
 	return render_to_response('detalledocumento.html',{'dato':dato})
+
+@login_required(login_url='/ingreso/')
+def documentoseditar(request, documento_id):
+	dato = get_object_or_404(Documento, pk=documento_id)
+	if request.method == 'POST':
+		formulario = DocumentoForm(request.POST, instance=dato)
+		if formulario.is_valid():
+			formulario.save()
+			redireccion = '/produccion/trabajos/detalle/'+str(documento_id)
+			return HttpResponseRedirect(redireccion)
+	else:
+		formulario = DocumentoForm(instance=dato)
+	return render_to_response('doceditar.html',{'formulario':formulario},context_instance=RequestContext(request))
 
 def registroarticuloformu(request):
 	if request.method == 'POST':
