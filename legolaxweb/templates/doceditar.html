@@ -6,6 +6,7 @@
 {% block javascript %}
 	<script src='/static/js/jquery-1.6.2.min.js'></script>
 	<script src='/static/js/jquery-ui-1.8.16.custom.min.js'></script>
+	<script src='/static/js/jquery.ui.datepicker-es.js'></script>
 	<script src='/static/js/legolax.js'></script>
 {% endblock %}
 {% block principal %}
@@ -20,7 +21,7 @@
 			</p>
 		</div>
 		<div id='elementos'>
-			<p class='instruccion'>* Asegurese que el articulo que desea registrar no existe ya en la lista anterior</p>
+			<p class='instruccion'>* Asegurese que el trabajo que desea registrar no existe ya en la lista anterior</p>
 			<form id='formulario' method='post' action=''>{% csrf_token %}
 			{{formulario.as_p}}
 			<p><input id='dialogSencillo' type='button' value='Confirmar'/></p>

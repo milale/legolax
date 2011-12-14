@@ -14,7 +14,7 @@ body { font-family:'Convergence',sans-serif; }
 #encabezado h2 { color:#000205; text-align:right; text-shadow:-1px -1px #fff;}
 
 #principal { text-align:center; margin:20px auto; width:960px; border:10px #fff solid; border-radius:10px; box-shadow:-3px -3px 20px #000; background:#F5F3E5;}
-#principal ul { margin:0 auto; text-align:center; width:460px; }
+#principal ul { margin:0 auto; text-align:center; width:462px; }
 #tab-Produccion ul, #tab-Almacen ul { list-style:none; }
 #tab-Produccion ul li , #tab-Almacen ul li { display:block; padding:10px; }
 /*

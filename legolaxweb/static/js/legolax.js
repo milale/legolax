@@ -42,3 +42,8 @@ $(document).ready(function() {
         }
     });
 });
+
+//Personalizar el datepicker
+$(function() {
+		$( "#fentrega" ).datepicker( $.datepicker.regional[ "es" ],"option","dateFormat","dd/mm/yy" );
+});
