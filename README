@@ -1,1 +1,28 @@
-Legolax - Sistema .... (milale completa)
+Legolax - Sistema de Registro de Producción y Almacén | Oficina de Publicaciones e Impresiones | UNCP
+
+En el inicio de nuestra aplicación encontraremos dos botones: Registro de producción y Registro de almacén.
+
+En el botón de Registro de Producción primero de los botones se despliega una serie de opciones: 
+
+Al seleccionar la opción de Trabajos, encontraremos el listado de los trabajos ya registrados ordenados por 
+fecha de registro, encontraremos dos opciones también:
+- "Volver al inicio" que nos hará ir a la página de inicio de la aplicación
+- "Registrar un trabajo nuevo", en esta opción podremos añadir un trabajo que se haya realizado en la oficina 
+en la que nos indicará que campos llenar y si son válidos o no a su ingreso
+Encontraremos también la opción de Equipos, al ingresar aquí leeremos el listado de equipos que se tienen 
+actualmente en la oficina y aquí tendremos dos opciones también:
+- "Volver al inicio" que nos hará ir a la página de inicio de la aplicación
+- "Registrar un equipo nuevo", en esta opción podremos añadir un equipo en caso llegue una maquinaria nueva 
+(pensando a futuro)
+Encontraremos también la opción de Interesados, al ingresar aquí leeremos el listado de las personas que han 
+requerido los servicios de la oficina y aquí tendremos dos opciones también:
+- "Volver al inicio" que nos hará ir a la página de inicio de la aplicación
+- "Registrar un interesado nuevo", en esta opción podremos añadir a cualquier persona que no se encuentre 
+actualmente en el listado.
+Encontraremos también la opción de Tipo de documentos, al ingresar aquí leeremos el listado de los tipos de 
+documento que maneja la oficna y aquí tendremos dos opciones también:
+- "Volver al inicio" que nos hará ir a la página de inicio de la aplicación
+- "Registrar un tipo de documento nuevo", en esta opción podremos añadir cualquier tipo de documento adicional
+a los que se encuentren en el listado.
+
+
