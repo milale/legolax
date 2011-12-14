@@ -60,11 +60,15 @@ class Articulo(models.Model):
 	codigo = models.CharField(max_length=50,blank=True)
 	caracteristica = models.TextField(blank=True)
 	umedida = models.CharField(max_length=50,verbose_name="Unidad de medida",blank=True)
-	sactual = models.DecimalField(max_digits=8,decimal_places=3)
+	sactual = models.DecimalField(max_digits=8,decimal_places=3,verbose_name="Saldo actual")
 	
 	def __unicode__(self):
-		return self.nombre
-		
+		return self.nombre + ", saldo: " + str(self.sactual)
+
+class ArticuloForm(ModelForm):
+	class Meta:
+		model = Articulo
+
 class RegistroArticulo(models.Model):
 	articulo = models.ForeignKey(Articulo)
 	detalle = models.TextField(blank=True)

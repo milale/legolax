@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load humanize %}
+{% block titulo %}Detalle: {{dato.nombre}}{% endblock %}
+{% block principal %}
+	<div id='principal'>
+		<div id='navigation'>
+			<p>
+				<a class='naveurl' href='/almacen/articulos/'>Volver a la lista de artículos</a>
+				<a class='naveurl' href='../../editar/{{dato.pk}}/' >Editar los datos de este artículo</a>
+			</p>
+		</div>
+		<div id='elementos'>
+			<ul class='detalleElemento'>
+				<li><strong>Nombre: </strong><em>{{dato.nombre}}</em></li>
+				<li><strong>Marca: </strong><em>{{dato.marca|default:'No registrada'}}</em></li>
+				<li><strong>Código: </strong><em>{{dato.codigo|default:'No registrado'}}</em></li>
+				<li><strong>Característica: </strong><em>{{dato.caracteristica|default:'No registrada'}}</em></li>
+				<li><strong>Unidad de medida: </strong><em>{{dato.umedida|default:'No registrada'}}</em></li>
+				<li><strong>Saldo Actual: </strong><em>{{dato.sactual|intcomma}}</em></li>
+			</ul>
+		</div>
+	</div>
+{% endblock %}

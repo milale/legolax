@@ -5,6 +5,7 @@ from portal.models import RegistroArticulo, RegistroArticuloForm
 from portal.models import Equipo, EquipoForm
 from portal.models import Interesado, InteresadoForm
 from portal.models import TipoDocumento, TipoDocumentoForm
+from portal.models import Articulo, ArticuloForm
 from django.template import RequestContext
 from django.contrib.auth import login
 from django.contrib.auth import authenticate
@@ -174,6 +175,49 @@ def documentoseditar(request, documento_id):
 	else:
 		formulario = DocumentoForm(instance=dato)
 	return render_to_response('doceditar.html',{'formulario':formulario},context_instance=RequestContext(request))
+
+@login_required(login_url='/ingreso/')
+def articulos(request):
+	datos = Articulo.objects.all().order_by('nombre')
+	return render_to_response('articulos.html',{'datos':datos})
+
+@login_required(login_url='/ingreso/')
+def articulosdetalle(request, articulo_id):
+	dato = get_object_or_404(Articulo, pk=articulo_id)
+	return render_to_response('articulosdetalle.html',{'dato':dato})
+
+@login_required(login_url='/ingreso/')
+def articuloseditar(request, articulo_id):
+	dato = get_object_or_404(Articulo, pk=articulo_id)
+	if request.method == 'POST':
+		formulario = ArticuloForm(request.POST, instance=dato)
+		if formulario.is_valid():
+			formulario.save()
+			redireccion = '/almacen/articulos/detalle/'+str(articulo_id)
+			return HttpResponseRedirect(redireccion)
+	else:
+		formulario = ArticuloForm(instance=dato)
+	return render_to_response('articuloseditar.html',{'formulario':formulario},context_instance=RequestContext(request))
+
+@login_required(login_url='/ingreso/')
+def articulosregistrar(request):
+	if request.method == 'POST':
+		formulario = ArticuloForm(request.POST)
+		if formulario.is_valid():
+			nombre = formulario.cleaned_data['nombre']
+			marca = formulario.cleaned_data['marca']
+			codigo = formulario.cleaned_data['codigo']
+			caracteristica = formulario.cleaned_data['caracteristica']
+			umedida = formulario.cleaned_data['umedida']
+			sactual = formulario.cleaned_data['sactual']
+			articulonuevo = Articulo(nombre=nombre,marca=marca,codigo=codigo,
+									caracteristica=caracteristica,
+									umedida=umedida,sactual=sactual)
+			articulonuevo.save()
+			return HttpResponseRedirect('/almacen/articulos/')
+	else:
+		formulario = ArticuloForm(auto_id=True)
+	return render_to_response('articuloseditar.html',{'formulario':formulario},context_instance=RequestContext(request))
 
 def registroarticuloformu(request):
 	if request.method == 'POST':

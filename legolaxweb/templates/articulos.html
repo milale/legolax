@@ -11,7 +11,7 @@
 		<div id='elementos'>
 			<ol>
 			{% for elemento in datos %}
-					<li><a href='editar/{{elemento.pk}}'>{{elemento.nombre}} - Marca: {{elemento.marca}} - Serie: {{elemento.serie}} - Codigo: {{elemento.codigo}} - Caracteristica: {{elemento.caracteristica}} - Unidad_medida: {{elemento.unidad_medida}}</a></li>
+					<li><a class='docu' href='detalle/{{elemento.pk}}'>{{elemento.nombre}}, Saldo actual: {{elemento.sactual}}</a></li>
 			{% endfor %}
 			</ol>
 		</div>
