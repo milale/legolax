@@ -63,7 +63,7 @@ class Articulo(models.Model):
 	sactual = models.DecimalField(max_digits=8,decimal_places=3,verbose_name="Saldo actual")
 	
 	def __unicode__(self):
-		return self.nombre + ", saldo: " + str(self.sactual)
+		return self.nombre
 
 class ArticuloForm(ModelForm):
 	class Meta:

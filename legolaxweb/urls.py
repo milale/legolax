@@ -23,7 +23,7 @@ urlpatterns = patterns('',
     url(r'^almacen/articulos/detalle/(?P<articulo_id>\d+)/$','portal.views.articulosdetalle'),
     url(r'^almacen/articulos/editar/(?P<articulo_id>\d+)/$','portal.views.articuloseditar'),
     url(r'^almacen/articulos/nuevo/$','portal.views.articulosregistrar'),
+    url(r'^almacen/articulos/registro/$','portal.views.registroarticuloformu'),
     url(r'^ingreso/$','portal.views.ingreso'),
-    url(r'^articulos/registro/$','portal.views.registroarticuloformu'),
     url(r'^admin/', include(admin.site.urls)),
 )

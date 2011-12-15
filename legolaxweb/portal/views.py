@@ -227,12 +227,28 @@ def registroarticuloformu(request):
 			cantidad = formulario.cleaned_data['cantidad']
 			fregistro = formulario.cleaned_data['fregistro']
 			tipo = formulario.cleaned_data['tipo']
-			precio = formulario.cleaned_data['precio']
+			preciouni = formulario.cleaned_data['preciouni']
 			preciototal = formulario.cleaned_data['preciototal']
-			articulo = formulario.cleaned_data['articulo']
+			articulo = Articulo.objects.get(nombre=formulario.cleaned_data['articulo'])
 			usuario = request.user
-			guardarregistro = RegistroArticulo(detalle=detalle,cantidad=cantidad,fregistro=fregistro,tipo=tipo,precio=precio,preciototal=preciototal,articulo=articulo,usuario=usuario)
-			guardarregistro.save()
+			
+			#validacion para la cantidad solo positiva
+			if cantidad < 0:
+				return HttpResponseRedirect('/negativo/')
+			
+			#actualizacion del saldo de producto
+			if tipo == 'e':
+				saldo = articulo.sactual + cantidad
+			elif tipo == 's':
+				saldo = articulo.sactual - cantidad
+			articulo.sactual = saldo
+			articulo.save()
+			
+			#guardar el registro de entrada o salida
+			guardarregistro = RegistroArticulo(detalle=detalle,cantidad=cantidad,
+												fregistro=fregistro,tipo=tipo,
+												preciouni=preciouni,preciototal=preciototal,
+												articulo=articulo,usuario=usuario)
 			return HttpResponseRedirect('/')
 	else:
 		formulario = RegistroArticuloForm(auto_id=True)
