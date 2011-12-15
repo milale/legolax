@@ -1,0 +1,175 @@
+%PDF-1.4
+%“Œ‹ž ReportLab Generated PDF document http://www.reportlab.com
+% 'BasicFonts': class PDFDictionary 
+1 0 obj
+% The standard fonts dictionary
+<< /F1 2 0 R
+ /F2 3 0 R >>
+endobj
+% 'F1': class PDFType1Font 
+2 0 obj
+% Font Helvetica
+<< /BaseFont /Helvetica
+ /Encoding /WinAnsiEncoding
+ /Name /F1
+ /Subtype /Type1
+ /Type /Font >>
+endobj
+% 'F2': class PDFType1Font 
+3 0 obj
+% Font Helvetica-Bold
+<< /BaseFont /Helvetica-Bold
+ /Encoding /WinAnsiEncoding
+ /Name /F2
+ /Subtype /Type1
+ /Type /Font >>
+endobj
+% 'Page1': class PDFPage 
+4 0 obj
+% Page dictionary
+<< /Contents 8 0 R
+ /MediaBox [ 0
+ 0
+ 595.2756
+ 841.8898 ]
+ /Parent 7 0 R
+ /Resources << /Font 1 0 R
+ /ProcSet [ /PDF
+ /Text
+ /ImageB
+ /ImageC
+ /ImageI ] >>
+ /Rotate 0
+ /Trans <<  >>
+ /Type /Page >>
+endobj
+% 'R5': class PDFCatalog 
+5 0 obj
+% Document Root
+<< /Outlines 9 0 R
+ /PageLabels 10 0 R
+ /PageMode /UseNone
+ /Pages 7 0 R
+ /Type /Catalog >>
+endobj
+% 'R6': class PDFInfo 
+6 0 obj
+<< /Author ()
+ /CreationDate (D:20111215101425+05'00')
+ /Creator (\(unspecified\))
+ /Keywords ()
+ /Producer (ReportLab PDF Library - www.reportlab.com)
+ /Subject (\(unspecified\))
+ /Title (Sistema de registro de Producci\363n y Almac\351n | Oficina de Publicaciones e Impresiones | UNCP) >>
+endobj
+% 'R7': class PDFPages 
+7 0 obj
+% page tree
+<< /Count 1
+ /Kids [ 4 0 R ]
+ /Type /Pages >>
+endobj
+% 'R8': class PDFStream 
+8 0 obj
+% page stream
+<< /Length 3051 >>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 62.69291 705.0236 cm
+q
+BT 1 0 0 1 0 28 Tm 11.51488 0 Td 24 TL /F2 20 Tf 0 0 0 rg (Sistema de registro de Producci\363n y Almac\351n |) Tj T* -1.669998 0 Td (Oficina de Publicaciones e Impresiones | UNCP) Tj T* -9.844882 0 Td ET
+Q
+Q
+q
+1 0 0 1 62.69291 683.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL (\277Para qu\351 sirve este sistema?) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 605.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 62 Tm /F1 10 Tf 12 TL .56832 Tw (Esta es una aplicaci\363n que permite el registro de los trabajos que se realizan con las m\341quinas con que) Tj T* 0 Tw .905318 Tw (cuenta la oficina de Publicaciones e Impresiones de la Universidad Nacional del Centro del Per\372. Cada) Tj T* 0 Tw 1.36686 Tw (ingreso de alg\372n documento a la oficina requeriendo de un trabajo por alguna \341rea de la universidad,) Tj T* 0 Tw 3.421984 Tw (podr\341 registrarse aqu\355 y afectando de esta manera a la base de datos, que inmediatamente se) Tj T* 0 Tw .831751 Tw (actualizar\341. De la misma manera gestionar\341 el almac\351n con el que cuenta, ya que se podr\341 registrar el) Tj T* 0 Tw (ingreso y la salida de los art\355culos) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 587.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL (\277Para qu\351 son esos dos botones que aparecen en la p\341gina de inicio?) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 521.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 50 Tm /F1 10 Tf 12 TL .74436 Tw (Al iniciar nuestra aplicaci\363n encontraremos un bot\363n de Registro de producci\363n y el otro de Registro de) Tj T* 0 Tw 1.127318 Tw (almac\351n; el primero de ellos ya se encuentra desplegado predeterminadamente por ser el que m\341s se) Tj T* 0 Tw .103876 Tw (usa diariamente en la oficina, al presionar en cualquiera de los dos se obtendr\341 una lista de opciones que) Tj T* 0 Tw .506457 Tw (permitir\341n realizar el registro. Los botones cambian el color al momento de pasar el mouse sobre ellos y) Tj T* 0 Tw (despliegan la lista de opciones.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 467.0236 cm
+q
+BT 1 0 0 1 0 38 Tm .020751 Tw 12 TL /F2 10 Tf 0 0 0 rg (\277Los campos se encuentran validados? ) Tj /F1 10 Tf (Todos los campos de los formularios se encuentran validados,) Tj T* 0 Tw .503516 Tw (cuando el usuario se olvide de ingresar alg\372n campo que sea obligatorio se le mostrar\341 un mensaje que) Tj T* 0 Tw .989513 Tw (le indique que es lo que le falt\363 completar o si tiene que cambiar alg\372n dato por no cumplir con el tipo) Tj T* 0 Tw (requerido.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 437.0236 cm
+q
+BT 1 0 0 1 0 14 Tm .224985 Tw 12 TL /F2 10 Tf 0 0 0 rg (\277Antes de ingresar alg\372n registro se pide confirmar o cancelar la acci\363n? ) Tj /F1 10 Tf (El usuario antes de hacer) Tj T* 0 Tw (alg\372n registro si se le preguntar\341 si est\341 seguro o no de modificar algo.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 56.69291 773.1969 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 195.3699 0 Td (Manual del Software) Tj T* -195.3699 0 Td ET
+Q
+Q
+ 
+endstream
+endobj
+% 'R9': class PDFOutlines 
+9 0 obj
+<< /Count 0
+ /Type /Outlines >>
+endobj
+% 'R10': class PDFPageLabels 
+10 0 obj
+% Document Root
+<< /Nums [ 0
+ 11 0 R ] >>
+endobj
+% 'R11': class PDFPageLabel 
+11 0 obj
+% None
+<< /S /D
+ /St 1 >>
+endobj
+xref
+0 12
+0000000000 65535 f
+0000000113 00000 n
+0000000221 00000 n
+0000000386 00000 n
+0000000559 00000 n
+0000000836 00000 n
+0000000991 00000 n
+0000001331 00000 n
+0000001436 00000 n
+0000004586 00000 n
+0000004668 00000 n
+0000004761 00000 n
+trailer
+<< /ID 
+ % ReportLab generated PDF document -- digest (http://www.reportlab.com) 
+ [(:d;\364.\262\334\255\013O\365L\200\2715\277) (:d;\364.\262\334\255\013O\365L\200\2715\277)] 
+
+ /Info 6 0 R
+ /Root 5 0 R
+ /Size 12 >>
+startxref
+4808
+%%EOF

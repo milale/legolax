@@ -1,0 +1,308 @@
+%PDF-1.4
+%“Œ‹ž ReportLab Generated PDF document http://www.reportlab.com
+% 'BasicFonts': class PDFDictionary 
+1 0 obj
+% The standard fonts dictionary
+<< /F1 2 0 R
+ /F2 3 0 R >>
+endobj
+% 'F1': class PDFType1Font 
+2 0 obj
+% Font Helvetica
+<< /BaseFont /Helvetica
+ /Encoding /WinAnsiEncoding
+ /Name /F1
+ /Subtype /Type1
+ /Type /Font >>
+endobj
+% 'F2': class PDFType1Font 
+3 0 obj
+% Font Helvetica-Bold
+<< /BaseFont /Helvetica-Bold
+ /Encoding /WinAnsiEncoding
+ /Name /F2
+ /Subtype /Type1
+ /Type /Font >>
+endobj
+% 'Page1': class PDFPage 
+4 0 obj
+% Page dictionary
+<< /Contents 9 0 R
+ /MediaBox [ 0
+ 0
+ 595.2756
+ 841.8898 ]
+ /Parent 8 0 R
+ /Resources << /Font 1 0 R
+ /ProcSet [ /PDF
+ /Text
+ /ImageB
+ /ImageC
+ /ImageI ] >>
+ /Rotate 0
+ /Trans <<  >>
+ /Type /Page >>
+endobj
+% 'Page2': class PDFPage 
+5 0 obj
+% Page dictionary
+<< /Contents 10 0 R
+ /MediaBox [ 0
+ 0
+ 595.2756
+ 841.8898 ]
+ /Parent 8 0 R
+ /Resources << /Font 1 0 R
+ /ProcSet [ /PDF
+ /Text
+ /ImageB
+ /ImageC
+ /ImageI ] >>
+ /Rotate 0
+ /Trans <<  >>
+ /Type /Page >>
+endobj
+% 'R6': class PDFCatalog 
+6 0 obj
+% Document Root
+<< /Outlines 11 0 R
+ /PageLabels 12 0 R
+ /PageMode /UseNone
+ /Pages 8 0 R
+ /Type /Catalog >>
+endobj
+% 'R7': class PDFInfo 
+7 0 obj
+<< /Author ()
+ /CreationDate (D:20111215101209+05'00')
+ /Creator (\(unspecified\))
+ /Keywords ()
+ /Producer (ReportLab PDF Library - www.reportlab.com)
+ /Subject (\(unspecified\))
+ /Title (Sistema de registro de Producci\363n y Almac\351n | Oficina de Publicaciones e Impresiones | UNCP) >>
+endobj
+% 'R8': class PDFPages 
+8 0 obj
+% page tree
+<< /Count 2
+ /Kids [ 4 0 R
+ 5 0 R ]
+ /Type /Pages >>
+endobj
+% 'R9': class PDFStream 
+9 0 obj
+% page stream
+<< /Length 6627 >>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 62.69291 705.0236 cm
+q
+BT 1 0 0 1 0 28 Tm 11.51488 0 Td 24 TL /F2 20 Tf 0 0 0 rg (Sistema de registro de Producci\363n y Almac\351n |) Tj T* -1.669998 0 Td (Oficina de Publicaciones e Impresiones | UNCP) Tj T* -9.844882 0 Td ET
+Q
+Q
+q
+1 0 0 1 62.69291 683.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL (\277Para qu\351 son esos dos botones que aparecen en la p\341gina de inicio?) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 629.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 38 Tm /F1 10 Tf 12 TL .74436 Tw (Al iniciar nuestra aplicaci\363n encontraremos un bot\363n de Registro de producci\363n y el otro de Registro de) Tj T* 0 Tw 1.127318 Tw (almac\351n; el primero de ellos ya se encuentra desplegado predeterminadamente por ser el que m\341s se) Tj T* 0 Tw .103876 Tw (usa diariamente en la oficina, al presionar en cualquiera de los dos se obtendr\341 una lista de opciones que) Tj T* 0 Tw (permitir\341n realizar el registro.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 611.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL (\277Qu\351 opciones aparecen al presionar en el bot\363n de Registro de Producci\363n?) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 581.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14 Tm /F1 10 Tf 12 TL 5.224524 Tw (Al desplegarse el bot\363n de Registro de Producci\363n encontraremos cuatro opciones: Equipos,) Tj T* 0 Tw (Interesados, Tipo de documentos y Trabajos.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 563.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL (\277Qu\351 encontramos en la opci\363n Equipos?) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 509.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 38 Tm /F1 10 Tf 12 TL 1.352927 Tw (Al ingresar a Equipos, encontraremos la lista de los equipos que se tengan registrados en la base de) Tj T* 0 Tw .939431 Tw (datos y tambi\351n dos opciones, una que nos permitir\341 regresar al inicio de la aplicaci\363n y la otra opci\363n) Tj T* 0 Tw .676235 Tw (que nos permitir\341 agregar equipos nuevos, solo debemos escribir el nombre y confirmarlo, si este no se) Tj T* 0 Tw (repite se a\361adira al listado.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 491.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL (\277Qu\351 encontramos en la opci\363n Interesados?) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 425.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 50 Tm /F1 10 Tf 12 TL .651412 Tw (Al ingresar a Interesados, encontraremos la lista de las personas interesadas que se tengan registradas) Tj T* 0 Tw .316988 Tw (en la base de datos y tambi\351n dos opciones, una que nos permitir\341 regresar al inicio de la aplicaci\363n y la) Tj T* 0 Tw .570651 Tw (otra opci\363n que nos permitir\341 agregar a interesados nuevos, en esta opci\363n aparecer\341n por rellenar tres) Tj T* 0 Tw .166098 Tw (campos, el nombre que es obligatorio, el DNI que puede ser a\361adido despu\351s y la oficina que tambi\351n es) Tj T* 0 Tw (un campo obligatorio, al confirmarlo si este no se repite se a\361adira al listado.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 407.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL (\277Qu\351 encontramos en la opci\363n Tipo de documentos?) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 353.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 38 Tm /F1 10 Tf 12 TL 1.819985 Tw (Al ingresar a Tipo de documentos encontraremos la lista de los tipos de documentos que se tengan) Tj T* 0 Tw 1.09332 Tw (registrados en la base de datos y tambi\351n dos opciones, una que nos permitir\341 regresar al inicio de la) Tj T* 0 Tw .090651 Tw (aplicaci\363n y la otra opci\363n que nos permitir\341 agregar Tipos de documentos nuevos, solo debemos escribir) Tj T* 0 Tw (el nombre y confirmarlo, si este no se repite se a\361adira al listado.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 335.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL (\277Qu\351 encontramos en la opci\363n Trabajos?) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 221.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 98 Tm /F1 10 Tf 12 TL .531984 Tw (Al desplegar esta opci\363n encontraremos el listado de trabajos que ya se hayan agregado ordenados por) Tj T* 0 Tw 1.646235 Tw (fecha, aqu\355 encontraremos dos opciones una que nos permitir\341 volver al inicio y la segunda que nos) Tj T* 0 Tw 3.49248 Tw (permitir\341 hacer el registro de producci\363n, a\361adiendo nuevos trabajos, en esta opci\363n deberemos) Tj T* 0 Tw .32561 Tw (seleccionar el tipo de documento, el c\363digo del trabajo, seleccionar a la persona interesada, el equip que) Tj T* 0 Tw 1.905318 Tw (se utilizar\341 para realizar determinado trabajo, el asunto describiendo de que trata el trabajo, el tiraje) Tj T* 0 Tw 1.43811 Tw (describiendo la cantidad de material que se ha usado para realizar el trabajo, seleccionar la fecha de) Tj T* 0 Tw 2.719318 Tw (entrega en un calendario que se habilita al seleccionar ese campo, el cont\363metro indicado en las) Tj T* 0 Tw 1.582339 Tw (m\341quinas, el costo y el n\372mero de expediente; es necesario recalcar que en esta secci\363n el Tipo de) Tj T* 0 Tw (documento, el C\363digo, el Equipo, el Interesado y la Fecha de entrega son campos obligatorios.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 203.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL (\277Qu\351 opciones aparecen al presionar en el bot\363n Registro de Almac\351n?) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 173.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14 Tm /F1 10 Tf 12 TL 2.887126 Tw (Al desplegarse el bot\363n de Registro de Almac\351n encontraremos dos opciones: Entrada | Salida y) Tj T* 0 Tw (Art\355culos.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 155.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL (\277Qu\351 encontramos en la opci\363n Entrada | Salida?) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 77.02362 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 62 Tm /F1 10 Tf 12 TL .454987 Tw (Al ingresar a Entrada | Salida, encontraremos la lista de las entradas o salidas registradas en la base de) Tj T* 0 Tw .939431 Tw (datos y tambi\351n dos opciones, una que nos permitir\341 regresar al inicio de la aplicaci\363n y la otra opci\363n) Tj T* 0 Tw 1.611235 Tw (que nos permitir\341 agregar una entrada o salida nueva, deberemos indicar de que art\355culo se trata, el) Tj T* 0 Tw .790488 Tw (detalle \(si la entrada o salida lo tuviera\), la cantidad, la fecha de registro, el Tipo, el Precio Unitario y el) Tj T* 0 Tw .257485 Tw (Precio Total; es necesario indicar que en esta secci\363n los campos de art\355culo, cantidad, fecha de registro) Tj T* 0 Tw (y tipo son obligatorios.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 56.69291 773.1969 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 198.9849 0 Td (Manual de Usuario) Tj T* -198.9849 0 Td ET
+Q
+Q
+ 
+endstream
+endobj
+% 'R10': class PDFStream 
+10 0 obj
+% page stream
+<< /Length 1081 >>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 62.69291 741.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL (\277Qu\351 encontramos en la opci\363n Art\355culos?) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 675.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 50 Tm /F1 10 Tf 12 TL .940542 Tw (Al ingresar a Art\355culos, encontraremos la lista de los articulos actuales en el almac\351n y al lado el saldo) Tj T* 0 Tw 1.348651 Tw (actual que se tiene de estos, encontraremos tambi\351n dos opciones, una que nos permitir\341 regresar al) Tj T* 0 Tw .569986 Tw (inicio de la aplicaci\363n y la otra opci\363n que nos permitir\341 agregar un art\355culo nuevo, deberemos indicar el) Tj T* 0 Tw 1.354692 Tw (nombre del art\355culo, la marca, el c\363digo, las caracter\355sticas, la unidad de medida y el saldo actual; es) Tj T* 0 Tw (necesario indicar que en esta secci\363n los campos nombre y saldo actual son obligatorios.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 56.69291 773.1969 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 198.9849 0 Td (Manual de Usuario) Tj T* -198.9849 0 Td ET
+Q
+Q
+ 
+endstream
+endobj
+% 'R11': class PDFOutlines 
+11 0 obj
+<< /Count 0
+ /Type /Outlines >>
+endobj
+% 'R12': class PDFPageLabels 
+12 0 obj
+% Document Root
+<< /Nums [ 0
+ 13 0 R
+ 1
+ 14 0 R ] >>
+endobj
+% 'R13': class PDFPageLabel 
+13 0 obj
+% None
+<< /S /D
+ /St 1 >>
+endobj
+% 'R14': class PDFPageLabel 
+14 0 obj
+% None
+<< /S /D
+ /St 2 >>
+endobj
+xref
+0 15
+0000000000 65535 f
+0000000113 00000 n
+0000000221 00000 n
+0000000386 00000 n
+0000000559 00000 n
+0000000836 00000 n
+0000001114 00000 n
+0000001270 00000 n
+0000001610 00000 n
+0000001723 00000 n
+0000008448 00000 n
+0000009630 00000 n
+0000009713 00000 n
+0000009819 00000 n
+0000009896 00000 n
+trailer
+<< /ID 
+ % ReportLab generated PDF document -- digest (http://www.reportlab.com) 
+ [(\323\314\335'@'\327/\265\203\216\366jzla) (\323\314\335'@'\327/\265\203\216\366jzla)] 
+
+ /Info 7 0 R
+ /Root 6 0 R
+ /Size 15 >>
+startxref
+9943
+%%EOF
