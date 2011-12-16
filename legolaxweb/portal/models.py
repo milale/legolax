@@ -92,3 +92,7 @@ class RegistroArticuloForm(ModelForm):
 class LoginForm(forms.Form):
 	userform = forms.CharField(label='usuario')
 	passform = forms.CharField(label='clave',widget=forms.PasswordInput(render_value=False))
+
+#Para el formulario de reporte anual de produccion
+class raprod(forms.Form):
+	anio = forms.IntegerField(label='anio',max_value=2020,min_value=2000)

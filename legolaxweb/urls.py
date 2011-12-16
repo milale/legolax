@@ -5,6 +5,8 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^$', 'portal.views.index'),
+    
+    #produccion 
     url(r'^produccion/$','portal.views.documentos'),
     url(r'^produccion/equipos/$','portal.views.equipos'),
     url(r'^produccion/equipos/nuevo/$','portal.views.equiposregistrar'),
@@ -19,6 +21,8 @@ urlpatterns = patterns('',
     url(r'^produccion/trabajos/detalle/(?P<documento_id>\d+)/$','portal.views.documentosdetalle'),
     url(r'^produccion/trabajos/editar/(?P<documento_id>\d+)/$','portal.views.documentoseditar'),
     url(r'^produccion/trabajos/nuevo/$','portal.views.documentosregistrar'),
+    
+    #almacen
     url(r'^almacen/articulos/$','portal.views.articulos'),
     url(r'^almacen/articulos/detalle/(?P<articulo_id>\d+)/$','portal.views.articulosdetalle'),
     url(r'^almacen/articulos/editar/(?P<articulo_id>\d+)/$','portal.views.articuloseditar'),

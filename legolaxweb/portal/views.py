@@ -260,3 +260,5 @@ def registrosnuevo(request):
 	else:
 		formulario = RegistroArticuloForm(auto_id=True)
 	return render_to_response('registroarticuloform.html',{'formulario':formulario},context_instance=RequestContext(request))
+
+#@login_required(login_url='/ingreso/')
