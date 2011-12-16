@@ -1,3 +1,4 @@
+#encoding:utf-8
 from django.contrib.auth.models import User
 from django.db import models
 from django import forms
@@ -45,7 +46,7 @@ class Documento(models.Model):
 	fentrega = models.DateField(verbose_name='Fecha de Entrega')
 	contometro = models.CharField(max_length=50, blank=True)
 	costo = models.DecimalField(max_digits=7,decimal_places=2,null=True,blank=True)
-	nexpediente = models.CharField(max_length=200, blank=True)
+	nexpediente = models.CharField(max_length=200, blank=True, verbose_name='Número de expediente')
 	
 	def __unicode__(self):
 		return str(self.fentrega) + " " + self.codigo
@@ -76,8 +77,8 @@ class RegistroArticulo(models.Model):
 	fregistro = models.DateField(verbose_name='Fecha de registro')
 	tipo_options = (('e','entrada'),('s','salida'))
 	tipo = models.CharField(max_length=1,choices=tipo_options)
-	preciouni = models.DecimalField(max_digits=8,decimal_places=3,blank=True)
-	preciototal = models.DecimalField(max_digits=8,decimal_places=3,blank=True)
+	preciouni = models.DecimalField(max_digits=8,decimal_places=3,null=True, blank=True, verbose_name='Precio Unitario')
+	preciototal = models.DecimalField(max_digits=8,decimal_places=3,null=True, blank=True, verbose_name='Precio Total')
 	usuario = models.ForeignKey(User)
 	
 	def __unicode__(self):

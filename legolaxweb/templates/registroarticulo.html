@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block titulo %}Entradas y Salidas de Articulos {% endblock %}
+{% block principal %}
+	<div id='principal'>
+		<div id='navigation'>
+			<p>
+				<a class='naveurl' href='/' title='Oficina de publicaciones e impresiones UNCP'>Volver al inicio</a>
+				<a class='naveurl' href='/almacen/articulos/' >Ver la lista de artículos</a>
+				<a class='naveurl' href='/almacen/articulos/registro/nuevo' >Registrar Entrada o Salida</a>
+			</p>
+		</div>
+		<div id='elementos'>
+			<ol>
+			{% for elemento in datos %}
+					<li>
+						{% if elemento.tipo == 's' %}
+							salida
+						{% else %}
+							entrada
+						{% endif %}
+						de {{elemento.cantidad}}
+						el {{elemento.fregistro}}, 
+						de {{elemento.articulo}},
+						con el detalle {{elemento.detalle|default:'no registrado'}}
+						y el precio unitario {{elemento.preciouni|default:'no registrado'}}
+						y el precio total {{elemento.preciototal|default:'no registrado'}}
+					</li>
+			{% empty %}
+				<li>No hay registros disponibles</li>
+			{% endfor %}
+			</ol>
+		</div>
+	</div>
+{% endblock %}

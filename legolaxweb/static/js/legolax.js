@@ -50,3 +50,9 @@ $(function() {
 $(function() {
 		$( "#id_fentrega" ).datepicker( $.datepicker.regional[ "es" ],"option","dateFormat","dd/mm/yy" );
 });
+$(function() {
+		$( "#fregistro" ).datepicker( $.datepicker.regional[ "es" ],"option","dateFormat","dd/mm/yy" );
+});
+$(function() {
+		$( "#id_fregistro" ).datepicker( $.datepicker.regional[ "es" ],"option","dateFormat","dd/mm/yy" );
+});
