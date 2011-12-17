@@ -1,3 +1,4 @@
+#encoding:utf-8
 from django.shortcuts import render_to_response, get_object_or_404
 from portal.models import Documento, DocumentoForm
 from portal.models import LoginForm
@@ -269,7 +270,13 @@ def raprodform(request):
 		if formulario.is_valid():
 			anio = formulario.cleaned_data['anio']
 			datos = Documento.objects.filter(fentrega__year=anio)
-			return render_to_response('raprod.html',{'datos':datos,'anio':anio})
+			
+			#calculo del costo por año
+			suma = 0
+			for i in datos:
+				suma += i.costo
+			
+			return render_to_response('raprod.html',{'datos':datos,'anio':anio,'suma':suma})
 	else:
 		formulario = raprod(auto_id=True)
 	return render_to_response('raprod.html',{'formulario':formulario},context_instance=RequestContext(request))

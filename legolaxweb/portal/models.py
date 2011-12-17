@@ -45,7 +45,7 @@ class Documento(models.Model):
 	tiraje = models.TextField(blank=True)
 	fentrega = models.DateField(verbose_name='Fecha de Entrega')
 	contometro = models.CharField(max_length=50, blank=True)
-	costo = models.DecimalField(max_digits=7,decimal_places=2,null=True,blank=True)
+	costo = models.DecimalField(max_digits=7,decimal_places=2,default=0)
 	nexpediente = models.CharField(max_length=200, blank=True, verbose_name='Número de expediente')
 	
 	def __unicode__(self):
@@ -95,4 +95,4 @@ class LoginForm(forms.Form):
 
 #Para el formulario de reporte anual de produccion
 class raprod(forms.Form):
-	anio = forms.IntegerField(label='Año:',max_value=2020,min_value=2000)
+	anio = forms.IntegerField(label='Año:',max_value=2013,min_value=2005)

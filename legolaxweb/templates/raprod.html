@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load humanize %}
 {% block titulo %}Reporte Anual de Producción {% endblock %}
 {% block css %}
 	<link href='/static/css/south-street/jquery-ui-1.8.16.custom.css' rel='stylesheet'>
@@ -25,8 +26,11 @@
 		</div>
 		{% endif %}
 		{% if datos %}
-			{{anio}}
-			{{datos}}
+			Reporte de Producción del {{anio}}
+			{% for elemento in datos %}
+				<li>{{elemento.codigo}} {{elemento.asunto}} {{elemento.fentrega}} {{elemento.costo|default:'No registrado'|intcomma}}
+			{% endfor %}
+			Costo total anual : {{suma|intcomma}}
 		{% endif %}
 	</div>
 {% endblock %}
