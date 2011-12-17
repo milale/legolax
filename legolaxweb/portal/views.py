@@ -267,7 +267,9 @@ def raprodform(request):
 	if request.method == 'POST':
 		formulario = raprod(request.POST)
 		if formulario.is_valid():
-			print request.POST['anio']
+			anio = formulario.cleaned_data['anio']
+			datos = Documento.objects.filter(fentrega__year=anio)
+			return render_to_response('raprod.html',{'datos':datos,'anio':anio})
 	else:
 		formulario = raprod(auto_id=True)
 	return render_to_response('raprod.html',{'formulario':formulario},context_instance=RequestContext(request))

@@ -15,6 +15,7 @@
 				<a class='naveurl' href='/' title='Oficina de publicaciones e impresiones UNCP'>Volver al inicio</a>
 			</p>
 		</div>
+		{% if formulario %}
 		<div id='elementos'>
 			<p class='instruccion'>* Ingrese el año que desea consultar, debe ingresarse los cuatro digitos del año. Ejemplo:2011</p>
 			<form id='formulario' method='post' action=''>{% csrf_token %}
@@ -22,5 +23,10 @@
 			<p><input id='dialogSencillo' class='boton' type='submit' value='Consultar'/></p>
 			</form>
 		</div>
+		{% endif %}
+		{% if datos %}
+			{{anio}}
+			{{datos}}
+		{% endif %}
 	</div>
 {% endblock %}
