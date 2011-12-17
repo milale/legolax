@@ -21,6 +21,7 @@ urlpatterns = patterns('',
     url(r'^produccion/trabajos/detalle/(?P<documento_id>\d+)/$','portal.views.documentosdetalle'),
     url(r'^produccion/trabajos/editar/(?P<documento_id>\d+)/$','portal.views.documentoseditar'),
     url(r'^produccion/trabajos/nuevo/$','portal.views.documentosregistrar'),
+    url(r'^produccion/reportes/anuales/$','portal.views.raprodform'),
     
     #almacen
     url(r'^almacen/articulos/$','portal.views.articulos'),

@@ -6,6 +6,7 @@ from portal.models import Equipo, EquipoForm
 from portal.models import Interesado, InteresadoForm
 from portal.models import TipoDocumento, TipoDocumentoForm
 from portal.models import Articulo, ArticuloForm
+from portal.models import raprod
 from django.template import RequestContext
 from django.contrib.auth import login
 from django.contrib.auth import authenticate
@@ -221,7 +222,7 @@ def articulosregistrar(request):
 
 @login_required(login_url='/ingreso/')
 def registros(request):
-	datos = RegistroArticulo.objects.all().order_by("-fregistro")
+	datos = RegistroArticulo.objects.all().order_by("-fregistro").order_by('-pk')
 	return render_to_response('registroarticulo.html',{'datos':datos})
 
 @login_required(login_url='/ingreso/')
@@ -261,4 +262,13 @@ def registrosnuevo(request):
 		formulario = RegistroArticuloForm(auto_id=True)
 	return render_to_response('registroarticuloform.html',{'formulario':formulario},context_instance=RequestContext(request))
 
-#@login_required(login_url='/ingreso/')
+@login_required(login_url='/ingreso/')
+def raprodform(request):
+	if request.method == 'POST':
+		formulario = raprod(request.POST)
+		if formulario.is_valid():
+			print request.POST['anio']
+	else:
+		formulario = raprod(auto_id=True)
+	return render_to_response('raprod.html',{'formulario':formulario},context_instance=RequestContext(request))
+		

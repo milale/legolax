@@ -95,4 +95,4 @@ class LoginForm(forms.Form):
 
 #Para el formulario de reporte anual de produccion
 class raprod(forms.Form):
-	anio = forms.IntegerField(label='anio',max_value=2020,min_value=2000)
+	anio = forms.IntegerField(label='Año:',max_value=2020,min_value=2000)
