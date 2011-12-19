@@ -17,7 +17,7 @@ class EquipoForm(ModelForm):
 class Interesado(models.Model):
 	nombre = models.CharField(max_length=200,unique=True)
 	dni = models.CharField(max_length=8,blank=True)
-	oficina = models.CharField(max_length=200)
+	oficina = models.CharField(max_length=200,blank=True)
 	
 	def __unicode__(self):
 		return self.nombre
