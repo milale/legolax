@@ -12,6 +12,8 @@
 			<ol>
 			{% for elemento in datos %}
 					<li><a href='editar/{{elemento.pk}}'>{{elemento.nombre}}, DNI: {{elemento.dni|default:'no registrado'}}, Oficina: {{elemento.oficina}}</a></li>
+			{% empty %}
+				<li>No hay interesados disponibles</li>			
 			{% endfor %}
 			</ol>
 		</div>

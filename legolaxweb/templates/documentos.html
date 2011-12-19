@@ -12,6 +12,8 @@
 			<ol>
 			{% for elemento in datos %}
 					<li><a class='docu' href='detalle/{{elemento.pk}}'>{{elemento.codigo}} - Fecha: {{elemento.fentrega}}</a></li>
+			{% empty %}
+				<p>No hay trabajos registrados</p>			
 			{% endfor %}
 			</ol>
 		</div>

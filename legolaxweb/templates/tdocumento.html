@@ -12,6 +12,8 @@
 			<ol>
 			{% for elemento in datos %}
 					<li><a href='editar/{{elemento.pk}}'>{{elemento.tipo}}</a></li>
+			{% empty %}
+				<li>No hay tipos de documentos disponibles</li>			
 			{% endfor %}
 			</ol>
 		</div>

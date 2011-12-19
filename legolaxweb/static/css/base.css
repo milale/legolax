@@ -13,6 +13,9 @@ body { font-family:'Convergence',sans-serif; }
 #encabezado h1 img{ position:absolute; margin-top:40px;}
 #encabezado h2 { color:#000205; text-align:right; text-shadow:-1px -1px #fff;}
 
+#usuariobar {background:#F6F4E9; padding:0px 5px; width:960px; margin:0 auto; 	border:10px #fff solid; border-radius:10px; box-shadow:-3px -3px 20px #000;}
+#usuariobar p { text-align:right; }
+
 #principal { text-align:center; margin:20px auto; width:960px; border:10px #fff solid; border-radius:10px; box-shadow:-3px -3px 20px #000; background:#F5F3E5;}
 #principal ul { margin:0 auto; text-align:center; width:462px; }
 #tab-Produccion ul, #tab-Almacen ul, { list-style:none; }

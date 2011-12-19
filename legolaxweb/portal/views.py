@@ -11,6 +11,7 @@ from portal.models import raprod
 from django.template import RequestContext
 from django.contrib.auth import login
 from django.contrib.auth import authenticate
+from django.contrib.auth import logout
 from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
@@ -37,6 +38,11 @@ def ingreso(request):
 	else:
 		formu = LoginForm(auto_id=True)
 	return render_to_response('ingreso.html',{'formu':formu},context_instance=RequestContext(request))
+
+@login_required(login_url='/ingreso/')
+def salida(request):
+	logout(request)
+	return render_to_response('salir.html')
 
 #view of persons, documents and equipment
 @login_required(login_url='/ingreso/')
@@ -77,11 +83,7 @@ def interesadosregistrar(request):
 	if request.method == 'POST':
 		formulario = InteresadoForm(request.POST)
 		if formulario.is_valid():
-			nombre = formulario.cleaned_data['nombre']
-			dni = formulario.cleaned_data['dni']
-			oficina = formulario.cleaned_data['oficina']
-			interesadonuevo = Interesado(nombre=nombre,dni=dni,oficina=oficina)
-			interesadonuevo.save()
+			formulario.save()
 			return HttpResponseRedirect('/produccion/interesados/')
 	else:
 		formulario = InteresadoForm(auto_id=True)
@@ -109,9 +111,7 @@ def tdocumentosregistrar(request):
 	if request.method == 'POST':
 		formulario = TipoDocumentoForm(request.POST)
 		if formulario.is_valid():
-			tipo = formulario.cleaned_data['tipo']
-			tdocumentonuevo = TipoDocumento(tipo=tipo)
-			tdocumentonuevo.save()
+			formulario.save()
 			return HttpResponseRedirect('/produccion/tipo-documentos/')
 	else:
 		formulario = TipoDocumentoForm(auto_id=True)
@@ -139,20 +139,7 @@ def documentosregistrar(request):
 	if request.method == 'POST':
 		formulario = DocumentoForm(request.POST)
 		if formulario.is_valid():
-			codigo = formulario.cleaned_data['codigo']
-			asunto = formulario.cleaned_data['asunto']
-			fentrega = formulario.cleaned_data['fentrega']
-			contometro = formulario.cleaned_data['contometro']
-			costo = formulario.cleaned_data['costo']
-			tiraje = formulario.cleaned_data['tiraje']
-			nexpediente = formulario.cleaned_data['nexpediente']
-			equipo = formulario.cleaned_data['equipo']
-			interesado = formulario.cleaned_data['interesado']
-			tdocumento = formulario.cleaned_data['tdocumento']
-			docnuevo = Documento(codigo=codigo,asunto=asunto,fentrega=fentrega,
-								contometro=contometro,costo=costo,tiraje=tiraje,
-								nexpediente=nexpediente,equipo=equipo,interesado=interesado,tdocumento=tdocumento)
-			docnuevo.save()
+			formulario.save()
 			return HttpResponseRedirect('/produccion/trabajos/')
 	else:
 		formulario = DocumentoForm(auto_id=True)
@@ -204,16 +191,7 @@ def articulosregistrar(request):
 	if request.method == 'POST':
 		formulario = ArticuloForm(request.POST)
 		if formulario.is_valid():
-			nombre = formulario.cleaned_data['nombre']
-			marca = formulario.cleaned_data['marca']
-			codigo = formulario.cleaned_data['codigo']
-			caracteristica = formulario.cleaned_data['caracteristica']
-			umedida = formulario.cleaned_data['umedida']
-			sactual = formulario.cleaned_data['sactual']
-			articulonuevo = Articulo(nombre=nombre,marca=marca,codigo=codigo,
-									caracteristica=caracteristica,
-									umedida=umedida,sactual=sactual)
-			articulonuevo.save()
+			formulario.save()
 			return HttpResponseRedirect('/almacen/articulos/')
 	else:
 		formulario = ArticuloForm(auto_id=True)

@@ -30,6 +30,9 @@ urlpatterns = patterns('',
     url(r'^almacen/articulos/nuevo/$','portal.views.articulosregistrar'),
     url(r'^almacen/articulos/registro/$','portal.views.registros'),
     url(r'^almacen/articulos/registro/nuevo/$','portal.views.registrosnuevo'),
+    
+    #administrativo
     url(r'^ingreso/$','portal.views.ingreso'),
+    url(r'^salida/$','portal.views.salida'),
     url(r'^admin/', include(admin.site.urls)),
 )

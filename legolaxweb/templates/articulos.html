@@ -13,6 +13,8 @@
 			<ol>
 			{% for elemento in datos %}
 					<li><a class='docu' href='detalle/{{elemento.pk}}'>{{elemento.nombre}}, Saldo actual: {{elemento.sactual}}</a></li>
+			{% empty %}
+				<li>No hay elementos disponibles</li>
 			{% endfor %}
 			</ol>
 		</div>

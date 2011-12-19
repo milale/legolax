@@ -12,6 +12,8 @@
 			<ol>
 			{% for elemento in datos %}
 					<li><a href='editar/{{elemento.pk}}'>{{elemento.nombre}}</a></li>
+			{% empty %}
+				<li>No hay elementos disponibles</li>
 			{% endfor %}
 			</ol>
 		</div>
