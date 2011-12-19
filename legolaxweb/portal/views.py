@@ -49,9 +49,7 @@ def equiposregistrar(request):
 	if request.method == 'POST':
 		formulario = EquipoForm(request.POST)
 		if formulario.is_valid():
-			nombre = formulario.cleaned_data['nombre']
-			equiponuevo = Equipo(nombre=nombre)
-			equiponuevo.save()
+			formulario.save()
 			return HttpResponseRedirect('/produccion/equipos/')
 	else:
 		formulario = EquipoForm(auto_id=True)

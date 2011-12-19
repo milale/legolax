@@ -77,8 +77,8 @@ class RegistroArticulo(models.Model):
 	fregistro = models.DateField(verbose_name='Fecha de registro')
 	tipo_options = (('e','entrada'),('s','salida'))
 	tipo = models.CharField(max_length=1,choices=tipo_options)
-	preciouni = models.DecimalField(max_digits=8,decimal_places=3,null=True, blank=True, verbose_name='Precio Unitario')
-	preciototal = models.DecimalField(max_digits=8,decimal_places=3,null=True, blank=True, verbose_name='Precio Total')
+	preciouni = models.DecimalField(max_digits=8,decimal_places=3,default=0, verbose_name='Precio Unitario')
+	preciototal = models.DecimalField(max_digits=8,decimal_places=3,default=0, verbose_name='Precio Total')
 	usuario = models.ForeignKey(User)
 	
 	def __unicode__(self):
