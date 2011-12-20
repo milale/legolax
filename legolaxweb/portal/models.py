@@ -38,7 +38,7 @@ class TipoDocumentoForm(ModelForm):
 
 class Documento(models.Model):
 	tdocumento = models.ForeignKey(TipoDocumento, verbose_name='Tipo de documento')
-	codigo = models.CharField(max_length=200)
+	codigo = models.CharField(max_length=200,blank=True)
 	interesado = models.ForeignKey(Interesado)
 	equipo = models.ForeignKey(Equipo)
 	asunto = models.TextField(blank=True)

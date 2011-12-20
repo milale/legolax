@@ -47,7 +47,7 @@ def salida(request):
 #view of persons, documents and equipment
 @login_required(login_url='/ingreso/')
 def equipos(request):
-	datos = Equipo.objects.all()
+	datos = Equipo.objects.all().order_by('nombre')
 	return render_to_response('equipos.html',{'datos':datos})
 
 @login_required(login_url='/ingreso/')
@@ -75,7 +75,7 @@ def equiposeditar(request, equipo_id):
 
 @login_required(login_url='/ingreso/')
 def interesados(request):
-	datos = Interesado.objects.all()
+	datos = Interesado.objects.all().order_by('nombre')
 	return render_to_response('interesados.html',{'datos':datos})
 
 @login_required(login_url='/ingreso/')

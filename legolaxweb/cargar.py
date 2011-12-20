@@ -7,9 +7,7 @@ import csv
 SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
 
 #CSV files
-csv_equipos = os.path.join(SITE_ROOT,'migration/equipos.csv')
-csv_tdocumentos = os.path.join(SITE_ROOT,'migration/tdocumentos.csv')
-csv_interesados = os.path.join(SITE_ROOT,'migration/interesados.csv')
+csv_trabajos = os.path.join(SITE_ROOT,'migration/trabajos.csv')
 
 #Calling Django settings
 sys.path.append(SITE_ROOT)
@@ -19,37 +17,47 @@ os.environ['DJANGO_SETTINGS_MODULE'] = 'settings'
 from portal.models import Equipo
 from portal.models import TipoDocumento
 from portal.models import Interesado
+from portal.models import Documento
 
 #Reading CSV
-lectorDatosEquipos = csv.reader(open(csv_equipos), delimiter=',', quotechar='"')
-lectorDatosTdocs = csv.reader(open(csv_tdocumentos), delimiter=',', quotechar='"')
-lectorDatosInteresados = csv.reader(open(csv_interesados), delimiter=',', quotechar='"')
+lectorDatos = csv.reader(open(csv_trabajos), delimiter=',', quotechar='"')
 
-#Create data in DB
-for elemento in lectorDatosEquipos:
+#~ #Create data in DB
+contador = 0
+for elemento in lectorDatos:
 	equipo = Equipo()
 	equipo.nombre = elemento[0]
 	try:
 		equipo.save()
 	except:
 		pass
-
 	
-for elemento in lectorDatosTdocs:
 	tdocs = TipoDocumento()
-	tdocs.tipo = elemento[0]
+	tdocs.tipo = elemento[3]
 	try:
 		tdocs.save()
 	except:
 		pass
 		
-for elemento in lectorDatosInteresados:
 	interesados = Interesado()
-	if elemento:
-		interesados.nombre = elemento[0]
-	else:
-		interesados.nombre = "Lic. Miriam Montero"
+	interesados.nombre = elemento[5]
 	try:
 		interesados.save()
 	except:
 		pass
+	
+	documentos = Documento()
+	documentos.tdocumento = TipoDocumento.objects.get(tipo__exact=elemento[3])
+	documentos.codigo = elemento[4]
+	documentos.interesado = Interesado.objects.get(nombre__exact=elemento[5])
+	documentos.equipo = Equipo.objects.get(nombre__exact=elemento[0])
+	documentos.asunto = elemento[6]
+	documentos.tiraje = elemento[7]
+	documentos.fentrega = elemento[2]
+	documentos.contometro = elemento[8]
+	documentos.costo = elemento[9]
+	documentos.nexpediente = elemento[1]
+	documentos.save()
+
+	contador += 1
+	print str(contador)
