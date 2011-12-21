@@ -57,7 +57,10 @@ for elemento in lectorDatos:
 	documentos.contometro = elemento[8]
 	documentos.costo = elemento[9]
 	documentos.nexpediente = elemento[1]
-	documentos.save()
+	try:
+		documentos.save()
+	except:
+		pass
 
 	contador += 1
 	print str(contador)
