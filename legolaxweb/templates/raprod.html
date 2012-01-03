@@ -3,6 +3,7 @@
 {% block titulo %}Reporte Anual de Producción {% endblock %}
 {% block css %}
 	<link href='/static/css/south-street/jquery-ui-1.8.16.custom.css' rel='stylesheet'>
+	<link href='/static/css/tablas.css' rel='stylesheet'>
 {% endblock %}
 {% block javascript %}
 	<script src='/static/js/jquery-1.6.2.min.js'></script>
@@ -26,11 +27,31 @@
 		</div>
 		{% endif %}
 		{% if datos %}
-			Reporte de Producción del {{anio}}
+		<p class='resultado'>Costo total anual : <span>S/.{{suma|intcomma}}</span><br>Cantidad de trabajos realizados: <span>{{total}}</span></p>
+		<table>
+			<caption>Reporte de Producción del <span class='total'>{{anio}}</span></caption>
+			<thead>
+				  <tr>
+					<th>Código</th><th>Asunto</th><th>Fecha de entrega</th><th>Costo S/.</th>
+				  </tr>
+			</thead>
+			<tfoot>
+				  <tr>
+					<th>Código</th><th>Asunto</th><th>Fecha de entrega</th><th>Costo S/.</th>
+				  </tr>
+			</tfoot>
+			<tbody>
 			{% for elemento in datos %}
-				<li>{{elemento.codigo}} {{elemento.asunto}} {{elemento.fentrega}} {{elemento.costo|default:'No registrado'|intcomma}}
+				<tr>
+				<td>{{elemento.codigo}}</td>
+				<td>{{elemento.asunto}}</td>
+				<td>{{elemento.fentrega|date:"SHORT_DATE_FORMAT"}}</td>
+				<td>{{elemento.costo|default:'No registrado'|intcomma}}</td>
+				</tr>
 			{% endfor %}
-			Costo total anual : {{suma|intcomma}}
+			</tbody>
+		</table>
+		<p class='resultado'>Costo total anual : <span>S/.{{suma|intcomma}}</span><br>Cantidad de trabajos realizados: <span>{{total}}</span></p>
 		{% endif %}
 	</div>
 {% endblock %}

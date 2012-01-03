@@ -246,14 +246,15 @@ def raprodform(request):
 		formulario = raprod(request.POST)
 		if formulario.is_valid():
 			anio = formulario.cleaned_data['anio']
-			datos = Documento.objects.filter(fentrega__year=anio)
+			datos = Documento.objects.filter(fentrega__year=anio).order_by('fentrega')
+			total = datos.count()
 			
 			#calculo del costo por año
 			suma = 0
 			for i in datos:
 				suma += i.costo
 			
-			return render_to_response('raprod.html',{'datos':datos,'anio':anio,'suma':suma})
+			return render_to_response('raprod.html',{'datos':datos,'anio':anio,'suma':suma,'total':total})
 	else:
 		formulario = raprod(auto_id=True)
 	return render_to_response('raprod.html',{'formulario':formulario},context_instance=RequestContext(request))
