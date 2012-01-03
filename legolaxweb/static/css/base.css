@@ -16,6 +16,14 @@ body { font-family:'Convergence',sans-serif; }
 #usuariobar {background:#F6F4E9; padding:0px 5px; width:960px; margin:0 auto; 	border:10px #fff solid; border-radius:10px; box-shadow:-3px -3px 20px #000;}
 #usuariobar p { text-align:right; }
 
+/* Estilo para el formulario de ingreso */
+#principal #ingreso ul { list-style:none; text-align:right;}
+#principal #ingreso input { font-size:1.5em; color:#FFA500; box-shadow:2px 2px 5px #FFA500; border-radius:5px; border:1px solid; margin:5px 0;}
+#principal #ingreso label { font-size:1.5em; }
+#principal #ingreso .boton { font-size:1.3em; background:#31AF31; border:0px; border-radius:10px; padding:5px; color:#fff; box-shadow:2px 2px 10px #000;}
+#principal #ingreso .boton { cursor:pointer; margin:10px;}
+#principal #ingreso .boton:hover {box-shadow:-2px -2px 5px #000;}
+
 #principal { text-align:center; margin:20px auto; width:960px; border:10px #fff solid; border-radius:10px; box-shadow:-3px -3px 20px #000; background:#F5F3E5;}
 #principal ul { margin:0 auto; text-align:center; width:462px; }
 #tab-Produccion ul, #tab-Almacen ul, { list-style:none; }

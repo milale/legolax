@@ -1,4 +1,11 @@
-<form method='post' action='/ingreso/'>{% csrf_token %}
-{{formu.as_ul}}
-<label><input type='submit' value='Ingresar'/></label>
+{% extends 'base.html' %}
+{% block titulo %} Ingreso {% endblock %}
+{% block navegacion %}{% endblock %}
+{% block principal %}
+<div id='principal'>
+<form id='ingreso' method='post' action='/ingreso/'>{% csrf_token %}
+	<ul>{{formu.as_ul}}</ul>
+<label><input class='boton' type='submit' value='Ingresar'/></label>
 </form>
+</div>
+{% endblock %}
