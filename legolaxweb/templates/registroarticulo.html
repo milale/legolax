@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{% load humanize %}
+{% block css %}<link href='/static/css/tablas.css' rel='stylesheet'>{% endblock %}
 {% block titulo %}Entradas y Salidas de Articulos {% endblock %}
 {% block principal %}
 	<div id='principal'>
@@ -10,25 +12,36 @@
 			</p>
 		</div>
 		<div id='elementos'>
-			<ol>
-			{% for elemento in datos %}
-					<li>
-						{% if elemento.tipo == 's' %}
-							salida
-						{% else %}
-							entrada
-						{% endif %}
-						de {{elemento.cantidad}}
-						el {{elemento.fregistro}}, 
-						de {{elemento.articulo}},
-						con el detalle {{elemento.detalle|default:'no registrado'}}
-						y el precio unitario {{elemento.preciouni|default:'no registrado'}}
-						y el precio total {{elemento.preciototal|default:'no registrado'}}
-					</li>
-			{% empty %}
-				<li>No hay registros disponibles</li>
-			{% endfor %}
-			</ol>
+			<table>
+				<caption>Entradas y salidas de almacén - Cantidad de registros: <span class='total'>{{total}}</span></caption>
+				<thead>
+				  <tr>
+					<th>Artículo</th><th>Detalle</th><th>Cantidad</th>
+					<th>Fecha</th><th>Tipo</th><th>Precio Unitario S/.</th><th>Precio Total S/.</th>
+				  </tr>
+				</thead>
+				<tfoot>
+				  <tr>
+					<th>Artículo</th><th>Detalle</th><th>Cantidad</th>
+					<th>Fecha</th><th>Tipo</th><th>Precio Unitario S/.</th><th>Precio Total S/.</th>
+				  </tr>
+				</tfoot>
+				<tbody>
+						{% for elemento in datos %}
+						{% if elemento.tipo == 's' %}<tr class='salida'>{% else %}<tr class='entrada'>{% endif %}
+							<td>{{elemento.articulo}}</td>
+							<td>{{elemento.detalle|default:'no registrado'}}</td>
+							<td>{{elemento.cantidad|intcomma}}</td>
+							<td>{{elemento.fregistro|date:"SHORT_DATE_FORMAT"}}</td>
+							<td>{% if elemento.tipo == 's' %}salida{% else %}entrada{% endif %}</td>
+							<td>{{elemento.preciouni|default:'no registrado'|intcomma}}</td>
+							<td>{{elemento.preciototal|default:'no registrado'|intcomma}}</td>
+						</tr>
+						{% empty %}
+							<tr><td>No hay registros disponibles</td></tr>
+						{% endfor %}
+				</tbody>
+			</table>
 		</div>
 	</div>
 {% endblock %}

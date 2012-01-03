@@ -199,8 +199,9 @@ def articulosregistrar(request):
 
 @login_required(login_url='/ingreso/')
 def registros(request):
-	datos = RegistroArticulo.objects.all().order_by("-fregistro").order_by('-pk')
-	return render_to_response('registroarticulo.html',{'datos':datos})
+	datos = RegistroArticulo.objects.all().order_by("-pk").order_by('-fregistro')
+	total = RegistroArticulo.objects.count()
+	return render_to_response('registroarticulo.html',{'datos':datos,'total':total})
 
 @login_required(login_url='/ingreso/')
 def registrosnuevo(request):

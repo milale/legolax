@@ -1,0 +1,10 @@
+
+table { border:1px solid #000; }
+table caption { font-size:1.3em; letter-spacing:-1px; }
+table caption .total { color:#FF0000; font-weight:bold;}
+table thead, table tfoot{ background:#000; border:1px solid #ccc; color:#fff; text-align:center; font-size:0.8em;}
+table tbody { font-size:0.8em; background:#ccc;}
+table tbody .entrada { background:#63E963; }
+table tbody .salida { background:#F9D77D; }
+
+tr:hover{background:#000 !important; color:white;}
