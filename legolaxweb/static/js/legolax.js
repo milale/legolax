@@ -56,3 +56,37 @@ $(function() {
 $(function() {
 		$( "#id_fregistro" ).datepicker( $.datepicker.regional[ "es" ],"option","dateFormat","dd/mm/yy" );
 });
+
+//Validar el ingreso de DNI
+$(document).ready(function() {
+    $("#id_dni").keydown(function(event) {
+        // Allow only backspace and delete
+        if ( event.keyCode == 46 || event.keyCode == 8 ) {
+            // let it happen, don't do anything
+        }
+        else {
+			if(event.keyCode < 95){
+				// Ensure that it is a number and stop the keypress
+				if ((event.keyCode < 48 || event.keyCode > 57) && (event.keyCode < 96 || event.keyCode > 105 )) {
+					event.preventDefault(); 
+				}
+            }
+        }
+    });
+});
+$(document).ready(function() {
+    $("#dni").keydown(function(event) {
+        // Allow only backspace and delete
+        if ( event.keyCode == 46 || event.keyCode == 8 ) {
+            // let it happen, don't do anything
+        }
+        else {
+			if(event.keyCode < 95){
+				// Ensure that it is a number and stop the keypress
+				if ((event.keyCode < 48 || event.keyCode > 57) && (event.keyCode < 96 || event.keyCode > 105 )) {
+					event.preventDefault(); 
+				}
+            }
+        }
+    });
+});

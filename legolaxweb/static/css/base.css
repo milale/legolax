@@ -51,6 +51,7 @@ body { font-family:'Convergence',sans-serif; }
 #formulario { width:700px; margin:0 auto; text-align:center; padding:25px;}
 #formulario label { font-size:18px; font-family:sans-serif; color:#444444; margin:5px;}
 #formulario input { width:370px; padding:5px; font-size:20px; margin:5px; font-family:sans-serif; }
+#formulario select { text-transform:capitalize;} 
 #formulario .errorlist{ color:#FF0018; font-size:15px; list-style:none; background:none !important; font-weight:normal !important; border:none !important; text-align:right !important; } 
 #formulario .errorlist li { float:right !important; font-size:0.7em;}
 #formulario p { width:600px; text-align:right;}
