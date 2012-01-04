@@ -22,6 +22,7 @@ urlpatterns = patterns('',
     url(r'^produccion/trabajos/editar/(?P<documento_id>\d+)/$','portal.views.documentoseditar'),
     url(r'^produccion/trabajos/nuevo/$','portal.views.documentosregistrar'),
     url(r'^produccion/reportes/anuales/$','portal.views.raprodform'),
+    url(r'^produccion/reportes/periodo/$','portal.views.rpprodform'),
     
     #almacen
     url(r'^almacen/articulos/$','portal.views.articulos'),

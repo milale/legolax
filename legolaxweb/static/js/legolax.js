@@ -56,6 +56,12 @@ $(function() {
 $(function() {
 		$( "#id_fregistro" ).datepicker( $.datepicker.regional[ "es" ],"option","dateFormat","dd/mm/yy" );
 });
+$(function() {
+		$( "#finicial" ).datepicker( $.datepicker.regional[ "es" ],"option","dateFormat","dd/mm/yy" );
+});
+$(function() {
+		$( "#ffinal" ).datepicker( $.datepicker.regional[ "es" ],"option","dateFormat","dd/mm/yy" );
+});
 
 //Validar el ingreso de DNI
 $(document).ready(function() {

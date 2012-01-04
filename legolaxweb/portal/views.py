@@ -7,7 +7,7 @@ from portal.models import Equipo, EquipoForm
 from portal.models import Interesado, InteresadoForm
 from portal.models import TipoDocumento, TipoDocumentoForm
 from portal.models import Articulo, ArticuloForm
-from portal.models import raprod
+from portal.models import raprod, rpprod, rpeprod
 from django.template import RequestContext
 from django.contrib.auth import login
 from django.contrib.auth import authenticate
@@ -261,3 +261,23 @@ def raprodform(request):
 		formulario = raprod(auto_id=True)
 	return render_to_response('raprod.html',{'formulario':formulario},context_instance=RequestContext(request))
 		
+@login_required(login_url='/ingreso/')
+def rpprodform(request):
+	if request.method == 'POST':
+		formulario = rpprod(request.POST)
+		if formulario.is_valid():
+			finicial = formulario.cleaned_data['finicial']
+			ffinal = formulario.cleaned_data['ffinal']
+			fecha = {'inicial':finicial,'final':ffinal}
+			datos = Documento.objects.filter(fentrega__range=(finicial,ffinal))
+			total = datos.count()
+			
+			#calculo de costo por periodo
+			suma = 0
+			for i in datos:
+				suma += i.costo
+			
+			return render_to_response('rpprod.html',{'datos':datos,'fecha':fecha,'suma':suma,'total':total})
+	else:
+		formulario = rpprod(auto_id=True)
+	return render_to_response('rpprod.html',{'formulario':formulario},context_instance=RequestContext(request))

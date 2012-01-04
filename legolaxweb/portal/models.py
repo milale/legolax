@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.db import models
 from django import forms
 from django.forms import ModelForm, TextInput
+import datetime
 
 class Equipo(models.Model):
 	nombre = models.CharField(max_length=200,verbose_name='Nombre del equipo',unique=True)
@@ -96,6 +97,17 @@ class LoginForm(forms.Form):
 	userform = forms.CharField(label='usuario')
 	passform = forms.CharField(label='clave',widget=forms.PasswordInput(render_value=False))
 
-#Para el formulario de reporte anual de produccion
+#Para el formulario de reporte anual de produccion, raprod = reporte anual de produccion
 class raprod(forms.Form):
 	anio = forms.IntegerField(label='Año:',max_value=2013,min_value=2005)
+
+#Para el formulario de reporte mensual de produccion, rpprod = reporte por periodo de produccion
+class rpprod(forms.Form):
+	finicial = forms.DateField(label='Fecha inicial',initial=datetime.date.today)
+	ffinal = forms.DateField(label='Fecha final',initial=datetime.date.today)
+	
+#Para el formulario de reporte mensual de produccion por equipo, rpeprod = reporte por periodod y por equipo de produccion	
+class rpeprod(forms.Form):
+	finicial = forms.DateField(label='Fecha inicial',initial=datetime.date.today)
+	ffinal = forms.DateField(label='Fecha final',initial=datetime.date.today)
+	equipo = forms.CharField(label='Equipo')

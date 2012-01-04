@@ -1,13 +1,13 @@
 
-table { border:1px solid #000; }
-table caption { font-size:1.3em; letter-spacing:-1px; }
-table caption .total { color:#FF0000; font-weight:bold;}
-table thead, table tfoot{ background:#000; border:1px solid #ccc; color:#fff; text-align:center; font-size:0.8em;}
-table tbody { font-size:0.8em; background:#ccc;}
-table tbody .entrada { background:#63E963; }
-table tbody .salida { background:#F9D77D; }
+#tabular { border:1px solid #000; margin:0 auto;}
+#tabular caption { font-size:1.3em; letter-spacing:-1px; }
+#tabular caption .total { color:#FF0000; font-weight:bold;}
+#tabular thead, table tfoot{ background:#000; border:1px solid #ccc; color:#fff; text-align:center; font-size:0.8em;}
+#tabular tbody { font-size:0.8em; background:#ccc;}
+#tabular tbody .entrada { background:#63E963; }
+#tabular tbody .salida { background:#F9D77D; }
 
-tr:hover{background:#000 !important; color:white;}
+#tabular tr:hover{background:#000 !important; color:white;}
 
 .resultado { font-size:1.7em; letter-spacing:-1px; }
 .resultado span {color:#FF0000;}

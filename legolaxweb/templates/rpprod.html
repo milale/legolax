@@ -8,6 +8,7 @@
 {% block javascript %}
 	<script src='/static/js/jquery-1.6.2.min.js'></script>
 	<script src='/static/js/jquery-ui-1.8.16.custom.min.js'></script>
+	<script src='/static/js/jquery.ui.datepicker-es.js'></script>
 	<script src='/static/js/legolax.js'></script>
 {% endblock %}
 {% block principal %}
@@ -19,7 +20,7 @@
 		</div>
 		{% if formulario %}
 		<div id='elementos'>
-			<p class='instruccion'>* Ingrese el año que desea consultar, debe ingresarse los cuatro digitos del año. Ejemplo:2011</p>
+			<p class='instruccion'>* Ingrese el rango de fechas para el reporte:</p>
 			<form id='formulario' method='post' action=''>{% csrf_token %}
 			{{formulario.as_p}}
 			<p><input id='dialogSencillo' class='boton' type='submit' value='Consultar'/></p>
@@ -27,9 +28,11 @@
 		</div>
 		{% endif %}
 		{% if datos %}
-		<p class='resultado'>Costo total anual : <span>S/.{{suma|intcomma}}</span><br>Cantidad de trabajos realizados: <span>{{total}}</span></p>
+		<p class='resultado'>
+		Periodo del <span>{{fecha.inicial|date:"SHORT_DATE_FORMAT"}}</span> al <span>{{fecha.final|date:"SHORT_DATE_FORMAT"}}</span><br>
+		Costo total : <span>S/.{{suma|intcomma}}</span><br>Cantidad de trabajos realizados: <span>{{total}}</span></p>
 		<table id='tabular'>
-			<caption>Reporte de Producción del <span class='total'>{{anio}}</span></caption>
+			<caption>Reporte detallado de producción</caption>
 			<thead>
 				  <tr>
 					<th>Código</th><th>Asunto</th><th>Fecha de entrega</th><th>Costo S/.</th>
@@ -51,7 +54,7 @@
 			{% endfor %}
 			</tbody>
 		</table>
-		<p class='resultado'>Costo total anual : <span>S/.{{suma|intcomma}}</span><br>Cantidad de trabajos realizados: <span>{{total}}</span></p>
+		<p class='resultado'>Costo total: <span>S/.{{suma|intcomma}}</span><br>Cantidad de trabajos realizados: <span>{{total}}</span></p>
 		{% endif %}
 	</div>
 {% endblock %}
