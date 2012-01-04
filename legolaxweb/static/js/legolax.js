@@ -60,33 +60,27 @@ $(function() {
 //Validar el ingreso de DNI
 $(document).ready(function() {
     $("#id_dni").keydown(function(event) {
-        // Allow only backspace and delete
-        if ( event.keyCode == 46 || event.keyCode == 8 ) {
-            // let it happen, don't do anything
-        }
-        else {
-			if(event.keyCode < 95){
-				// Ensure that it is a number and stop the keypress
-				if ((event.keyCode < 48 || event.keyCode > 57) && (event.keyCode < 96 || event.keyCode > 105 )) {
-					event.preventDefault(); 
-				}
-            }
-        }
+		if ((!event.shiftKey && !event.ctrlKey && !event.altKey) && ((event.keyCode >= 48 && event.keyCode <= 57) || (event.keyCode >= 96 && event.keyCode <= 105))) // 0-9 or numpad 0-9, disallow shift, ctrl, and alt 
+		{ 
+		// check textbox value now and tab over if necessary 
+		} 
+		else if (event.keyCode != 8 && event.keyCode != 46 && event.keyCode != 37 && event.keyCode != 39) // not esc, del, left or right 
+		{ 
+		event.preventDefault(); 
+		} 
+		// else the key should be handled normally 
     });
 });
 $(document).ready(function() {
     $("#dni").keydown(function(event) {
-        // Allow only backspace and delete
-        if ( event.keyCode == 46 || event.keyCode == 8 ) {
-            // let it happen, don't do anything
-        }
-        else {
-			if(event.keyCode < 95){
-				// Ensure that it is a number and stop the keypress
-				if ((event.keyCode < 48 || event.keyCode > 57) && (event.keyCode < 96 || event.keyCode > 105 )) {
-					event.preventDefault(); 
-				}
-            }
-        }
+		if ((!event.shiftKey && !event.ctrlKey && !event.altKey) && ((event.keyCode >= 48 && event.keyCode <= 57) || (event.keyCode >= 96 && event.keyCode <= 105))) // 0-9 or numpad 0-9, disallow shift, ctrl, and alt 
+		{ 
+		// check textbox value now and tab over if necessary 
+		} 
+		else if (event.keyCode != 8 && event.keyCode != 46 && event.keyCode != 37 && event.keyCode != 39) // not esc, del, left or right 
+		{ 
+		event.preventDefault(); 
+		} 
+		// else the key should be handled normally 
     });
 });
