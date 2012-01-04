@@ -269,7 +269,7 @@ def rpprodform(request):
 			finicial = formulario.cleaned_data['finicial']
 			ffinal = formulario.cleaned_data['ffinal']
 			fecha = {'inicial':finicial,'final':ffinal}
-			datos = Documento.objects.filter(fentrega__range=(finicial,ffinal))
+			datos = Documento.objects.filter(fentrega__range=(finicial,ffinal)).order_by('fentrega')
 			total = datos.count()
 			
 			#calculo de costo por periodo
