@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load humanize %}
+{% block titulo %}Reporte Anual de Producción {% endblock %}
+{% block css %}
+	<link href='/static/css/south-street/jquery-ui-1.8.16.custom.css' rel='stylesheet'>
+	<link href='/static/css/tablas.css' rel='stylesheet'>
+{% endblock %}
+{% block javascript %}
+	<script src='/static/js/jquery-1.6.2.min.js'></script>
+	<script src='/static/js/jquery-ui-1.8.16.custom.min.js'></script>
+	<script src='/static/js/jquery.ui.datepicker-es.js'></script>
+	<script src='/static/js/legolax.js'></script>
+{% endblock %}
+{% block principal %}
+	<div id='principal'>
+		<div id='navigation'>
+			<p>
+				<a class='naveurl' href='/' title='Oficina de publicaciones e impresiones UNCP'>Volver al inicio</a>
+			</p>
+		</div>
+		{% if formulario %}
+		<div id='elementos'>
+			<p class='instruccion'>* Ingrese el rango de fechas para el reporte:</p>
+			<form id='formulario' method='post' action=''>{% csrf_token %}
+			{{formulario.as_p}}
+			<p><input id='dialogSencillo' class='boton' type='submit' value='Consultar'/></p>
+			</form>
+		</div>
+		{% endif %}
+		{% if datos %}
+		<p class='resultado'>
+		Trabajo de <span>{{referencia.equipo.nombre}}</span><br>
+		Del <span>{{referencia.inicial|date:"SHORT_DATE_FORMAT"}}</span> al <span>{{referencia.final|date:"SHORT_DATE_FORMAT"}}</span><br>
+		Costo total : <span>S/.{{suma|intcomma}}</span><br>Cantidad de trabajos realizados: <span>{{total}}</span></p>
+		<table id='tabular'>
+			<caption>Reporte detallado de producción</caption>
+			<thead>
+				  <tr>
+					<th>Código</th><th>Asunto</th><th>Fecha de entrega</th><th>Costo S/.</th>
+				  </tr>
+			</thead>
+			<tfoot>
+				  <tr>
+					<th>Código</th><th>Asunto</th><th>Fecha de entrega</th><th>Costo S/.</th>
+				  </tr>
+			</tfoot>
+			<tbody>
+			{% for elemento in datos %}
+				<tr>
+				<td>{{elemento.codigo}}</td>
+				<td>{{elemento.asunto}}</td>
+				<td>{{elemento.fentrega|date:"SHORT_DATE_FORMAT"}}</td>
+				<td>{{elemento.costo|default:'No registrado'|intcomma}}</td>
+				</tr>
+			{% endfor %}
+			</tbody>
+		</table>
+		<p class='resultado'>Costo total: <span>S/.{{suma|intcomma}}</span><br>Cantidad de trabajos realizados: <span>{{total}}</span></p>
+		{% endif %}
+	</div>
+{% endblock %}

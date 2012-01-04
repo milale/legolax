@@ -9,5 +9,5 @@
 
 #tabular tr:hover{background:#000 !important; color:white;}
 
-.resultado { font-size:1.7em; letter-spacing:-1px; }
-.resultado span {color:#FF0000;}
+.resultado { font-size:1.5em; letter-spacing:-1px; }
+.resultado span {color:#FF0000; text-transform:uppercase;}

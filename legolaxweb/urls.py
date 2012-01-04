@@ -23,6 +23,7 @@ urlpatterns = patterns('',
     url(r'^produccion/trabajos/nuevo/$','portal.views.documentosregistrar'),
     url(r'^produccion/reportes/anuales/$','portal.views.raprodform'),
     url(r'^produccion/reportes/periodo/$','portal.views.rpprodform'),
+    url(r'^produccion/reportes/periodo/equipo/$','portal.views.rpeprodform'),
     
     #almacen
     url(r'^almacen/articulos/$','portal.views.articulos'),

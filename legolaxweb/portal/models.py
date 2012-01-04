@@ -110,4 +110,4 @@ class rpprod(forms.Form):
 class rpeprod(forms.Form):
 	finicial = forms.DateField(label='Fecha inicial',initial=datetime.date.today)
 	ffinal = forms.DateField(label='Fecha final',initial=datetime.date.today)
-	equipo = forms.CharField(label='Equipo')
+	equipo = forms.ModelChoiceField(queryset=Equipo.objects.all())

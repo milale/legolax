@@ -281,3 +281,25 @@ def rpprodform(request):
 	else:
 		formulario = rpprod(auto_id=True)
 	return render_to_response('rpprod.html',{'formulario':formulario},context_instance=RequestContext(request))
+
+@login_required(login_url='/ingreso/')
+def rpeprodform(request):
+	if request.method == 'POST':
+		formulario = rpeprod(request.POST)
+		if formulario.is_valid():
+			finicial = formulario.cleaned_data['finicial']
+			ffinal = formulario.cleaned_data['ffinal']
+			equipoform = formulario.cleaned_data['equipo']
+			referencia = {'inicial':finicial,'final':ffinal,'equipo':equipoform}
+			datos = Documento.objects.filter(fentrega__range=(finicial,ffinal),equipo=equipoform).order_by('fentrega')
+			total = datos.count()
+			
+			#calculo de costo por periodo y por equipo
+			suma = 0
+			for i in datos:
+				suma += i.costo
+			
+			return render_to_response('rpeprod.html',{'datos':datos,'referencia':referencia,'suma':suma,'total':total})
+	else:
+		formulario = rpeprod(auto_id=True)
+	return render_to_response('rpeprod.html',{'formulario':formulario},context_instance=RequestContext(request))
