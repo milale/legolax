@@ -2,7 +2,7 @@
 from django.contrib.auth.models import User
 from django.db import models
 from django import forms
-from django.forms import ModelForm
+from django.forms import ModelForm, TextInput
 
 class Equipo(models.Model):
 	nombre = models.CharField(max_length=200,verbose_name='Nombre del equipo',unique=True)
@@ -54,6 +54,9 @@ class Documento(models.Model):
 class DocumentoForm(ModelForm):
 	class Meta:
 		model = Documento
+		widgets = {
+			'interesado':TextInput(attrs={'size':200,'title': 'Interesado',}),
+		}
 
 class Articulo(models.Model):
 	nombre = models.CharField(max_length=250,unique=True)

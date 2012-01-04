@@ -136,6 +136,7 @@ def documentos(request):
 
 @login_required(login_url='/ingreso/')
 def documentosregistrar(request):
+	interesados = Interesado.objects.all()
 	if request.method == 'POST':
 		formulario = DocumentoForm(request.POST)
 		if formulario.is_valid():
@@ -143,7 +144,7 @@ def documentosregistrar(request):
 			return HttpResponseRedirect('/produccion/trabajos/')
 	else:
 		formulario = DocumentoForm(auto_id=True)
-	return render_to_response('doceditar.html',{'formulario':formulario},context_instance=RequestContext(request))
+	return render_to_response('docnuevo.html',{'formulario':formulario,'interesados':interesados},context_instance=RequestContext(request))
 
 @login_required(login_url='/ingreso/')
 def documentosdetalle(request, documento_id):
@@ -152,6 +153,7 @@ def documentosdetalle(request, documento_id):
 
 @login_required(login_url='/ingreso/')
 def documentoseditar(request, documento_id):
+	interesados = Interesado.objects.all()
 	dato = get_object_or_404(Documento, pk=documento_id)
 	if request.method == 'POST':
 		formulario = DocumentoForm(request.POST, instance=dato)
@@ -160,8 +162,8 @@ def documentoseditar(request, documento_id):
 			redireccion = '/produccion/trabajos/detalle/'+str(documento_id)
 			return HttpResponseRedirect(redireccion)
 	else:
-		formulario = DocumentoForm(instance=dato)
-	return render_to_response('doceditar.html',{'formulario':formulario},context_instance=RequestContext(request))
+		formulario = DocumentoForm(initial={'interesado':dato.interesado.nombre},instance=dato)
+	return render_to_response('doceditar.html',{'formulario':formulario,'interesados':interesados},context_instance=RequestContext(request))
 
 @login_required(login_url='/ingreso/')
 def articulos(request):
