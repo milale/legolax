@@ -3,9 +3,11 @@
 #tabular caption { font-size:1.3em; letter-spacing:-1px; }
 #tabular caption .total { color:#FF0000; font-weight:bold;}
 #tabular thead, table tfoot{ background:#000; border:1px solid #ccc; color:#fff; text-align:center; font-size:0.8em;}
-#tabular tbody { font-size:0.8em; background:#ccc;}
+#tabular tbody { font-size:0.8em; background:#ccc; text-transform:uppercase;}
 #tabular tbody .entrada { background:#63E963; }
 #tabular tbody .salida { background:#F9D77D; }
+#tabular tbody tr td a {color:#4D4D4D;}
+#tabular tbody tr td a:hover {color:#ffffff;}
 
 #tabular tr:hover{background:#000 !important; color:white;}
 

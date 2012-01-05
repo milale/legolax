@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{% load humanize %}
+{% block css %}<link href='/static/css/tablas.css' rel='stylesheet'>{% endblock %}
 {% block titulo %}Trabajos {% endblock %}
 {% block principal %}
 	<div id='principal'>
@@ -9,13 +11,31 @@
 			</p>
 		</div>
 		<div id='elementos'>
-			<ol>
-			{% for elemento in datos %}
-					<li><a class='docu' href='detalle/{{elemento.pk}}'>{{elemento.codigo}} - Fecha: {{elemento.fentrega}}</a></li>
-			{% empty %}
-				<p>No hay trabajos registrados</p>			
-			{% endfor %}
-			</ol>
+			<table id='tabular'>
+				<caption>Lista de trabajos recibidos</caption>
+				<thead>
+					<tr>
+						<th>Tipo</th><th>Código</th><th>Fecha de Entrega</th>
+					</tr>
+				</thead>
+				<tfoot>
+					<tr>
+						<th>Tipo</th><th>Código</th><th>Fecha de Entrega</th>
+					</tr>
+				</tfoot>
+				<tbody>
+				{% for elemento in datos %}
+				<tr>
+					<td><a href='detalle/{{elemento.pk}}'>{{elemento.tdocumento}}</a></td>
+					<td>{{elemento.codigo}}</td>
+					<td>{{elemento.fentrega|date:"SHORT_DATE_FORMAT"}}</td>
+					</a>
+				</tr>
+				{% empty %}
+					<p>No hay trabajos registrados</p>			
+				{% endfor %}
+				</tbody>
+			</table>
 		</div>
 	</div>
 {% endblock %}
