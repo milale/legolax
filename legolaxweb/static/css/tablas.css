@@ -6,7 +6,7 @@
 #tabular tbody { font-size:0.8em; background:#ccc; text-transform:uppercase;}
 #tabular tbody .entrada { background:#63E963; }
 #tabular tbody .salida { background:#F9D77D; }
-#tabular tbody tr td a {color:#4D4D4D;}
+#tabular tbody tr td a { display:block; color:#4D4D4D; text-decoration:none;}
 #tabular tbody tr td a:hover {color:#ffffff;}
 
 #tabular tr:hover{background:#000 !important; color:white;}

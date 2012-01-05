@@ -27,8 +27,8 @@
 				{% for elemento in datos %}
 				<tr>
 					<td><a href='detalle/{{elemento.pk}}'>{{elemento.tdocumento}}</a></td>
-					<td>{{elemento.codigo}}</td>
-					<td>{{elemento.fentrega|date:"SHORT_DATE_FORMAT"}}</td>
+					<td><a href='detalle/{{elemento.pk}}'>{{elemento.codigo}}</a></td>
+					<td><a href='detalle/{{elemento.pk}}'>{{elemento.fentrega|date:"SHORT_DATE_FORMAT"}}</a></td>
 					</a>
 				</tr>
 				{% empty %}
