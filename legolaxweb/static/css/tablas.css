@@ -10,6 +10,8 @@
 #tabular tbody tr td a:hover {color:#ffffff;}
 
 #tabular tr:hover{background:#000 !important; color:white;}
+#tabular th {background:#000; color:#fff; padding:3px;}
+#tabular td {padding:3px;}
 
 .resultado { font-size:1.5em; letter-spacing:-1px; }
 .resultado span {color:#FF0000; text-transform:uppercase;}

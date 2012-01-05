@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load humanize %}
+{% block css %}<link href='/static/css/tablas.css' rel='stylesheet'>{% endblock %}
 {% block titulo %}Detalle: {{dato.codigo}}{% endblock %}
 {% block principal %}
 	<div id='principal'>
@@ -10,18 +11,18 @@
 			</p>
 		</div>
 		<div id='elementos'>
-			<ul class='detalleElemento'>
-				<li><strong>Tipo de documento: </strong><em>{{dato.tdocumento|default:'No registrado'}}</em></li>
-				<li><strong>Código: </strong><em>{{dato.codigo}}</em></li>
-				<li><strong>Interesado: </strong><em>{{dato.interesado|default:'No registrado'}}</em></li>
-				<li><strong>Equipo asignado: </strong><em>{{dato.equipo|default:'No registrado'}}</em></li>
-				<li><strong>Asunto: </strong><em>{{dato.asunto}}</em></li>
-				<li><strong>Tiraje: </strong><em>{{dato.tiraje|default:'No registrado'}}</em></li>
-				<li><strong>Fecha de entrega: </strong><em>{{dato.fentrega}}</em></li>
-				<li><strong>Contometro: </strong><em>{{dato.contometro|default:'No registrado'}}</em></li>
-				<li><strong>Costo: </strong><em>S/. {{dato.costo|default:'No registrado'|intcomma}}</em></li>
-				<li><strong>Número de Expediente: </strong><em>{{dato.nexpediente|default:'No registrado'}}</em></li>
-			</ul>
+			<table id='tabular'>
+				<tr><th>Tipo de documento</th><td>{{dato.tdocumento|default:'No registrado'}}</td></tr>
+				<tr><th>Código</th><td>{{dato.codigo|default:'No registrado'}}</td></tr>
+				<tr><th>Interesado</th><td>{{dato.interesado}}</td></tr>
+				<tr><th>Equipo</th><td>{{dato.equipo}}</td></tr>
+				<tr><th>Asunto</th><td>{{dato.asunto|default:'No registrado'}}</td></tr>
+				<tr><th>Tiraje</th><td>{{dato.tiraje|default:'No registrado'}}</td></tr>
+				<tr><th>Fecha de registro</th><td>{{dato.fentrega}}</td></tr>
+				<tr><th>Contómetro</th><td>{{dato.contometro|default:'No registrado'}}</td></tr>
+				<tr><th>Costo</th><td>{{dato.costo|intcomma}}</td></tr>
+				<tr><th>Número de expediente</th><td>{{dato.nexpediente|default:'No registrado'}}</td></tr>
+			</table>
 		</div>
 	</div>
 {% endblock %}
