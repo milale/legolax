@@ -177,7 +177,8 @@ def documentoseditar(request, documento_id):
 @login_required(login_url='/ingreso/')
 def articulos(request):
 	datos = Articulo.objects.all().order_by('nombre')
-	return render_to_response('articulos.html',{'datos':datos})
+	total = datos.count()
+	return render_to_response('articulos.html',{'datos':datos,'total':total})
 
 @login_required(login_url='/ingreso/')
 def articulosdetalle(request, articulo_id):

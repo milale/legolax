@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{% load humanize %}
+{% block css %}<link href='/static/css/tablas.css' rel='stylesheet'>{% endblock %}
 {% block titulo %}Articulos {% endblock %}
 {% block principal %}
 	<div id='principal'>
@@ -10,13 +12,29 @@
 			</p>
 		</div>
 		<div id='elementos'>
-			<ol>
-			{% for elemento in datos %}
-					<li><a class='docu' href='detalle/{{elemento.pk}}'>{{elemento.nombre}}, Saldo actual: {{elemento.sactual}}</a></li>
-			{% empty %}
-				<li>No hay elementos disponibles</li>
-			{% endfor %}
-			</ol>
+			<table id='tabular'>
+				<caption><span class='total'>{{total}}</span> artículos registrados en almacén.</caption>
+				<thead>
+					<tr>
+						<th>Nombre del artículo</th><th>Saldo actual</th>
+					</tr>
+				</thead>
+				<tfoot>
+					<tr>
+						<th>Nombre del artículo</th><th>Saldo actual</th>
+					</tr>
+				</tfoot>
+				<tbody>
+				{% for elemento in datos %}
+					<tr>
+						<td><a class='docu' href='detalle/{{elemento.pk}}'>{{elemento.nombre}}</a></td>
+						<td><a class='docu' href='detalle/{{elemento.pk}}'>{{elemento.sactual|intcomma}}</a></td>
+					</tr>
+				{% empty %}
+					<p>No hay elementos disponibles</p>
+				{% endfor %}
+				</tbody>
+			</table>
 		</div>
 	</div>
 {% endblock %}
