@@ -139,6 +139,11 @@ def documentosregistrar(request):
 	interesados = Interesado.objects.all()
 	if request.method == 'POST':
 		formulario = DocumentoForm(request.POST)
+		posteables = request.POST.copy()
+		interesadoform = posteables['interesado']
+		interesadoid = Interesado.objects.get(nombre__exact=interesadoform)
+		posteables['interesado'] = interesadoid.id
+		formulario = DocumentoForm(posteables)
 		if formulario.is_valid():
 			formulario.save()
 			return HttpResponseRedirect('/produccion/trabajos/')
@@ -156,7 +161,11 @@ def documentoseditar(request, documento_id):
 	interesados = Interesado.objects.all()
 	dato = get_object_or_404(Documento, pk=documento_id)
 	if request.method == 'POST':
-		formulario = DocumentoForm(request.POST, instance=dato)
+		posteables = request.POST.copy()
+		interesadoform = posteables['interesado']
+		interesadoid = Interesado.objects.get(nombre__exact=interesadoform)
+		posteables['interesado'] = interesadoid.id
+		formulario = DocumentoForm(posteables, instance=dato)
 		if formulario.is_valid():
 			formulario.save()
 			redireccion = '/produccion/trabajos/detalle/'+str(documento_id)
