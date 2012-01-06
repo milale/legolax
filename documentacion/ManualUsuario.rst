@@ -5,13 +5,33 @@
 Sistema de registro de Producción y Almacén | Oficina de Publicaciones e Impresiones | UNCP
 ===========================================================================================
 
+**¿Cómo ingreso al sistema?**
+
+En el escritorio se debe dar click en el ícono de SICGRAF - UNCP para iniciar la aplicación
+
+**¿Cómo inicio sesión?**
+
+La jefa de la dependencia ya cuenta con el nombre de usuario y la constraseña respectivas para iniciar el sistema y se da click en el botón Ingresar.
+
 **¿Para qué son esos dos botones que aparecen en la página de inicio?**
 
-Al iniciar nuestra aplicación encontraremos un botón de Registro de producción y el otro de Registro de almacén; el primero de ellos ya se encuentra desplegado predeterminadamente por ser el que más se usa diariamente en la oficina, al presionar en cualquiera de los dos se obtendrá una lista de opciones que permitirán realizar el registro.
+Al iniciar la aplicación encontraremos un botón de Registro de Producción y el otro de Registro de Almacén; el primero de ellos ya se encuentra desplegado predeterminadamente por ser del que más se hace uso diariamente en la oficina, al presionar en cualquiera de los dos botones se obtendrá una lista de opciones que permitirán realizar el registro requerido.
 
 **¿Qué opciones aparecen al presionar en el botón de Registro de Producción?**
 
-Al desplegarse el botón de Registro de Producción encontraremos cuatro opciones: Equipos, Interesados, Tipo de documentos y Trabajos.
+Al desplegarse el botón de Registro de Producción encontraremos siete opciones:
+
+- Trabajos
+- Equipos
+- Interesados
+- Tipo de documentos
+- Reportes de Trabajos por año
+- Reportes de trabajos por periodos
+- Reportes de trabajos por periodos y por equipos
+
+**¿Qué encontramos en la opción Trabajos?**
+
+Al dar click a esta opción encontraremos la lista completa de trabajos realizados hasta el momento (desde inicios del año 2010), se encuentran enumerados y ordenados descendentemente por fecha; antes del listado encontramos dos opciones: Volver al inicio y Registrar un trabajo nuevo.
 
 **¿Qué encontramos en la opción Equipos?**
 
@@ -25,9 +45,6 @@ Al ingresar a Interesados, encontraremos la lista de las personas interesadas qu
 
 Al ingresar a Tipo de documentos encontraremos la lista de los tipos de documentos que se tengan registrados en la base de datos y también dos opciones, una que nos permitirá regresar al inicio de la aplicación y la otra opción que nos permitirá agregar Tipos de documentos nuevos, solo debemos escribir el nombre y confirmarlo, si este no se repite se añadira al listado.
 
-**¿Qué encontramos en la opción Trabajos?**
-
-Al desplegar esta opción encontraremos el listado de trabajos que ya se hayan agregado ordenados por fecha, aquí encontraremos dos opciones una que nos permitirá volver al inicio y la segunda que nos permitirá hacer el registro de producción, añadiendo nuevos trabajos, en esta opción deberemos seleccionar el tipo de documento, el código del trabajo, seleccionar a la persona interesada, el equip que se utilizará para realizar determinado trabajo, el asunto describiendo de que trata el trabajo, el tiraje describiendo la cantidad de material que se ha usado para realizar el trabajo, seleccionar la fecha de entrega en un calendario que se habilita al seleccionar ese campo, el contómetro indicado en las máquinas, el costo y el número de expediente; es necesario recalcar que en esta sección el Tipo de documento, el Código, el Equipo, el Interesado y la Fecha de entrega son campos obligatorios.
 
 **¿Qué opciones aparecen al presionar en el botón Registro de Almacén?**
 

@@ -20,3 +20,7 @@ Todos los campos de los formularios se encuentran validados, cuando el usuario s
 
 **¿Antes de ingresar algún registro se pide confirmar o cancelar la acción?**
 El usuario antes de hacer algún registro si se le preguntará si está seguro o no de modificar algo.
+
+.. image:: kernel.jpg
+	:height: 1200px
+	:width: 800 px
