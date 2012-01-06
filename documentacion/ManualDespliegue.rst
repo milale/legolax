@@ -214,5 +214,124 @@ y Restart para usarlos si es necesario.
 **SmartGit**
 
 Ahora instalaremos SmartGit, este es un cliente gráfico para manejar git, el sistema controlador de versiones que se usó para el desarrollo, lo descargaremos de la página
+http://www.syntevo.com/smartgit/download.html, al descargar el archivo comprimido, le daremos click al archivo setup
 
+.. image:: images/smartgit/smartgit0.png
+	:height: 800px
+	:width: 1000 px
+	
+Obtendremos la ventana de inicio de instalación y daremos click a Next >
 
+.. image:: images/smartgit/smartgit1.png
+	:height: 800px
+	:width: 1000 px
+	
+A continuación seleccionaremos la ubicación en la que lo instalaremos, en este caso dejaremos la ruta por defecto 
+
+.. image:: images/smartgit/smartgit2.png
+	:height: 800px
+	:width: 1000 px
+	
+Ahora seleccionaremos el folder del menú de inicio que será el lugar para iniciar Smartgit
+
+.. image:: images/smartgit/smartgit3.png
+	:height: 800px
+	:width: 1000 px
+	
+Al dar click en Next> encontraremos algunas opciones adicionales
+
+.. image:: images/smartgit/smartgit4.png
+	:height: 800px
+	:width: 1000 px
+
+En la siguiente ventana veremos si todo ya está listo para empezar con la instalación y damos click en la opción Install
+
+.. image:: images/smartgit/smartgit5.png
+	:height: 800px
+	:width: 1000 px
+	
+Aquí podremos observar como la instalación está en progreso
+
+.. image:: images/smartgit/smartgit6.png
+	:height: 800px
+	:width: 1000 px
+	
+Y finalmente damos click en Finish lo que nos indicará que habremos terminado con la instalación
+
+.. image:: images/smartgit/smartgit7.png
+	:height: 800px
+	:width: 1000 px
+	
+En la siguiente imagen podremos darnos cuenta como Smartgit está funcionando correctamente en la pc de la oficina y desde este se está
+administrando el proyecto.
+
+.. image:: images/smartgit/smartgit8.JPG
+	:height: 800px
+	:width: 1000 px
+	
+**Notepad++**
+
+Es también importante contar con un editor de textos que nos permita editar nuestros cambios por ejemplo, Notepad++ es una herramienta
+libre con licencia GPL que nos permitirá editar lo que necesitemos, una característica importante es que soporta muchos lenguajes de 
+programación. Descargaremos la última versión a la fecha desde este link http://notepad-plus-plus.org/download/v5.9.8.html
+
+Al dar click en el archivo ejecutable obtendremos la siguiente ventanita que nos pide indicar el idioma, seleccionaremos español
+
+.. image:: images/notepad++/1.png
+	:height: 800px
+	:width: 1000 px
+
+Luego nos aparecerá la bienvenida al inicio de instalación de Notepad++
+
+.. image:: images/notepad++/2.png
+	:height: 800px
+	:width: 1000 px
+	
+Aceptamos la licencia y le damos click en Siguiente
+
+.. image:: images/notepad++/3.png
+	:height: 800px
+	:width: 1000 px
+	
+A continuación elegiremos el lugar de la instalación, en este caso se quedará la ruta por defecto
+
+.. image:: images/notepad++/4.png
+	:height: 800px
+	:width: 1000 px
+	
+Luego elegiremos los componentes que deseamos que tenga nuestra instalación
+
+.. image:: images/notepad++/6.png
+	:height: 800px
+	:width: 1000 px
+
+Y algunos otros detalles 
+
+.. image:: images/notepad++/7.png
+	:height: 800px
+	:width: 1000 px
+
+Al darle click en instalar, veremos que el proceso de instalación es rápido
+
+.. image:: images/notepad++/8.png
+	:height: 800px
+	:width: 1000 px
+	
+Al dar click en Terminar el asistente de configuración nos indicará que hemos finalizado correctamente con la instalación
+
+.. image:: images/notepad++/9.png
+	:height: 800px
+	:width: 1000 px
+	
+Finalmente Notepad++ ya estará listo 
+
+.. image:: images/notepad++/10.png
+	:height: 800px
+	:width: 1000 px
+	
+Podemos ver como en la pc de la oficina nos permite editar los archivos que necesitemos (en este ejemplo es el archivo de
+settings.py) y podemos notar lo interesante que es este editor de textos.
+
+.. image:: images/notepad++/11.JPG
+	:height: 800px
+	:width: 1000 px
