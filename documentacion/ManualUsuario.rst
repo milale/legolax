@@ -9,7 +9,7 @@ Sistema de registro de Producción y Almacén | Oficina de Publicaciones e Impre
 
 En el escritorio se debe dar click en el ícono de SICGRAF - UNCP para iniciar la aplicación (el ícono con el logo de la UNCP)
 
-.. image:: images/app/app0.png
+.. image:: images/app/app0.jpeg
 	:height: 1000px
 	:width: 1600 px
 
@@ -65,10 +65,7 @@ Al dar click obtendremos el siguiente formulario con todos los datos que se nece
 
 - Tipo de documento: lo seleccionaremos de la lista deplegable (este campo es obligatorio)
 - Código: Se escribe en caso sea necesario (por ejemplo: Oficio n° 123-UNCP)
-- Interesado: En este campo indicaremos la persona que está solicitando la realización del trabajo, 
-al empezar a digitar el nombre la lista se irá reduciendo en opciones para así poder seleccionar a la
-persona que estamos buscando (este campo es obligatorio). Por ejemplo si empezamos a digitar "ter" en este campo
-la lista total de interesados se empezará a reducir solo a los que coincidan con lo que se está digitando
+- Interesado: En este campo indicaremos la persona que está solicitando la realización del trabajo, al empezar a digitar el nombre la lista se irá reduciendo en opciones para así poder seleccionar a la persona que estamos buscando (este campo es obligatorio). Por ejemplo si empezamos a digitar "ter" en este campo la lista total de interesados se empezará a reducir solo a los que coincidan con lo que se está digitando
 
 .. image:: images/app/app44.png
 	:height: 1000px
@@ -84,8 +81,7 @@ la lista total de interesados se empezará a reducir solo a los que coincidan co
 Continuando, también es necesario:
 
 - Tiraje: Aquí se indicará lo necesario (materiales) para realizar el trabajo o mencionar alguna característica técnica especial
-- Fecha de entrega: En este al hacer clic aparecerá un calendario en el cual se podra seleccionar la fecha o también escribirla
-(como podemos notarlo en la siguiente imagen)
+- Fecha de entrega: En este al hacer clic aparecerá un calendario en el cual se podra seleccionar la fecha o también escribirla (como podemos notarlo en la siguiente imagen)
 
 .. image:: images/app/app46.png
 	:height: 1000px
