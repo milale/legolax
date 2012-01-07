@@ -1,7 +1,0 @@
-Lista de requerimientos
-
-- Digitalización de datos, ya que todo se encuentra en registros de producción manuales.
-- Aplicación que permita realizar estos ingresos de trabajos realizados.
-- Al ya contar con una base de datos, poder tener un informe el cual indique todo lo 
-  necesario para poder presentar un informe a fin de año.
-- 

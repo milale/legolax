@@ -264,12 +264,99 @@ Y este es el final del Reporte detallado de producción, cabe resaltar que tanto
 
 Al desplegarse el botón de Registro de Almacén encontraremos dos opciones: Entrada | Salida y Artículos.
 
+.. image:: images/app/app31.png
+	:height: 1000px
+	:width: 1600 px
+	
 **¿Qué encontramos en la opción Entrada | Salida?**
 
-Al ingresar a Entrada | Salida, encontraremos la lista de las entradas o salidas registradas en la base de datos y también dos opciones, una que nos permitirá regresar al inicio de la aplicación y la otra opción que nos permitirá agregar una entrada o salida nueva, deberemos indicar de que artículo se trata, el detalle (si la entrada o salida lo tuviera), la cantidad, la fecha de registro, el Tipo, el Precio Unitario y el Precio Total; es necesario indicar que en esta sección los campos de artículo, cantidad, fecha de registro y tipo son obligatorios.
+.. image:: images/app/app32.png
+	:height: 1000px
+	:width: 1600 px
+	
+Al ingresar a Entrada | Salida, encontraremos la lista de las entradas o salidas registradas en la base de datos (las salidas se encontrarán de color crema y las entradas de color verde) 
 
+.. image:: images/app/app33.png
+	:height: 1000px
+	:width: 1600 px
+	
+y también encontraremos tres opciones, una que nos permitirá regresar al inicio de la aplicación, la otra opción que nos permitirá ver la lista de Artículos, con la cantidad total indicada en la parte superior y la
+tercera opción que encontramos es la de registrar una nueva entrada o salida, el formulario que se debe llenar es el siguiente:
+
+- Artículo: Seleccionar del listado el artículo del cual se registrará la entrada o salida.
+- Detalle: Se escribirá el detalle de esa entrada o salida (para que trabajo se realizo, las especificaciones técnicas de los trabajos)
+- Cantidad
+- Fecha de registro
+- Tipo: Aquí seleccionaremos si se trata de una entrada o una salida
+- Precio Unitario: Para el caso de las entradas cuando se registre alguna pecosa
+- Precio Total: Para el caso de las entradas cuando se registre alguna pecosa
+
+Cabe mencionar que al confirmar el registro si alguno de los campos obligatorios no fue llenado, aparecerá un mensaje de aviso de que el campo es obligatorio.
+
+.. image:: images/app/app37.png
+	:height: 1000px
+	:width: 1600 px
+	
 **¿Qué encontramos en la opción Artículos?** 
 
-Al ingresar a Artículos, encontraremos la lista de los articulos actuales en el almacén y al lado el saldo actual que se tiene de estos, encontraremos también dos opciones, una que nos permitirá regresar al inicio de la aplicación y la otra opción que nos permitirá agregar un artículo nuevo, deberemos indicar el nombre del artículo, la marca, el código, las características, la unidad de medida y el saldo actual; es necesario indicar que en esta sección los campos nombre y saldo actual son obligatorios.
+Al ingresar a Artículos, encontraremos la lista de los articulos actuales en el almacén y al lado el saldo actual que se tiene de estos, encontraremos también dos opciones, una que nos permitirá regresar al inicio de la aplicación y la otra opción que nos permitirá agregar un artículo nuevo.
 
+.. image:: images/app/app34.png
+	:height: 1000px
+	:width: 1600 px
+	
+Y este es el final de la lista
 
+.. image:: images/app/app35.png
+	:height: 1000px
+	:width: 1600 px
+
+Al momento de registrar un artículo nuevo deberemos indicar el nombre del artículo, la marca, el código, las características, la unidad de medida y el saldo actual;
+es necesario indicar que en esta sección los campos nombre y saldo actual son obligatorios.
+
+.. image:: images/app/app36.png
+	:height: 1000px
+	:width: 1600 px
+
+**¿Cómo podemos editar los datos de un artículo ya registrado?**
+
+Para poder hacer esto, nos dirigimos al botón de Registro de Almacén, a la opción de Artículos y aquí al obtener el listado, 
+podemos dar click a cualquier artículo y veremos lo siguiente (Para el ejemplo le di click en un artículo cualquiera)
+
+.. image:: images/app/app38.png
+	:height: 1000px
+	:width: 1600 px
+	
+Notamos que al dar click en cualquier artículo obtenemos las características de este y veremos que hay una opción para Editar los datos de este artículo,
+al darle click aquí volvemos al formulario que teniamos inicialmente, aquí podremos modificar lo que se desea y confirmarlo.
+
+.. image:: images/app/app39.png
+	:height: 1000px
+	:width: 1600 px
+	
+**¿Podemos modificar los registros de entrada|salida?**
+
+No, por requerimientos del cliente se tomó la decisión de que estos no puedan ser modificados para evitar cualquier tipo de problemas respecto a la malversación
+de los materiales que se tengan en el almacén de la dependencia.
+
+**¿Cómo salimos del sistema?** 
+
+.. image:: images/app/app2.png
+	:height: 1000px
+	:width: 1600 px
+
+En la parte superior derecha damos clic a Cerrar Sesión y obtendremos esta ventana de salida.
+
+.. image:: images/app/app40.png
+	:height: 1000px
+	:width: 1600 px
+	
+Es importante mencionar que si el usuario olvida cerrar su sesión pero cierra el navegador, el sistema se cerrará automáticamente.
+	
+**¿Qué pasa si alguien ajeno desea ingresar al sistema?**
+
+Si una persona desea entrar al sistema colocando cualquier usuario y cualquier contraseña, obtendrá una venta que le avisará que los datos son incorrectos y no podrá ingresar.
+
+.. image:: images/app/app41.png
+	:height: 1000px
+	:width: 1600 px
