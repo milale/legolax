@@ -141,7 +141,10 @@ def documentosregistrar(request):
 		formulario = DocumentoForm(request.POST)
 		posteables = request.POST.copy()
 		interesadoform = posteables['interesado']
-		interesadoid = Interesado.objects.get(nombre__exact=interesadoform)
+		try:
+			interesadoid = Interesado.objects.get(nombre__exact=interesadoform)
+		except:
+			return render_to_response('nointeresado.html')
 		posteables['interesado'] = interesadoid.id
 		formulario = DocumentoForm(posteables)
 		if formulario.is_valid():
@@ -163,7 +166,10 @@ def documentoseditar(request, documento_id):
 	if request.method == 'POST':
 		posteables = request.POST.copy()
 		interesadoform = posteables['interesado']
-		interesadoid = Interesado.objects.get(nombre__exact=interesadoform)
+		try:
+			interesadoid = Interesado.objects.get(nombre__exact=interesadoform)
+		except:
+			return render_to_response('nointeresado.html')
 		posteables['interesado'] = interesadoid.id
 		formulario = DocumentoForm(posteables, instance=dato)
 		if formulario.is_valid():
