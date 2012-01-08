@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load humanize %}
+{% block css %}<link href='/static/css/tablas.css' rel='stylesheet'>{% endblock %}
 {% block titulo %}Detalle: {{dato.nombre}}{% endblock %}
 {% block principal %}
 	<div id='principal'>
@@ -10,14 +11,14 @@
 			</p>
 		</div>
 		<div id='elementos'>
-			<ul class='detalleElemento'>
-				<li><strong>Nombre: </strong><em>{{dato.nombre}}</em></li>
-				<li><strong>Marca: </strong><em>{{dato.marca|default:'No registrada'}}</em></li>
-				<li><strong>Código: </strong><em>{{dato.codigo|default:'No registrado'}}</em></li>
-				<li><strong>Característica: </strong><em>{{dato.caracteristica|default:'No registrada'}}</em></li>
-				<li><strong>Unidad de medida: </strong><em>{{dato.umedida|default:'No registrada'}}</em></li>
-				<li><strong>Saldo Actual: </strong><em>{{dato.sactual|intcomma}}</em></li>
-			</ul>
+			<table id='tabular'>
+				<tr><th>Nombre</th><td>{{dato.nombre}}</td></tr>
+				<tr><th>Marca</th><td>{{dato.marca|default:'No registrada'}}</td></tr>
+				<tr><th>Código</th><td>{{dato.codigo|default:'No registrado'}}</td></tr>
+				<tr><th>Características</th><td>{{dato.caracteristica|default:'No registradas'}}</td></tr>
+				<tr><th>Unidad de medida</th><td>{{dato.umedida|default:'No registrada'}}</td></tr>
+				<tr><th>Saldo Actual</th><td>{{dato.sactual|intcomma}}</td></tr>
+			</table>
 		</div>
 	</div>
 {% endblock %}
