@@ -335,3 +335,78 @@ settings.py) y podemos notar lo interesante que es este editor de textos.
 .. image:: images/notepad++/11.JPG
 	:height: 800px
 	:width: 1000 px
+
+**Dropbox**
+
+Usaremos esta herramienta para poder obtener un backup del archivo de la base de datos que registrará todos los datos que se 
+ingresen al día.
+
+Para instalarlo, debemos descargarlo de este link https://www.dropbox.com/, al obtener el archivo, lo ejecutaremos
+
+.. image:: images/dropbox/1.png
+	:height: 800px
+	:width: 1000 px
+	
+Obtendremos la ventana de bienvenida para iniciar la instalación
+
+.. image:: images/dropbox/2.png
+	:height: 800px
+	:width: 1000 px
+	
+Veremos el proceso de instalación
+
+.. image:: images/dropbox/3.png
+	:height: 800px
+	:width: 1000 px
+	
+A continuación deberemos indicar si contamos o no con una cuenta en Dropbox, en esta ocasión crearemos una nueva
+
+.. image:: images/dropbox/4.png
+	:height: 800px
+	:width: 1000 px
+	
+En la siguiente ventana completaremos los datos que se nos solicitan y de esta manera nuestra cuenta estará creada
+
+.. image:: images/dropbox/5.png
+	:height: 800px
+	:width: 1000 px
+	
+Nosotros podríamos escoger que la cuenta de Dropbox obtenga más especio que 2 GB que es el espacio que se nos da para 
+obtenerlo gratuitamente, en este caso eligiremos obtener una cuenta free.
+
+.. image:: images/dropbox/6.png
+	:height: 800px
+	:width: 1000 px
+	
+Nos pide escoger el tipo de configuración, seleccionaremos la personalizada
+
+.. image:: images/dropbox/7.png
+	:height: 800px
+	:width: 1000 px
+	
+En esta parte tenemos la capacidad de poder elegir en que ruta instalaremos nuestro Dropbox
+
+.. image:: images/dropbox/8.png
+	:height: 800px
+	:width: 1000 px
+	
+También seleccionaremos los detalles de la sincronización
+
+.. image:: images/dropbox/9.png
+	:height: 800px
+	:width: 1000 px
+	
+Dropbox nos da la bienvenida y nos da la opción de seguir un recorrido en el cual dará información importante, para verlos seguiremos
+dando click en Siguiente para terminar de leer esta importante información
+
+.. image:: images/dropbox/10.png
+	:height: 800px
+	:width: 1000 px
+	
+La última pantalla sería esta, daremos click en Terminar y la instalación estará lista.
+
+.. image:: images/dropbox/11.png
+	:height: 800px
+	:width: 1000 px
+	
+Podremos ver como todo está ahora sincronizado y correctamente instalado
