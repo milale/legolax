@@ -1,0 +1,10 @@
+body { font-size:12px; font-family:sans-serif;} 
+#encabezado h1 { display:none; }
+#encabezado h2 { margin-left:100px; float:right;}
+#encabezado img { width:50px;}
+#navigation, #usuariobar { display:none;} 
+table { text-align:center; width:100%;}
+table caption { font-size:20px;}
+tfoot { display:none;}
+th {border:1px dotted #000; font-size:8px; background:transparent;} 
+td {border:1px solid #000;}
