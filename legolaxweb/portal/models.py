@@ -39,13 +39,13 @@ class TipoDocumentoForm(ModelForm):
 
 class Documento(models.Model):
 	tdocumento = models.ForeignKey(TipoDocumento, verbose_name='Tipo de documento')
-	codigo = models.CharField(max_length=200,blank=True)
+	codigo = models.CharField(max_length=200,blank=True,verbose_name='Código')
 	interesado = models.ForeignKey(Interesado)
 	equipo = models.ForeignKey(Equipo)
 	asunto = models.TextField(blank=True)
 	tiraje = models.TextField(blank=True)
 	fentrega = models.DateField(verbose_name='Fecha de Entrega',default=datetime.date.today)
-	contometro = models.CharField(max_length=50, blank=True)
+	contometro = models.CharField(max_length=50, blank=True,verbose_name='Contómetro')
 	costo = models.DecimalField(max_digits=7,decimal_places=2,default=0)
 	nexpediente = models.CharField(max_length=200, blank=True, verbose_name='Número de expediente')
 	
@@ -70,8 +70,8 @@ class DocumentoForm(ModelForm):
 class Articulo(models.Model):
 	nombre = models.CharField(max_length=250,unique=True)
 	marca = models.CharField(max_length=50,blank=True)
-	codigo = models.CharField(max_length=50,blank=True)
-	caracteristica = models.TextField(blank=True)
+	codigo = models.CharField(max_length=50,blank=True,verbose_name='Código')
+	caracteristica = models.TextField(blank=True,verbose_name='Característica')
 	umedida = models.CharField(max_length=50,verbose_name="Unidad de medida",blank=True)
 	sactual = models.DecimalField(max_digits=8,decimal_places=3,verbose_name="Saldo actual",default=0)
 	
@@ -83,7 +83,7 @@ class ArticuloForm(ModelForm):
 		model = Articulo
 
 class RegistroArticulo(models.Model):
-	articulo = models.ForeignKey(Articulo)
+	articulo = models.ForeignKey(Articulo,verbose_name='Artículo')
 	detalle = models.TextField(blank=True)
 	cantidad = models.DecimalField(max_digits=8,decimal_places=3)
 	fregistro = models.DateField(verbose_name='Fecha de registro',default=datetime.date.today)
