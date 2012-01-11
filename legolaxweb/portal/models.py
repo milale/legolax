@@ -52,12 +52,20 @@ class Documento(models.Model):
 	def __unicode__(self):
 		return str(self.fentrega) + " " + self.codigo
 
+class InteresadoField(forms.CharField):
+	def clean(self, value):
+		if not value:
+			raise forms.ValidationError('Este campo es obligatorio')
+		try:
+			interesadoid = Interesado.objects.get(nombre__exact=value)
+			return interesadoid
+		except:
+			raise forms.ValidationError('No existe el interesado')
+
 class DocumentoForm(ModelForm):
+	interesado = InteresadoField()
 	class Meta:
 		model = Documento
-		widgets = {
-			'interesado':TextInput(attrs={'size':200,'title': 'Interesado',}),
-		}
 
 class Articulo(models.Model):
 	nombre = models.CharField(max_length=250,unique=True)
