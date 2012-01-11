@@ -20,6 +20,21 @@
 				<a class='naveurl' href='/almacen/articulos/registro/' >Volver a la lista de entradas y salidas</a>
 			</p>
 		</div>
+		<script>
+			$(function(){
+				var todosinteresados = [
+					{% for articulo in articulos %}
+					'{{articulo.nombre|safe}}',
+					{% endfor %}
+				];
+				$("#articulo").autocomplete({
+					source:todosinteresados
+				});
+				$("#id_articulo").autocomplete({
+					source:todosinteresados
+				});
+			});
+		</script>
 		<div id='elementos'>
 			<p class='instruccion'>* Asegurese que los datos que están registrando sean correctos</p>
 			<form id='formulario' method='post' action=''>{% csrf_token %}

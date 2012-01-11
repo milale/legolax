@@ -96,7 +96,18 @@ class RegistroArticulo(models.Model):
 	def __unicode__(self):
 		return self.articulo.nombre + " " + str(self.fregistro) + " "  + self.tipo + " " + str(self.cantidad) 
 
+class ArticuloField(forms.CharField):
+	def clean(self, value):
+		if not value:
+			raise forms.ValidationError('Este campo es obligatorio')
+		try:
+			articuloid = Articulo.objects.get(nombre__exact=value)
+			return articuloid
+		except:
+			raise forms.ValidationError('No existe el artículo')
+
 class RegistroArticuloForm(ModelForm):
+	articulo = ArticuloField()
 	class Meta:
 		model = RegistroArticulo
 		exclude = ('usuario',)

@@ -208,6 +208,7 @@ def registros(request):
 
 @login_required(login_url='/ingreso/')
 def registrosnuevo(request):
+	articulos = Articulo.objects.all()
 	if request.method == 'POST':
 		formulario = RegistroArticuloForm(request.POST)
 		if formulario.is_valid():
@@ -241,7 +242,7 @@ def registrosnuevo(request):
 			return HttpResponseRedirect('/almacen/articulos/registro/')
 	else:
 		formulario = RegistroArticuloForm(auto_id=True)
-	return render_to_response('registroarticuloform.html',{'formulario':formulario},context_instance=RequestContext(request))
+	return render_to_response('registroarticuloform.html',{'formulario':formulario,'articulos':articulos},context_instance=RequestContext(request))
 
 @login_required(login_url='/ingreso/')
 def raprodform(request):
