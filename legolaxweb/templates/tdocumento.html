@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% block css %}<link href='/static/css/tablas.css' rel='stylesheet'>{% endblock %}
 {% block titulo %}Tipos de documento {% endblock %}
 {% block principal %}
 	<div id='principal'>
@@ -9,13 +10,14 @@
 			</p>
 		</div>
 		<div id='elementos'>
-			<ol>
-			{% for elemento in datos %}
-					<li><a href='editar/{{elemento.pk}}'>{{elemento.tipo}}</a></li>
+			<table id='tabular'>
+				<tr><th>Tipos de documentos</th></tr>
+				{% for elemento in datos %}
+					<tr><td><a href='editar/{{elemento.pk}}'>{{elemento.tipo}}</a></td></tr>
 			{% empty %}
-				<li>No hay tipos de documentos disponibles</li>			
+				<tr><td>No hay tipos de documentos disponibles</td></tr>
 			{% endfor %}
-			</ol>
+			</table>
 		</div>
 	</div>
 {% endblock %}

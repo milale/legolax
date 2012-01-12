@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block titulo %}Equipos {% endblock %}
+{% block css %}<link href='/static/css/tablas.css' rel='stylesheet'>{% endblock %}
 {% block principal %}
 	<div id='principal'>
 		<div id='navigation'>
@@ -9,13 +10,14 @@
 			</p>
 		</div>
 		<div id='elementos'>
-			<ol>
+			<table id='tabular'>
+			<tr><th>Equipos</th></tr>
 			{% for elemento in datos %}
-					<li><a href='editar/{{elemento.pk}}'>{{elemento.nombre}}</a></li>
+					<tr><td><a href='editar/{{elemento.pk}}'>{{elemento.nombre}}</td></tr>
 			{% empty %}
-				<li>No hay elementos disponibles</li>
+				<tr><td>No hay elementos disponibles</td></tr>
 			{% endfor %}
-			</ol>
+			</table>
 		</div>
 	</div>
 {% endblock %}
