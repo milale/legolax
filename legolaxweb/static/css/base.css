@@ -26,16 +26,7 @@ body { font-family:'Convergence',sans-serif; }
 
 #principal { text-align:center; margin:20px auto; width:960px; border:10px #fff solid; border-radius:10px; box-shadow:-3px -3px 20px #000; background:#F5F3E5;}
 #principal ul { margin:0 auto; text-align:center; width:462px; }
-#tab-Produccion {height:120px;}
-#tab-Produccion ul, #tab-Almacen ul, { list-style:none; }
-#tab-Produccion ul li , #tab-Almacen ul li { display:block; padding:10px; }
-/*
-#tab-Produccion ul li , #tab-Almacen ul li{ display:inline; }
-*/
-.main { margin:10px 0px; color:#FF8400 !important; font-weight:bold; }
-.main:hover { text-decoration:none; }
-.extra { margin:10px 0px; color:#FF8400 !important; font-weight:bold; }
-.extra:hover { text-decoration:none; }
+#tab-Produccion , #tab-Almacen {height:120px;}
 
 #navigation { text-align:left; font-family:sans-serif; }
 #navigation p a { color:#FF8400; font-weight:bold; padding:0px 10px;}
