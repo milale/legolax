@@ -176,7 +176,9 @@ def articulos(request):
 @login_required(login_url='/ingreso/')
 def articulosdetalle(request, articulo_id):
 	dato = get_object_or_404(Articulo, pk=articulo_id)
-	return render_to_response('articulosdetalle.html',{'dato':dato})
+	ultimaentrada = RegistroArticulo.objects.filter(articulo=dato,tipo='e').order_by('-fregistro')[0]
+	precioreferencial = ultimaentrada.preciouni
+	return render_to_response('articulosdetalle.html',{'dato':dato,'precioref':precioreferencial})
 
 @login_required(login_url='/ingreso/')
 def articuloseditar(request, articulo_id):
