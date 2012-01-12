@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 {% load humanize %}
-{% block css %}<link href='/static/css/tablas.css' rel='stylesheet'>{% endblock %}
+{% block css %}
+	<link href='/static/css/tablas.css' rel='stylesheet' media='screen'>
+		<link href='/static/css/imprimir.css' rel='stylesheet' media='print'>
+{% endblock %}
 {% block titulo %}Articulos {% endblock %}
 {% block principal %}
 	<div id='principal'>
@@ -13,7 +16,7 @@
 		</div>
 		<div id='elementos'>
 			<table id='tabular'>
-				<caption><span class='total'>{{total}}</span> artículos registrados en almacén.</caption>
+				<caption>Al {{fecha|date:"SHORT_DATE_FORMAT"}} existen <span class='total'>{{total}}</span> artículos registrados en almacén</caption>
 				<thead>
 					<tr>
 						<th>Nombre del artículo</th><th>Saldo actual</th>

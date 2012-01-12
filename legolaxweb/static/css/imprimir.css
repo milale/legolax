@@ -8,3 +8,4 @@ table caption { font-size:20px;}
 tfoot { display:none;}
 th {border:1px dotted #000; font-size:8px; background:transparent;} 
 td {border:1px solid #000; font-size:9px; padding:5px 0px; }
+td a { text-decoration:none; color:#000;}

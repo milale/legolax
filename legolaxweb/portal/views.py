@@ -16,6 +16,7 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.http import Http404
+import datetime
 
 @login_required(login_url='/ingreso/')
 def index(request):
@@ -169,7 +170,8 @@ def documentoseditar(request, documento_id):
 def articulos(request):
 	datos = Articulo.objects.all().order_by('nombre')
 	total = datos.count()
-	return render_to_response('articulos.html',{'datos':datos,'total':total})
+	fecha = datetime.date.today
+	return render_to_response('articulos.html',{'datos':datos,'total':total,'fecha':fecha})
 
 @login_required(login_url='/ingreso/')
 def articulosdetalle(request, articulo_id):
