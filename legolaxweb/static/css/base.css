@@ -26,6 +26,7 @@ body { font-family:'Convergence',sans-serif; }
 
 #principal { text-align:center; margin:20px auto; width:960px; border:10px #fff solid; border-radius:10px; box-shadow:-3px -3px 20px #000; background:#F5F3E5;}
 #principal ul { margin:0 auto; text-align:center; width:462px; }
+#tab-Produccion {height:120px;}
 #tab-Produccion ul, #tab-Almacen ul, { list-style:none; }
 #tab-Produccion ul li , #tab-Almacen ul li { display:block; padding:10px; }
 /*
@@ -62,5 +63,5 @@ body { font-family:'Convergence',sans-serif; }
 #formulario p label { padding:5px 0px; width:90px;}
 #formulario p select { width:385px; padding:5px; font-size:20px; margin:5px; font-family:sans-serif; overflow:hidden; background:url('../imagenes/select.jpg') no-repeat right #ddd; }
 
-#pie { padding:0px 5px; width:960px; margin:0 auto; text-align:right; color:#000; font-size:0.9em; letter-spacing:-1px;}
+#pie { padding:0px 5px; width:960px; margin:0 auto; text-align:right; color:#000; font-size:0.9em; letter-spacing:-1px; clear:both;}
 

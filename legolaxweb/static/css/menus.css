@@ -4,32 +4,38 @@
 #trabajosicon p a:hover { color:#FFA500; }
 #trabajosicon img:hover { background:url('../imagenes/trabajosfondo.png'); }
 
-#equiposicon { float:left; margin-left:15px;}
+#equiposicon { float:left; margin-left:5px;}
 #equiposicon p {text-align:center;}
 #equiposicon p a {text-decoration:none; color:#FF6A00; font-weight:bold; font-size:0.8em;}
 #equiposicon p a:hover { color:#FFA500; }
 #equiposicon img:hover { background:url('../imagenes/equiposfondo.png'); }
 
-#interesadosicon { float:left; margin-left:15px;}
+#interesadosicon { float:left; margin-left:5px;}
 #interesadosicon p {text-align:center;}
 #interesadosicon p a {text-decoration:none; color:#FF6A00; font-weight:bold; font-size:0.8em;}
 #interesadosicon p a:hover { color:#FFA500; }
 #interesadosicon img:hover { background:url('../imagenes/interesadosfondo.png'); }
 
-#tdocsicon { float:left; margin-left:15px;}
+#tdocsicon { float:left; margin-left:5px;}
 #tdocsicon p {text-align:center;}
 #tdocsicon p a {text-decoration:none; color:#FF6A00; font-weight:bold; font-size:0.7em;}
 #tdocsicon p a:hover { color:#FFA500; }
 #tdocsicon img:hover { background:url('../imagenes/tdocsfondo.png'); }
 
-#reportesaicon { float:left; margin-left:15px;}
+#reportesaicon { float:left; margin-left:10px;}
 #reportesaicon p {text-align:center;}
 #reportesaicon p a {text-decoration:none; color:#FF6A00; font-weight:bold; font-size:1.1em;}
 #reportesaicon p a:hover { color:#FFA500; }
 #reportesaicon img:hover { background:url('../imagenes/reportesafondo.png'); }
 
-#reportespicon { float:left; margin-left:15px;}
+#reportespicon { float:left; margin-left:10px;}
 #reportespicon p {text-align:center;}
 #reportespicon p a {text-decoration:none; color:#FF6A00; font-weight:bold; font-size:0.7em;}
 #reportespicon p a:hover { color:#FFA500; }
-#reportespicon img:hover { background:url('../imagenes/reportesafondo.png'); }
+#reportespicon img:hover { background:url('../imagenes/reportespfondo.png'); }
+
+#reportespeicon { float:left; margin-left:10px;}
+#reportespeicon p {text-align:center;}
+#reportespeicon p a {text-decoration:none; color:#FF6A00; font-weight:bold; font-size:0.7em;}
+#reportespeicon p a:hover { color:#FFA500; }
+#reportespeicon img:hover { background:url('../imagenes/reportespefondo.png'); }
