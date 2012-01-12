@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
-{% block titulo %}Equipos {% endblock %}
+{% block titulo %}Interesados {% endblock %}
+{% block css %}
+		<link href='/static/css/tablas.css' rel='stylesheet' media='screen'>
+	<link href='/static/css/imprimir.css' rel='stylesheet' media='print'>
+{% endblock %}
 {% block principal %}
 	<div id='principal'>
 		<div id='navigation'>
@@ -9,13 +13,26 @@
 			</p>
 		</div>
 		<div id='elementos'>
-			<ol>
-			{% for elemento in datos %}
-					<li><a href='editar/{{elemento.pk}}'>{{elemento.nombre}}, DNI: {{elemento.dni|default:'no registrado'}}, Oficina: {{elemento.oficina}}</a></li>
-			{% empty %}
-				<li>No hay interesados disponibles</li>			
-			{% endfor %}
-			</ol>
+			<table id='tabular'>
+				<caption>Lista de interesados en trabajos de producción</caption>
+				<thead>
+					<tr><th>Nombre completo</th><th>DNI</th><th>Oficina o Dependencia</th></tr>
+				</thead>
+				<tfoot>
+					<tr><th>Nombre completo</th><th>DNI</th><th>Oficina o Dependencia</th></tr>
+				</tfoot>
+				<tbody>
+					{% for elemento in datos %}
+						<tr>
+							<td><a href='editar/{{elemento.pk}}'>{{elemento.nombre}}</a></td>
+							<td><a href='editar/{{elemento.pk}}'>{{elemento.dni|default:'no registrado'}}</a></td>
+							<td><a href='editar/{{elemento.pk}}'>{{elemento.dni|default:'no registrada'}}</a></td>
+						</tr>
+					{% empty %}
+						<tr><td>No hay interesados disponibles</td></tr>			
+					{% endfor %}
+				</tbody>
+			</table>
 		</div>
 	</div>
 {% endblock %}
