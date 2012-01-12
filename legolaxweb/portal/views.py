@@ -206,9 +206,15 @@ def articulosregistrar(request):
 
 @login_required(login_url='/ingreso/')
 def registros(request):
-	datos = RegistroArticulo.objects.all().order_by("-pk").order_by('-fregistro')
-	total = RegistroArticulo.objects.count()
+	datos = RegistroArticulo.objects.filter(tipo='s').order_by("-pk").order_by('-fregistro')
+	total = datos.count()
 	return render_to_response('registroarticulo.html',{'datos':datos,'total':total})
+
+@login_required(login_url='/ingreso/')
+def registrosentradas(request):
+	datos = RegistroArticulo.objects.filter(tipo='e').order_by("-pk").order_by('-fregistro')
+	total = datos.count()
+	return render_to_response('registroarticuloentradas.html',{'datos':datos,'total':total})
 
 @login_required(login_url='/ingreso/')
 def registrosnuevo(request):

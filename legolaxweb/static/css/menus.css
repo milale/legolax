@@ -40,13 +40,13 @@
 #reportespeicon p a:hover { color:#FFA500; }
 #reportespeicon img:hover { background:url('../imagenes/reportespefondo.png'); }
 
-#entradasalidaicon { float:left; margin-left:230px;}
+#entradasalidaicon { float:left; margin-left:130px;}
 #entradasalidaicon p {text-align:center;}
-#entradasalidaicon p a {text-decoration:none; color:#FF6A00; font-weight:bold; font-size:1.1em;}
+#entradasalidaicon p a {text-decoration:none; color:#FF6A00; font-weight:bold; font-size:1em;}
 #entradasalidaicon p a:hover { color:#FFA500; }
 #entradasalidaicon img:hover { background:url('../imagenes/entradasalidafondo.png'); }
 
-#articulosicon { float:left; margin-left:200px;}
+#articulosicon { float:left; margin-left:150px;}
 #articulosicon p {text-align:center;}
 #articulosicon p a {text-decoration:none; color:#FF6A00; font-weight:bold; font-size:1.1em;}
 #articulosicon p a:hover { color:#FFA500; }

@@ -31,6 +31,7 @@ urlpatterns = patterns('',
     url(r'^almacen/articulos/editar/(?P<articulo_id>\d+)/$','portal.views.articuloseditar'),
     url(r'^almacen/articulos/nuevo/$','portal.views.articulosregistrar'),
     url(r'^almacen/articulos/registro/$','portal.views.registros'),
+    url(r'^almacen/articulos/registro/entradas/$','portal.views.registrosentradas'),
     url(r'^almacen/articulos/registro/nuevo/$','portal.views.registrosnuevo'),
     
     #administrativo
