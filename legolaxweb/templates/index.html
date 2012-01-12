@@ -2,6 +2,7 @@
 {% block titulo %}Inicio{% endblock %}
 {% block css %}
 	<link href='/static/css/south-street/jquery-ui-1.8.16.custom.css' rel='stylesheet'>
+	<link href='/static/css/menus.css' rel='stylesheet'>
 {% endblock %}
 {% block javascript %}
 	<script src='/static/js/jquery-1.6.2.min.js'></script>
@@ -15,17 +16,27 @@
 			<li><a href='#tab-Almacen' class='botonAlmacen' title='Gestiona los recursos del almacén '>Registro de almacén</a></li>
 		</ul>
 		<div id='tab-Produccion'>
-			<ul>
-				<li><a href='/produccion/trabajos/' class='main'>Trabajos</a></li>
-				<li>
-					<a href='/produccion/equipos/' class='extra'>Equipos</a>
-					<a href='/produccion/interesados/' class='extra'>Interesados</a>
-					<a href='/produccion/tipo-documentos/' class='extra'>Tipo de Documentos</a>
-				</li>
-				<li><a class='main' href='/produccion/reportes/anuales/'>Reportes de trabajos por año</a></li>
-				<li><a class='main' href='/produccion/reportes/periodo/'>Reportes de trabajos por periodos</a></li>
-				<li><a class='main' href='/produccion/reportes/periodo/equipo/'>Reportes de trabajos por periodos y por equipos</a></li>
-			</ul>
+			<div id='trabajosicon'>
+				<p><a href='/produccion/trabajos/'><img src='/static/imagenes/trabajos.png'><br><span>Trabajos</span></a></p>
+			</div>
+			<div id='equiposicon'>
+				<p><a href='/produccion/equipos/'><img src='/static/imagenes/equipos.png'><br><span>Equipos</span></a></p>
+			</div>
+			<div id='interesadosicon'>
+				<p><a href='/produccion/interesados/'><img src='/static/imagenes/interesados.png'><br><span>Interesados</span></a></p>
+			</div>
+			<div id='tdocsicon'>
+				<p><a href='/produccion/tipo-documentos/'><img src='/static/imagenes/tdocs.png'><br><span>Tipos de documentos</span></a></p>
+			</div>
+			<div id='reportesaicon'>
+				<p><a href='/produccion/reportes/anuales/'><img src='/static/imagenes/reportesa.png'><br><span>Reportes anuales</span></a></p>
+			</div>
+			<div id='reportespicon'>
+				<p><a href='/produccion/reportes/periodo/'><img src='/static/imagenes/reportesp.png'><br><span>Reportes por periodos</span></a></p>
+			</div>
+			<div id='reportespeicon'>
+				<p><a href='/produccion/reportes/periodo/equipo/'><img src='/static/imagenes/reportespe.png'><br><span>Reportes por equipos</span></a></p>
+			</div>
 		</div>
 		<div id='tab-Almacen'>
 			<ul>

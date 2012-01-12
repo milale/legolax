@@ -254,6 +254,8 @@ def raprodform(request):
 			anio = formulario.cleaned_data['anio']
 			datos = Documento.objects.filter(fentrega__year=anio).order_by('fentrega')
 			total = datos.count()
+			if total == 0:
+				raise Http404
 			
 			#calculo del costo por año
 			suma = 0

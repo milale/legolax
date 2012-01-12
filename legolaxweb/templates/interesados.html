@@ -16,14 +16,15 @@
 			<table id='tabular'>
 				<caption>Lista de interesados en trabajos de producción</caption>
 				<thead>
-					<tr><th>Nombre completo</th><th>DNI</th><th>Oficina o Dependencia</th></tr>
+					<tr><th>N°</th><th>Nombre completo</th><th>DNI</th><th>Oficina o Dependencia</th></tr>
 				</thead>
 				<tfoot>
-					<tr><th>Nombre completo</th><th>DNI</th><th>Oficina o Dependencia</th></tr>
+					<tr><th>N°</th><th>Nombre completo</th><th>DNI</th><th>Oficina o Dependencia</th></tr>
 				</tfoot>
 				<tbody>
 					{% for elemento in datos %}
 						<tr>
+							<td><a href='editar/{{elemento.pk}}'>{{forloop.counter}}</a></td>
 							<td><a href='editar/{{elemento.pk}}'>{{elemento.nombre}}</a></td>
 							<td><a href='editar/{{elemento.pk}}'>{{elemento.dni|default:'no registrado'}}</a></td>
 							<td><a href='editar/{{elemento.pk}}'>{{elemento.dni|default:'no registrada'}}</a></td>
