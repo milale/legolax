@@ -17,11 +17,15 @@
 		<h2>Oficina de Publicaciones e Impresiones</h2>
 		<img src='/static/imagenes/uncp.png' alt='UNCP'>
 	</div>
-	{% block navegacion %}
 	<div id='usuariobar'>
-		<p><a href='/salida/'>Cerrar sesión</a></p>
+		<div id='navigation'>
+			<div id='inicio'>
+				<p><a href='/'><img src='/static/imagenes/inicio.png'><br><span>Inicio</span></a></p>
+			</div>
+			{% block navegacion %}{% endblock %}
+		</div>
+		<div id='cerrar'><p><a href='/salida/'><img src='/static/imagenes/salir.png'><br><span>Salir</span></a></p></div>
 	</div>	
-	{% endblock %}
    	{% block principal %}
 	{% endblock %}
 	<div id='pie'>

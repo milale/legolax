@@ -2,14 +2,13 @@
 {% load humanize %}
 {% block css %}<link href='/static/css/tablas.css' rel='stylesheet'>{% endblock %}
 {% block titulo %}Trabajos {% endblock %}
+{% block navegacion %}
+			<div class='nuevo'>
+				<p><a href='nuevo' ><img src='/static/imagenes/nuevo.png'><br><span>Nuevo trabajo</span></a></p>
+			</div>
+{% endblock %}
 {% block principal %}
 	<div id='principal'>
-		<div id='navigation'>
-			<p>
-				<a class='naveurl' href='/' title='Oficina de publicaciones e impresiones UNCP'>Volver al inicio</a>
-				<a class='naveurl' href='nuevo' >Registrar un trabajo nuevo</a>
-			</p>
-		</div>
 		<div id='elementos'>
 			<table id='tabular'>
 				<caption>Lista de trabajos recibidos</caption>

@@ -28,9 +28,22 @@ body { font-family:'Convergence',sans-serif; }
 #principal ul { margin:0 auto; text-align:center; width:462px; }
 #tab-Produccion , #tab-Almacen {height:120px;}
 
-#navigation { text-align:left; font-family:sans-serif; }
-#navigation p a { color:#FF8400; font-weight:bold; padding:0px 10px;}
-#navigation p a:hover { text-decoration:none; }
+#usuariobar { height:75px; font-family:sans-serif;}
+#usuariobar #cerrar p { text-align:center; font-size:0.8em; float:right;}
+#usuariobar #cerrar p a { color:#FF7100; text-decoration:none; }
+#usuariobar #cerrar p a:hover { color:#FFA500; }
+#usuariobar #cerrar p a img:hover {background:url('../imagenes/salirfondo.png');}
+#navigation { text-align:center; }
+#navigation #inicio { float:left; }
+#navigation #inicio p { text-align:center; font-size:0.8em; }
+#navigation #inicio p a { color:#FF7100; text-decoration:none; }
+#navigation #inicio p a:hover { color:#FFA500; }
+#navigation #inicio p a img:hover {background:url('../imagenes/iniciofondo.png');}
+#navigation .nuevo { float:left; margin-left:20px; }
+#navigation .nuevo p { text-align:center; font-size:0.8em; }
+#navigation .nuevo p a { color:#FF7100; text-decoration:none; }
+#navigation .nuevo p a:hover { color:#FFA500; }
+#navigation .nuevo p a img:hover {background:url('../imagenes/nuevofondo.png');}
 
 #elementos { font-family:sans-serif; text-align:left; margin:20px 10px;}
 #elementos ol { text-transform:capitalize; }
