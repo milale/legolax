@@ -44,6 +44,11 @@ body { font-family:'Convergence',sans-serif; }
 #navigation .nuevo p a { color:#FF7100; text-decoration:none; }
 #navigation .nuevo p a:hover { color:#FFA500; }
 #navigation .nuevo p a img:hover {background:url('../imagenes/nuevofondo.png');}
+#navigation .lista { float:left; margin-left:20px; }
+#navigation .lista p { text-align:center; font-size:0.8em; }
+#navigation .lista p a { color:#FF7100; text-decoration:none; }
+#navigation .lista p a:hover { color:#FFA500; }
+#navigation .lista p a img:hover {background:url('../imagenes/listafondo.png');}
 
 #elementos { font-family:sans-serif; text-align:left; margin:20px 10px;}
 #elementos ol { text-transform:capitalize; }

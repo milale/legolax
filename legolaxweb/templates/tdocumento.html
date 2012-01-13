@@ -1,14 +1,13 @@
 {% extends 'base.html' %}
 {% block css %}<link href='/static/css/tablas.css' rel='stylesheet'>{% endblock %}
 {% block titulo %}Tipos de documento {% endblock %}
+{% block navegacion %}
+			<div class='nuevo'>
+				<p><a href='nuevo' ><img src='/static/imagenes/nuevo.png'><br><span>Nuevo tipo de documento</span></a></p>
+			</div>
+{% endblock %}
 {% block principal %}
 	<div id='principal'>
-		<div id='navigation'>
-			<p>
-				<a class='naveurl' href='/' title='Oficina de publicaciones e impresiones UNCP'>Volver al inicio</a>
-				<a class='naveurl' href='nuevo' >Registrar un tipo de documento nuevo</a>
-			</p>
-		</div>
 		<div id='elementos'>
 			<table id='tabular'>
 				<tr><th>Tipos de documentos</th></tr>

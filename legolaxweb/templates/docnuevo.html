@@ -9,17 +9,16 @@
 	<script src='/static/js/jquery.ui.datepicker-es.js'></script>
 	<script src='/static/js/legolax.js'></script>
 {% endblock %}
+{% block navegacion %}
+			<div class='lista'>
+				<p><a href='/produccion/trabajos/' ><img src='/static/imagenes/lista.png'><br><span>Trabajos registrados</span></a></p>
+			</div>
+{% endblock %}
 {% block principal %}
 <div id='dialogo' title='Confirmación de cambios' style="display:none;">
 		<p>¿Desea guardar los cambios?</p>
 	</div>
 	<div id='principal'>
-		<div id='navigation'>
-			<p>
-				<a class='naveurl' href='/'>Volver al inicio</a>
-				<a class='naveurl' href='/produccion/trabajos/' >Volver a la lista de trabajos</a>
-			</p>
-		</div>
 		<script>
 			$(function(){
 				var todosinteresados = [

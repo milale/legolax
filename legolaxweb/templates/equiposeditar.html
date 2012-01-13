@@ -8,17 +8,16 @@
 	<script src='/static/js/jquery-ui-1.8.16.custom.min.js'></script>
 	<script src='/static/js/legolax.js'></script>
 {% endblock %}
+{% block navegacion %}
+			<div class='lista'>
+				<p><a href='/produccion/equipos/' ><img src='/static/imagenes/lista.png'><br><span>Equipos registrados</span></a></p>
+			</div>
+{% endblock %}
 {% block principal %}
 	<div id='dialogo' title='Confirmación de cambios' style="display:none;">
 		<p>¿Desea guardar los cambios?</p>
 	</div>
 	<div id='principal'>
-		<div id='navigation'>
-			<p>
-				<a class='naveurl' href='/' title='Oficina de publicaciones e impresiones UNCP'>Volver al inicio</a>
-				<a class='naveurl' href='/produccion/equipos/' >Volver a la lista de equipos</a>
-			</p>
-		</div>
 		<div id='elementos'>
 			<p class='instruccion'>* Asegurese que el equipo que desea registrar no existe ya en la lista anterior</p>
 			<form id='formulario' method='post' action=''>{% csrf_token %}

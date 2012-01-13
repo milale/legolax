@@ -4,14 +4,13 @@
 		<link href='/static/css/tablas.css' rel='stylesheet' media='screen'>
 	<link href='/static/css/imprimir.css' rel='stylesheet' media='print'>
 {% endblock %}
+{% block navegacion %}
+			<div class='nuevo'>
+				<p><a href='nuevo' ><img src='/static/imagenes/nuevo.png'><br><span>Nuevo interesado</span></a></p>
+			</div>
+{% endblock %}
 {% block principal %}
 	<div id='principal'>
-		<div id='navigation'>
-			<p>
-				<a class='naveurl' href='/' title='Oficina de publicaciones e impresiones UNCP'>Volver al inicio</a>
-				<a class='naveurl' href='nuevo' >Registrar un interesado nuevo</a></p>
-			</p>
-		</div>
 		<div id='elementos'>
 			<table id='tabular'>
 				<caption>Lista de interesados en trabajos de producción</caption>
