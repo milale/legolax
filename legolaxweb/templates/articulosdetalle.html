@@ -2,14 +2,16 @@
 {% load humanize %}
 {% block css %}<link href='/static/css/tablas.css' rel='stylesheet'>{% endblock %}
 {% block titulo %}Detalle: {{dato.nombre}}{% endblock %}
+{% block navegacion %}
+			<div class='lista'>
+				<p><a href='/almacen/articulos/' ><img src='/static/imagenes/lista.png'><br><span>Artículos registrados</span></a></p>
+			</div>
+			<div class='editar'>
+				<p><a href='../../editar/{{dato.pk}}/' ><img src='/static/imagenes/editar.png'><br><span>Editar artículo</span></a></p>
+			</div>
+{% endblock %}
 {% block principal %}
 	<div id='principal'>
-		<div id='navigation'>
-			<p>
-				<a class='naveurl' href='/almacen/articulos/'>Volver a la lista de artículos</a>
-				<a class='naveurl' href='../../editar/{{dato.pk}}/' >Editar los datos de este artículo</a>
-			</p>
-		</div>
 		<div id='elementos'>
 			<table id='tabular'>
 				<tr><th>Nombre</th><td>{{dato.nombre}}</td></tr>

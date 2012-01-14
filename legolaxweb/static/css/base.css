@@ -28,12 +28,13 @@ body { font-family:'Convergence',sans-serif; }
 #principal ul { margin:0 auto; text-align:center; width:462px; }
 #tab-Produccion , #tab-Almacen {height:120px;}
 
-#usuariobar { height:75px; font-family:sans-serif;}
+#usuariobar { height:80px; font-family:sans-serif;}
 #usuariobar #cerrar p { text-align:center; font-size:0.8em; float:right;}
 #usuariobar #cerrar p a { color:#FF7100; text-decoration:none; }
 #usuariobar #cerrar p a:hover { color:#FFA500; }
 #usuariobar #cerrar p a img:hover {background:url('../imagenes/salirfondo.png');}
 #navigation { text-align:center; }
+#navigation #user { font-size:0.7em; color:#1E90FF;}
 #navigation #inicio { float:left; }
 #navigation #inicio p { text-align:center; font-size:0.8em; }
 #navigation #inicio p a { color:#FF7100; text-decoration:none; }
@@ -49,6 +50,23 @@ body { font-family:'Convergence',sans-serif; }
 #navigation .lista p a { color:#FF7100; text-decoration:none; }
 #navigation .lista p a:hover { color:#FFA500; }
 #navigation .lista p a img:hover {background:url('../imagenes/listafondo.png');}
+#navigation .editar { float:left; margin-left:20px; }
+#navigation .editar p { text-align:center; font-size:0.8em; }
+#navigation .editar p a { color:#FF7100; text-decoration:none; }
+#navigation .editar p a:hover { color:#FFA500; }
+#navigation .editar p a img:hover {background:url('../imagenes/editarfondo.png');}
+#navigation .listaentradas { float:left; margin-left:20px; }
+#navigation .listaentradas p { text-align:center; font-size:0.8em; }
+#navigation .listaentradas p a { color:#FF7100; text-decoration:none; }
+#navigation .listaentradas p img { width:50px; }
+#navigation .listaentradas p a:hover { color:#FFA500; }
+#navigation .listaentradas p a img:hover { background:url('../imagenes/minientradafondo.png');}
+#navigation .listasalidas { float:left; margin-left:20px; }
+#navigation .listasalidas p { text-align:center; font-size:0.8em; }
+#navigation .listasalidas p a { color:#FF7100; text-decoration:none; }
+#navigation .listasalidas p img { width:50px; }
+#navigation .listasalidas p a:hover { color:#FFA500; }
+#navigation .listasalidas p a img:hover { background:url('../imagenes/minisalidafondo.png');}
 
 #elementos { font-family:sans-serif; text-align:left; margin:20px 10px;}
 #elementos ol { text-transform:capitalize; }

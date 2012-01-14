@@ -9,17 +9,19 @@
 	<script src='/static/js/jquery.ui.datepicker-es.js'></script>
 	<script src='/static/js/legolax.js'></script>
 {% endblock %}
+{% block navegacion %}
+			<div class='listaentradas'>
+				<p><a href='/almacen/articulos/registro/entradas/' ><img src='/static/imagenes/entrada.png'><br><span>Entradas registradas</span></a></p>
+			</div>
+			<div class='listasalidas'>
+				<p><a href='/almacen/articulos/registro/' ><img src='/static/imagenes/salida.png'><br><span>Salidas registradas</span></a></p>
+			</div>
+{% endblock %}
 {% block principal %}
 	<div id='dialogo' title='Confirmación de cambios' style="display:none;">
 		<p>¿Desea guardar los cambios?</p>
 	</div>
 	<div id='principal'>
-		<div id='navigation'>
-			<p>
-				<a class='naveurl' href='/' title='Oficina de publicaciones e impresiones UNCP'>Volver al inicio</a>
-				<a class='naveurl' href='/almacen/articulos/registro/' >Volver a la lista de entradas y salidas</a>
-			</p>
-		</div>
 		<script>
 			$(function(){
 				var todosinteresados = [

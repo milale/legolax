@@ -2,14 +2,16 @@
 {% load humanize %}
 {% block css %}<link href='/static/css/tablas.css' rel='stylesheet'>{% endblock %}
 {% block titulo %}Detalle: {{dato.codigo}}{% endblock %}
+{% block navegacion %}
+			<div class='lista'>
+				<p><a href='/produccion/trabajos/' ><img src='/static/imagenes/lista.png'><br><span>Trabajos registrados</span></a></p>
+			</div>
+			<div class='editar'>
+				<p><a href='../../editar/{{dato.pk}}/' ><img src='/static/imagenes/editar.png'><br><span>Editar trabajo</span></a></p>
+			</div>
+{% endblock %}
 {% block principal %}
 	<div id='principal'>
-		<div id='navigation'>
-			<p>
-				<a class='naveurl' href='/produccion/trabajos/'>Volver a la lista de trabajos</a>
-				<a class='naveurl' href='../../editar/{{dato.pk}}/' >Editar los datos de este trabajo</a>
-			</p>
-		</div>
 		<div id='elementos'>
 			<table id='tabular'>
 				<tr><th>Tipo de documento</th><td>{{dato.tdocumento|default:'No registrado'}}</td></tr>

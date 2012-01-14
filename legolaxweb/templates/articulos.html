@@ -4,16 +4,23 @@
 	<link href='/static/css/tablas.css' rel='stylesheet' media='screen'>
 	<link href='/static/css/imprimir.css' rel='stylesheet' media='print'>
 {% endblock %}
+{% block navegacion %}
+			<div class='nuevo'>
+				<p><a href='/almacen/articulos/nuevo' ><img src='/static/imagenes/nuevo.png'><br><span>Nuevo artículo</span></a></p>
+			</div>
+			<div class='nuevo'>
+				<p><a href='/almacen/articulos/registro/nuevo' ><img src='/static/imagenes/nuevo.png'><br><span>Nueva entrada o salida</span></a></p>
+			</div>
+			<div class='listaentradas'>
+				<p><a href='/almacen/articulos/registro/entradas/' ><img src='/static/imagenes/entrada.png'><br><span>Entradas registradas</span></a></p>
+			</div>
+			<div class='listasalidas'>
+				<p><a href='/almacen/articulos/registro/' ><img src='/static/imagenes/salida.png'><br><span>Salidas registradas</span></a></p>
+			</div>
+{% endblock %}
 {% block titulo %}Articulos {% endblock %}
 {% block principal %}
 	<div id='principal'>
-		<div id='navigation'>
-			<p>
-				<a class='naveurl' href='/' title='Oficina de publicaciones e impresiones UNCP'>Volver al inicio</a>
-				<a class='naveurl' href='/almacen/articulos/nuevo' >Registrar un artículo nuevo</a>
-				<a class='naveurl' href='/almacen/articulos/registro/nuevo' >Registrar Entrada o Salida</a>
-			</p>
-		</div>
 		<div id='elementos'>
 			<table id='tabular'>
 				<caption>Al {{fecha|date:"SHORT_DATE_FORMAT"}} existen <span class='total'>{{total}}</span> artículos registrados en almacén</caption>
