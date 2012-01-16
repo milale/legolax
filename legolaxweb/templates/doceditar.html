@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block titulo %}Agregar o editar nuevos trabajos {% endblock %}
+{% block titulo %}Agregar o editar trabajos {% endblock %}
 {% block css %}
 	<link href='/static/css/south-street/jquery-ui-1.8.16.custom.css' rel='stylesheet'>
 {% endblock %}
@@ -32,7 +32,7 @@
 			});
 		</script>
 		<div id='elementos'>
-			<p class='instruccion'>* Asegurese que el trabajo que desea registrar no existe ya en la lista anterior</p>
+			<p class='instruccion'>* Verifique los datos antes de confirmar.</p>
 			<form id='formulario' method='post' action=''>{% csrf_token %}
 			{{formulario.as_p}}
 			<p><input id='dialogSencillo' type='button' value='Confirmar'/></p>

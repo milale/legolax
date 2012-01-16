@@ -16,7 +16,7 @@
 	<div id='principal'>
 		{% if formulario %}
 		<div id='elementos'>
-			<p class='instruccion'>* Ingrese el rango de fechas para el reporte:</p>
+			<p class='instruccion'>* Ingrese el rango de fechas para el reporte y elija el equipo:</p>
 			<form id='formulario' method='post' action=''>{% csrf_token %}
 			{{formulario.as_p}}
 			<p><input id='dialogSencillo' class='boton' type='submit' value='Consultar'/></p>

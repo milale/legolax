@@ -74,7 +74,7 @@ body { font-family:'Convergence',sans-serif; }
 #elementos ol li .docu:hover { color:#FFA500; }
 #elementos .detalleElemento { text-align:left; }
 
-.instruccion { color:#42B222; font-size:0.9em; }
+.instruccion { color:#FF0000; font-size:0.9em; }
 
 #formulario { width:700px; margin:0 auto; text-align:center; padding:25px;}
 #formulario label { font-size:18px; font-family:sans-serif; color:#444444; margin:5px;}

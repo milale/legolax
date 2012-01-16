@@ -19,7 +19,7 @@
 	</div>
 	<div id='principal'>
 		<div id='elementos'>
-			<p class='instruccion'>* Asegurese que el articulo que desea registrar no existe ya en la lista anterior</p>
+			<p class='instruccion'>* Verifique los datos antes de confirmar.</p>
 			<form id='formulario' method='post' action=''>{% csrf_token %}
 			{{formulario.as_p}}
 			<p><input id='dialogSencillo' class='boton' type='button' value='Confirmar'/></p>

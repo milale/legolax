@@ -110,7 +110,7 @@ class ArticuloField(forms.CharField):
 			raise forms.ValidationError('No existe el artículo')
 
 class RegistroArticuloForm(ModelForm):
-	articulo = ArticuloField()
+	articulo = ArticuloField(label='Artículo')
 	class Meta:
 		model = RegistroArticulo
 		exclude = ('usuario',)
