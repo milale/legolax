@@ -21,7 +21,7 @@ import datetime
 
 @login_required(login_url='/ingreso/')
 def index(request):
-    return render_to_response('index.html')
+    return render_to_response('index.html',context_instance=RequestContext(request))
 
 def ingreso(request):
 	if request.method == 'POST':
@@ -50,7 +50,7 @@ def salida(request):
 @login_required(login_url='/ingreso/')
 def equipos(request):
 	datos = Equipo.objects.all().order_by('nombre')
-	return render_to_response('equipos.html',{'datos':datos})
+	return render_to_response('equipos.html',{'datos':datos},context_instance=RequestContext(request))
 
 @login_required(login_url='/ingreso/')
 def equiposregistrar(request):
@@ -78,7 +78,7 @@ def equiposeditar(request, equipo_id):
 @login_required(login_url='/ingreso/')
 def interesados(request):
 	datos = Interesado.objects.all().order_by('nombre')
-	return render_to_response('interesados.html',{'datos':datos})
+	return render_to_response('interesados.html',{'datos':datos},context_instance=RequestContext(request))
 
 @login_required(login_url='/ingreso/')
 def interesadosregistrar(request):
@@ -106,7 +106,7 @@ def interesadoseditar(request, interesado_id):
 @login_required(login_url='/ingreso/')
 def tdocumentos(request):
 	datos = TipoDocumento.objects.all()
-	return render_to_response('tdocumento.html',{'datos':datos})	
+	return render_to_response('tdocumento.html',{'datos':datos},context_instance=RequestContext(request))	
 
 @login_required(login_url='/ingreso/')
 def tdocumentosregistrar(request):
@@ -134,7 +134,7 @@ def tdocumentoseditar(request, tdocumento_id):
 @login_required(login_url='/ingreso/')
 def documentos(request):
 	datos = Documento.objects.all().order_by('-fentrega')
-	return render_to_response('documentos.html',{'datos':datos})
+	return render_to_response('documentos.html',{'datos':datos},context_instance=RequestContext(request))
 
 @login_required(login_url='/ingreso/')
 def documentosregistrar(request):
@@ -151,7 +151,7 @@ def documentosregistrar(request):
 @login_required(login_url='/ingreso/')
 def documentosdetalle(request, documento_id):
 	dato = get_object_or_404(Documento, pk=documento_id)
-	return render_to_response('detalledocumento.html',{'dato':dato})
+	return render_to_response('detalledocumento.html',{'dato':dato},context_instance=RequestContext(request))
 
 @login_required(login_url='/ingreso/')
 def documentoseditar(request, documento_id):
@@ -173,12 +173,12 @@ def articulos(request):
 	total = datos.count()
 	suma = Articulo.objects.all().aggregate(Sum('preciototalref'))['preciototalref__sum']
 	fecha = datetime.date.today
-	return render_to_response('articulos.html',{'datos':datos,'total':total,'fecha':fecha,'suma':suma})
+	return render_to_response('articulos.html',{'datos':datos,'total':total,'fecha':fecha,'suma':suma},context_instance=RequestContext(request))
 
 @login_required(login_url='/ingreso/')
 def articulosdetalle(request, articulo_id):
 	dato = get_object_or_404(Articulo, pk=articulo_id)
-	return render_to_response('articulosdetalle.html',{'dato':dato})
+	return render_to_response('articulosdetalle.html',{'dato':dato},context_instance=RequestContext(request))
 
 @login_required(login_url='/ingreso/')
 def articuloseditar(request, articulo_id):
@@ -214,13 +214,13 @@ def articulosregistrar(request):
 def registros(request):
 	datos = RegistroArticulo.objects.filter(tipo='s').order_by("-pk").order_by('-fregistro')
 	total = datos.count()
-	return render_to_response('registroarticulo.html',{'datos':datos,'total':total})
+	return render_to_response('registroarticulo.html',{'datos':datos,'total':total},context_instance=RequestContext(request))
 
 @login_required(login_url='/ingreso/')
 def registrosentradas(request):
 	datos = RegistroArticulo.objects.filter(tipo='e').order_by("-pk").order_by('-fregistro')
 	total = datos.count()
-	return render_to_response('registroarticuloentradas.html',{'datos':datos,'total':total})
+	return render_to_response('registroarticuloentradas.html',{'datos':datos,'total':total},context_instance=RequestContext(request))
 
 @login_required(login_url='/ingreso/')
 def registrosnuevo(request):
@@ -278,7 +278,7 @@ def raprodform(request):
 			for i in datos:
 				suma += i.costo
 			
-			return render_to_response('raprod.html',{'datos':datos,'anio':anio,'suma':suma,'total':total})
+			return render_to_response('raprod.html',{'datos':datos,'anio':anio,'suma':suma,'total':total},context_instance=RequestContext(request))
 	else:
 		formulario = raprod(auto_id=True)
 	return render_to_response('raprod.html',{'formulario':formulario},context_instance=RequestContext(request))
@@ -293,13 +293,15 @@ def rpprodform(request):
 			fecha = {'inicial':finicial,'final':ffinal}
 			datos = Documento.objects.filter(fentrega__range=(finicial,ffinal)).order_by('fentrega')
 			total = datos.count()
+			if total == 0:
+				raise Http404
 			
 			#calculo de costo por periodo
 			suma = 0
 			for i in datos:
 				suma += i.costo
 			
-			return render_to_response('rpprod.html',{'datos':datos,'fecha':fecha,'suma':suma,'total':total})
+			return render_to_response('rpprod.html',{'datos':datos,'fecha':fecha,'suma':suma,'total':total},context_instance=RequestContext(request))
 	else:
 		formulario = rpprod(auto_id=True)
 	return render_to_response('rpprod.html',{'formulario':formulario},context_instance=RequestContext(request))
@@ -315,13 +317,15 @@ def rpeprodform(request):
 			referencia = {'inicial':finicial,'final':ffinal,'equipo':equipoform}
 			datos = Documento.objects.filter(fentrega__range=(finicial,ffinal),equipo=equipoform).order_by('fentrega')
 			total = datos.count()
-			
+			if total == 0:
+				raise Http404
+				
 			#calculo de costo por periodo y por equipo
 			suma = 0
 			for i in datos:
 				suma += i.costo
 			
-			return render_to_response('rpeprod.html',{'datos':datos,'referencia':referencia,'suma':suma,'total':total})
+			return render_to_response('rpeprod.html',{'datos':datos,'referencia':referencia,'suma':suma,'total':total},context_instance=RequestContext(request))
 	else:
 		formulario = rpeprod(auto_id=True)
 	return render_to_response('rpeprod.html',{'formulario':formulario},context_instance=RequestContext(request))
