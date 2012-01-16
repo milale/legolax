@@ -23,22 +23,27 @@
 	<div id='principal'>
 		<div id='elementos'>
 			<table id='tabular'>
-				<caption>Al {{fecha|date:"SHORT_DATE_FORMAT"}} existen <span class='total'>{{total}}</span> artículos registrados en almacén</caption>
+				<caption>Al {{fecha|date:"SHORT_DATE_FORMAT"}} existen <span class='total'>{{total}}</span> 
+						artículos registrados en almacén, los cuales hacen una suma 
+						total de <span class='total'>S/.{{suma|intcomma}}</span></caption>
 				<thead>
 					<tr>
-						<th>Nombre del artículo</th><th>Saldo actual</th>
+						<th>N°</th><th>Nombre del artículo</th><th>Saldo actual</th><th>Precio Referencial Unitario</th><th>Total Referencial</th>
 					</tr>
 				</thead>
 				<tfoot>
 					<tr>
-						<th>Nombre del artículo</th><th>Saldo actual</th>
+						<th>N°</th><th>Nombre del artículo</th><th>Saldo actual</th><th>Precio Referencial</th><th>Total Referencial</th>
 					</tr>
 				</tfoot>
 				<tbody>
 				{% for elemento in datos %}
 					<tr>
+						<td><a class='docu' href='detalle/{{elemento.pk}}'>{{forloop.counter}}</a></td>
 						<td><a class='docu' href='detalle/{{elemento.pk}}'>{{elemento.nombre}}</a></td>
 						<td><a class='docu' href='detalle/{{elemento.pk}}'>{{elemento.sactual|intcomma}}</a></td>
+						<td><a class='docu' href='detalle/{{elemento.pk}}'>{{elemento.precioref|intcomma}}</a></td>
+						<td><a class='docu' href='detalle/{{elemento.pk}}'>{{elemento.preciototalref|intcomma}}</a></td>
 					</tr>
 				{% empty %}
 					<p>No hay elementos disponibles</p>

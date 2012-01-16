@@ -16,6 +16,7 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.http import Http404
+from django.db.models import Sum
 import datetime
 
 @login_required(login_url='/ingreso/')
@@ -170,15 +171,14 @@ def documentoseditar(request, documento_id):
 def articulos(request):
 	datos = Articulo.objects.all().order_by('nombre')
 	total = datos.count()
+	suma = Articulo.objects.all().aggregate(Sum('preciototalref'))['preciototalref__sum']
 	fecha = datetime.date.today
-	return render_to_response('articulos.html',{'datos':datos,'total':total,'fecha':fecha})
+	return render_to_response('articulos.html',{'datos':datos,'total':total,'fecha':fecha,'suma':suma})
 
 @login_required(login_url='/ingreso/')
 def articulosdetalle(request, articulo_id):
 	dato = get_object_or_404(Articulo, pk=articulo_id)
-	ultimaentrada = RegistroArticulo.objects.filter(articulo=dato,tipo='e').order_by('-fregistro')[0]
-	precioreferencial = ultimaentrada.preciouni
-	return render_to_response('articulosdetalle.html',{'dato':dato,'precioref':precioreferencial})
+	return render_to_response('articulosdetalle.html',{'dato':dato})
 
 @login_required(login_url='/ingreso/')
 def articuloseditar(request, articulo_id):
@@ -187,6 +187,9 @@ def articuloseditar(request, articulo_id):
 		formulario = ArticuloForm(request.POST, instance=dato)
 		if formulario.is_valid():
 			formulario.save()
+			modificar = Articulo.objects.get(pk=articulo_id)
+			modificar.preciototalref = modificar.sactual * modificar.precioref
+			modificar.save()
 			redireccion = '/almacen/articulos/detalle/'+str(articulo_id)
 			return HttpResponseRedirect(redireccion)
 	else:
@@ -199,6 +202,9 @@ def articulosregistrar(request):
 		formulario = ArticuloForm(request.POST)
 		if formulario.is_valid():
 			formulario.save()
+			ultimo = Articulo.objects.latest('id')
+			ultimo.preciototalref = ultimo.sactual * ultimo.precioref
+			ultimo.save()
 			return HttpResponseRedirect('/almacen/articulos/')
 	else:
 		formulario = ArticuloForm(auto_id=True)
@@ -238,9 +244,11 @@ def registrosnuevo(request):
 			#actualizacion del saldo de producto
 			if tipo == 'e':
 				saldo = articulo.sactual + cantidad
+				articulo.precioref = preciouni
 			elif tipo == 's':
 				saldo = articulo.sactual - cantidad
 			articulo.sactual = saldo
+			articulo.preciototalref = articulo.sactual * articulo.precioref
 			articulo.save()
 			
 			#guardar el registro de entrada o salida
@@ -249,7 +257,7 @@ def registrosnuevo(request):
 												preciouni=preciouni,preciototal=preciototal,
 												articulo=articulo,usuario=usuario)
 			guardarregistro.save()
-			return HttpResponseRedirect('/almacen/articulos/registro/')
+			return HttpResponseRedirect('/almacen/articulos/')
 	else:
 		formulario = RegistroArticuloForm(auto_id=True)
 	return render_to_response('registroarticuloform.html',{'formulario':formulario,'articulos':articulos},context_instance=RequestContext(request))

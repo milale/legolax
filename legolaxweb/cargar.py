@@ -1,22 +1,22 @@
-#~ #encoding:utf-8
-#~ #code by neosergio - http://neosergio.net
-#~ import os
-#~ import sys
+#encoding:utf-8
+#code by neosergio - http://neosergio.net
+#import os
+#import sys
 #~ import csv
-#~ from decimal import *
+#from decimal import *
 #~ 
 #~ #project root directory
-#~ SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
+#SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
 #~ 
 #~ #CSV files
 #~ csv_trabajos = os.path.join(SITE_ROOT,'migration/trabajos.csv')
 #~ csv_almacen = os.path.join(SITE_ROOT,'migration/almacen.csv')
 #~ 
 #~ #Calling Django settings
-#~ sys.path.append(SITE_ROOT)
-#~ os.environ['DJANGO_SETTINGS_MODULE'] = 'settings'
+#sys.path.append(SITE_ROOT)
+#os.environ['DJANGO_SETTINGS_MODULE'] = 'settings'
 #~ 
-#~ #import models
+#import models
 #~ from portal.models import Equipo
 #~ from portal.models import TipoDocumento
 #~ from portal.models import Interesado
@@ -126,3 +126,15 @@
 	#~ contador += 1
 	#~ print str(contador)
 #~ print "Fin de migración de datos de entrada y salida"
+
+## Calculo de nuevos datos agregados manualmente a la tabla articulo
+#~ contador = 1
+#~ while contador <= 75:
+	#~ articulo = Articulo.objects.get(pk=contador)
+	#~ precioso = RegistroArticulo.objects.filter(articulo=articulo,tipo='e').order_by('-fregistro')[0]
+	#~ total = articulo.sactual * precioso.preciouni
+	#~ articulo.precioref = precioso.preciouni
+	#~ articulo.preciototalref = total
+	#~ articulo.save()
+	#~ print contador
+	#~ contador += 1

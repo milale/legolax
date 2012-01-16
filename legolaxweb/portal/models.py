@@ -68,12 +68,14 @@ class DocumentoForm(ModelForm):
 		model = Documento
 
 class Articulo(models.Model):
-	nombre = models.CharField(max_length=250,unique=True)
+	nombre = models.CharField(max_length=250,unique=True) 
 	marca = models.CharField(max_length=50,blank=True)
 	codigo = models.CharField(max_length=50,blank=True,verbose_name='Código')
 	caracteristica = models.TextField(blank=True,verbose_name='Característica')
 	umedida = models.CharField(max_length=50,verbose_name="Unidad de medida",blank=True)
 	sactual = models.DecimalField(max_digits=8,decimal_places=3,verbose_name="Saldo actual",default=0)
+	precioref = models.DecimalField(max_digits=8,decimal_places=3,default=0, verbose_name='Precio referencial')
+	preciototalref = models.DecimalField(max_digits=10,decimal_places=3,default=0, verbose_name='Precio total referencial')
 	
 	def __unicode__(self):
 		return self.nombre
@@ -81,6 +83,7 @@ class Articulo(models.Model):
 class ArticuloForm(ModelForm):
 	class Meta:
 		model = Articulo
+		exclude = ('preciototalref',)
 
 class RegistroArticulo(models.Model):
 	articulo = models.ForeignKey(Articulo,verbose_name='Artículo')
