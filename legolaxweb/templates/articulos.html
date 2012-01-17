@@ -21,11 +21,10 @@
 {% block titulo %}Articulos {% endblock %}
 {% block principal %}
 	<div id='principal'>
+		<p class='resultado'>Costo total: <span>S/.{{suma|intcomma}}</span><br>Cantidad de artículos: <span>{{total}}</span></p>
 		<div id='elementos'>
 			<table id='tabular'>
-				<caption>Al {{fecha|date:"SHORT_DATE_FORMAT"}} existen <span class='total'>{{total}}</span> 
-						artículos registrados en almacén, los cuales hacen una suma 
-						total de <span class='total'>S/.{{suma|intcomma}}</span></caption>
+				<caption>Reporte de Artículos en Almacén al {{fecha|date:"SHORT_DATE_FORMAT"}}</caption>
 				<thead>
 					<tr>
 						<th>N°</th><th>Nombre del artículo</th><th>Saldo actual</th><th>Precio Referencial Unitario</th><th>Total Referencial</th>
@@ -51,5 +50,6 @@
 				</tbody>
 			</table>
 		</div>
+		<p class='resultado'>Costo total: <span>S/.{{suma|intcomma}}</span><br>Cantidad de artículos: <span>{{total}}</span></p>
 	</div>
 {% endblock %}
