@@ -10,3 +10,6 @@
 #Avoid Excel
 ~*.xlsx
 .~lock*
+
+#Avoid backups tmp
+*~
